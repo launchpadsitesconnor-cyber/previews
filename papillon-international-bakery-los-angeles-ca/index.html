@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Papillon International Bakery | Los Angeles, CA</title><meta name="description" content="Fresh Armenian and Georgian pastries, savory foods, and cakes in Los Angeles. Order for pickup or delivery from Papillon International Bakery.">
+<meta name="theme-color" content="#d6a21e">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap">
+<style>:root{--bg:#fffaf0;--ink:#2b2410;--muted:#6c6448;--accent:#d6a21e;--accent-ink:#241b03;--soft:#f6ead0;--card:#ffffff;--dark:#2b2410;--dark-ink:#fbf3df;--line:rgba(43,36,16,0.13);--head:'Outfit',Georgia,serif;--body:'Outfit',system-ui,sans-serif;--hw:700;--hls:-0.01em;--rc:22px;--rb:999px;--motif:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='28'%3E%3Cpath d='M0 14 Q 15 2 30 14 T 60 14 T 90 14 T 120 14' fill='none' stroke='rgba%28214%2C162%2C30%2C0.1%29' stroke-width='1.6'/%3E%3C/svg%3E") 0 0/120px 28px;--motif-dark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='28'%3E%3Cpath d='M0 14 Q 15 2 30 14 T 60 14 T 90 14 T 120 14' fill='none' stroke='rgba%28255%2C255%2C255%2C0.07%29' stroke-width='1.6'/%3E%3C/svg%3E") 0 0/120px 28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--head);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.07;margin:0 0 .45em}
+h1{font-size:clamp(2.3rem,5.6vw,4rem)}h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}h3{font-size:1.25rem}
+p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+ font-weight:600;padding:13px 24px;border-radius:var(--rb);border:2px solid var(--accent);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
+.sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
+.hours-list{list-style:none;padding:0;margin:0}
+.hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
+ padding:10px 18px;border-radius:999px;font-weight:600}
+.numbered{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.numbered li{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);font-size:1.1rem;font-weight:600}
+.numbered b{font-family:var(--head);color:var(--accent);font-size:1.3rem;min-width:2ch}
+.rules{list-style:none;padding:0;margin:0}.rules li{display:flex;justify-content:space-between;padding:20px 0;
+ border-top:1px solid var(--line);font-size:1.2rem;font-family:var(--head)}.rules li span{color:var(--accent)}
+.diamonds{list-style:none;padding:0;margin:0 auto;max-width:760px;columns:2;column-gap:48px}
+.diamonds li{break-inside:avoid;padding:10px 0 10px 26px;position:relative}
+.diamonds li::before{content:"";position:absolute;left:4px;top:19px;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
+.tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
+.tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
+ .chips span{padding:8px 14px}}
+.callbar{display:none}
+footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
+@media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
+ .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;text-align:center;background:var(--accent);
+  color:var(--accent-ink);padding:15px;font-weight:700;text-decoration:none}body{padding-bottom:54px}}
+
+body{position:relative;overflow-x:hidden}
+.p-blobs{position:absolute;inset:0 0 auto 0;height:900px;z-index:-1;background:
+ radial-gradient(420px 320px at 12% 10%,var(--soft),transparent 70%),radial-gradient(520px 380px at 90% 6%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),
+ radial-gradient(380px 300px at 70% 60%,var(--soft),transparent 70%)}
+.p-head{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px}
+.p-pill{background:var(--card);border:1px solid var(--line);padding:10px 20px;border-radius:999px;font:var(--hw) 1.1rem var(--head);box-shadow:0 10px 30px -18px rgba(0,0,0,.3)}
+.p-hero{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:stretch;padding-top:40px;padding-bottom:30px}
+.p-card{background:var(--card);border-radius:28px;padding:48px;box-shadow:0 30px 70px -40px rgba(0,0,0,.35)}
+.p-photo{width:100%;height:100%;object-fit:cover;border-radius:28px}
+.p-side{background:var(--motif),var(--accent);color:var(--accent-ink);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px}
+.p-addr{font:var(--hw) 1.5rem/1.25 var(--head);margin:10px 0}.p-small{opacity:.85;margin:4px 0}
+.p-call{font:var(--hw) 1.8rem var(--head);text-decoration:none;margin-top:14px}
+.p-row{display:grid;grid-template-columns:2fr 1.2fr 1.2fr;gap:18px;padding-top:10px}
+.p-box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}.p-box div{margin:5px 0}
+.p-accent{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.p-map{border-radius:22px}
+.btn{border-radius:999px}
+@media(max-width:860px){.p-hero,.p-row{grid-template-columns:1fr}.p-card{padding:30px}}</style></head><body>
+<div class="p-blobs" aria-hidden="true"></div>
+<header class="wrap p-head"><span class="p-pill">Papillon International Bakery</span>
+<a class="btn" href="tel:+13239531100">(323) 953-1100</a></header>
+<section class="wrap p-hero"><div class="p-card"><div class="eyebrow" style="color:var(--accent)">Fresh bakes, made for order</div>
+<h1>Armenian and Georgian pastries in Los Angeles</h1><p class="lede">We make freshly prepared baked goods and savory foods for pickup or delivery in Los Angeles. Our menu brings together Armenian and Georgian-inspired items with classic pastries and a modern spin.</p><div class="row"><a class="btn" href="tel:+13239531100">Call us</a><a class="btn ghost" href="#contact">Find us</a></div></div><img class="p-photo" src="photos/photo1.jpg" alt="Papillon International Bakery"></section>
+<section class="wrap sec"><h2>Menu highlights</h2><div class="chips"><span>Ponchik</span><span>Perashki</span><span>Armenian Pizza</span><span>Bread Boat</span><span>Churro</span><span>Croissant</span><span>Empanada</span><span>Spicy Cheesy Greens</span></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap gallery g5"><img src="photos/photo2.jpg" alt="Papillon International Bakery" loading="lazy"><img src="photos/photo3.jpg" alt="Papillon International Bakery" loading="lazy"><img src="photos/photo4.jpg" alt="Papillon International Bakery" loading="lazy"><img src="photos/photo5.jpg" alt="Papillon International Bakery" loading="lazy"><img src="photos/photo6.jpg" alt="Papillon International Bakery" loading="lazy"></div></section>
+<section class="wrap p-row" id="contact"><div class="p-box p-wide"><h3>Fresh from our ovens</h3><p>We’ve been serving Los Angeles since 1996, and our menu has taken a new direction since 2011. Every order is made fresh, so you get pastries and savory items that feel made for the moment. Our lineup reflects a diverse customer base, with favorites like ponchik, perashki, Georgian khachapuri, and Nutella boat. You can order through our website, then pick up or have it delivered.</p></div>
+<div class="p-box"><h3>Hours</h3><ul class="hours-list"><li><span>[unknown]</span></li></ul></div>
+<div class="p-box p-accent"><h3>Order today</h3><div><a class="" href="tel:+13239531100">(323) 953-1100</a></div><div><a href="mailto:papillioninternationalbakery@gmail.com">papillioninternationalbakery@gmail.com</a></div><div><span>5019 Hollywood Blvd, Los Angeles, CA 90027</span></div></div></section>
+<div class="wrap" style="margin-top:20px"><iframe class="map p-map" loading="lazy" title="Map to Papillon International Bakery" src="https://www.google.com/maps?q=Papillon%20International%20Bakery%2C%205019%20Hollywood%20Blvd%2C%20Los%20Angeles%2C%20CA%2090027&output=embed"></iframe></div><footer class="foot wrap">© 2026 Papillon International Bakery · Los Angeles, CA</footer><a class="callbar" href="tel:+13239531100">Call (323) 953-1100</a></body></html>
