@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -74,7 +75,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <section class="b-hero"><div class="wrap b-grid"><div><div class="eyebrow">Boat storage and care in Damariscotta</div><h1>Keep your boat ready for the season</h1>
 <p>We store and care for boats right here in Damariscotta, so you can spend less time worrying about the haul-out and more time on the water. Bring us the kind of work that keeps a boat in good shape between trips.</p><div class="row"><a class="btn b-dark" href="tel:+12075635983">Call now</a><a class="btn ghost" href="#contact">Contact</a></div></div></div></section>
 <section class="b-facts"><div class="wrap b-three"><div>Based in Damariscotta, Maine</div><div>Call (207) 563-5983</div></div></section>
-<section class="sec"><div class="wrap"><h2>Our services</h2><ul class="tiles"><li>Boat storage</li><li>Seasonal haul-out and launch</li><li>Routine maintenance</li><li>Boat repairs</li><li>Marina services</li></ul></div></section>
+<section class="sec"><div class="wrap"><h2>Our services</h2><ul class="tiles wide"><li>Boat storage</li><li>Seasonal haul-out and launch</li><li>Routine maintenance</li><li>Boat repairs</li><li>Marina services</li></ul></div></section>
 <section class="b-about"><div class="wrap b-grid"><h2>Boat care here</h2><p>We handle marina, storage, maintenance, and repair work for boat owners in and around Damariscotta, Maine. That means the practical stuff that keeps your boat ready when you are. If you need seasonal storage, regular upkeep, or repair work, you can bring it to us and talk through what needs doing. We keep it straightforward and local.</p></div></section>
 
 <section class="sec" id="contact"><div class="wrap b-grid"><div><h2>Call or stop by</h2><div><a class="big-phone" href="tel:+12075635983">(207) 563-5983</a></div><div><span>460 Main St, Damariscotta, ME 04543</span></div>
