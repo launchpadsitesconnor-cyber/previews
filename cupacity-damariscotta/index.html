@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -77,5 +78,5 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <section class="sec"><div class="wrap j-grid"><h2>Around the counter</h2><p class="dropcap">Cupacity is part of the daily rhythm in Damariscotta, Maine. We pour coffee for people heading to work, meeting friends, or taking a minute for themselves. Come in when you want something simple, warm, and ready when you are. We keep it easy to grab your drink and get back to your day, or stay a little if you’ve got time.</p></div></section>
 
 
-<section class="j-contact" id="contact"><div class="wrap j-grid"><div><h2>Visit us</h2><div><a class="big-phone" href="tel:+12077011738">(207) 701-1738</a></div><div><a href="mailto:susan@cupacitycoffee.com">susan@cupacitycoffee.com</a></div><div><span>133 Main Street, Damariscotta, ME 04543</span></div></div></div></section>
+<section class="j-contact" id="contact"><div class="wrap j-grid"><div><h2>Visit us</h2><div><a class="big-phone" href="tel:+12077011738">(207) 701-1738</a></div><div><span>133 Main Street, Damariscotta, ME 04543</span></div></div></div></section>
 <iframe class="map" loading="lazy" title="Map to Cupacity" src="https://www.google.com/maps?q=Cupacity%2C%20133%20Main%20Street%2C%20Damariscotta%2C%20ME%2004543&output=embed"></iframe><footer class="foot wrap">© 2026 Cupacity · Damariscotta, Maine</footer><a class="callbar" href="tel:+12077011738">Call (207) 701-1738</a></body></html>
