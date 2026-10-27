@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boulder Guest House | Boulder, CO</title><meta name="description" content="Historic Boulder guest house with private entrances, self check-in, WiFi, meditation space, gardens, and boutique hotel-style rooms.">
+<meta name="theme-color" content="#0f7c80">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito%20Sans:wght@400;600;700&display=swap">
+<style>:root{--bg:#f2f7f7;--ink:#0e2a2c;--muted:#4f6a6c;--accent:#0f7c80;--accent-ink:#ffffff;--soft:#d7e9ea;--card:#ffffff;--dark:#0e2a2c;--dark-ink:#e8f3f3;--line:rgba(14,42,44,0.13);--head:'Lora',Georgia,serif;--body:'Nunito Sans',system-ui,sans-serif;--hw:600;--hls:0;--rc:14px;--rb:2px;--motif:repeating-linear-gradient(135deg, rgba(15,124,128,0.1) 0 2px, transparent 2px 16px);--motif-dark:repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 16px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--head);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.07;margin:0 0 .45em}
+h1{font-size:clamp(2.3rem,5.6vw,4rem)}h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}h3{font-size:1.25rem}
+p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+ font-weight:600;padding:13px 24px;border-radius:var(--rb);border:2px solid var(--accent);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
+.sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
+.hours-list{list-style:none;padding:0;margin:0}
+.hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
+ padding:10px 18px;border-radius:999px;font-weight:600}
+.numbered{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.numbered li{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);font-size:1.1rem;font-weight:600}
+.numbered b{font-family:var(--head);color:var(--accent);font-size:1.3rem;min-width:2ch}
+.rules{list-style:none;padding:0;margin:0}.rules li{display:flex;justify-content:space-between;padding:20px 0;
+ border-top:1px solid var(--line);font-size:1.2rem;font-family:var(--head)}.rules li span{color:var(--accent)}
+.diamonds{list-style:none;padding:0;margin:0 auto;max-width:760px;columns:2;column-gap:48px}
+.diamonds li{break-inside:avoid;padding:10px 0 10px 26px;position:relative}
+.diamonds li::before{content:"";position:absolute;left:4px;top:19px;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
+.tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
+.tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
+ .chips span{padding:8px 14px}}
+.callbar{display:none}
+footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
+@media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
+ .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;text-align:center;background:var(--accent);
+  color:var(--accent-ink);padding:15px;font-weight:700;text-decoration:none}body{padding-bottom:54px}}
+
+.i-head{padding:34px 0 22px;border-bottom:1px solid var(--line)}.i-orn{color:var(--accent);display:flex;justify-content:center;margin-bottom:12px}
+.i-name{display:block;font:var(--hw) clamp(2rem,4.6vw,3.2rem) var(--head);text-decoration:none;margin-bottom:6px}
+.i-hero{padding:72px 0}.i-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.i-arch{aspect-ratio:3/4;border-radius:999px 999px var(--rc) var(--rc);overflow:hidden;background:var(--soft);box-shadow:0 30px 60px -34px rgba(0,0,0,.45)}
+.i-arch img{width:100%;height:100%;object-fit:cover}.i-motif{width:100%;height:100%;background:var(--motif),linear-gradient(160deg,var(--soft),var(--card))}
+.i-soft{background:var(--soft)}.i-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.i-card{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:32px}.i-card div{margin:6px 0}
+@media(max-width:780px){.i-grid{grid-template-columns:1fr;gap:32px}.i-arch{max-width:340px;margin:0 auto}}</style></head><body>
+<header class="i-head"><div class="wrap center"><div class="i-orn"><svg viewBox='0 0 120 16' width='120' height='16' aria-hidden='true'><path d='M0 8 H48 M72 8 H120' stroke='currentColor' stroke-width='1'/><path d='M60 1 L67 8 L60 15 L53 8 Z' fill='currentColor'/></svg></div>
+<a class="i-name" href="#">Boulder Guest House</a><div class="eyebrow">Boulder, CO</div></div></header>
+<section class="i-hero"><div class="wrap i-grid"><div class="i-arch"><div class="i-motif"></div></div>
+<div><div class="eyebrow" style="color:var(--accent)">Quiet stays in central Boulder</div><h1>Rest and reset in Boulder</h1><p class="lede">Stay in a historic Victorian home in Boulder, with the comforts of a boutique hotel and the quiet of an urban Zen Buddhist practice center. You can settle in with self check-in, a private entrance, and space to work or unwind.</p>
+<div class="row"><a class="btn" href="#contact">Email us</a><a class="btn ghost" href="#contact">Plan your visit</a></div></div></div></section>
+<section class="sec center"><div class="narrow"><div class="i-orn"><svg viewBox='0 0 120 16' width='120' height='16' aria-hidden='true'><path d='M0 8 H48 M72 8 H120' stroke='currentColor' stroke-width='1'/><path d='M60 1 L67 8 L60 15 L53 8 Z' fill='currentColor'/></svg></div><h2>A quiet house</h2><p class="lede" style="margin:0 auto">We’re in a historic Boulder building that was built before the turn of the century, with original artwork, custom-designed beds by a local artisan, and details like radiant floor heating, skylights, and bathtubs. Rooms include WiFi, a full-size desk, a 43&quot; SmartTV with Roku, premium bath products, a coffee and tea station, and room darkening shades. You can also spend time in the Zen meditation room, join scheduled meditation periods and other programs, or step out into the gardens. Guests often mention the clean rooms, good location, and responsive, gracious communication.</p></div></section>
+<section class="sec i-soft"><div class="wrap"><h2 class="center">Amenities</h2><ul class="diamonds"><li>Private entrances</li><li>Self check-in</li><li>Workspace</li><li>WiFi</li><li>Full-size desk</li><li>43&quot; SmartTV with Roku streaming player</li><li>Premium bath products</li><li>Coffee and tea station</li></ul></div></section>
+
+<section class="sec" id="contact"><div class="wrap i-cards"><div class="i-card"><h3>Email us</h3><div><a href="mailto:stay@boulderguesthouse.com">stay@boulderguesthouse.com</a></div><div><span>2151 Arapahoe Ave, Boulder, CO 80302</span></div></div>
+</div></section>
+<iframe class="map" loading="lazy" title="Map to Boulder Guest House" src="https://www.google.com/maps?q=Boulder%20Guest%20House%2C%202151%20Arapahoe%20Ave%2C%20Boulder%2C%20CO%2080302&output=embed"></iframe><footer class="foot wrap">© 2026 Boulder Guest House · Boulder, CO</footer></body></html>
