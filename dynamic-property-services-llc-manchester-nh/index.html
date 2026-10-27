@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dynamic Property Services LLC | Manchester, NH</title><meta name="description" content="Manchester, NH home care, landscaping, cleanups, decks, roofing, painting, gutters, flooring, plumbing, and more. Call or email today.">
+<meta name="theme-color" content="#d6a21e">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space%20Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM%20Plex%20Mono:wght@400;500&display=swap">
+<style>:root{--bg:#fffaf0;--ink:#2b2410;--muted:#6c6448;--accent:#d6a21e;--accent-ink:#241b03;--soft:#f6ead0;--card:#ffffff;--dark:#2b2410;--dark-ink:#fbf3df;--line:rgba(43,36,16,0.13);--head:'Space Grotesk',Georgia,serif;--body:'Inter',system-ui,sans-serif;--hw:700;--hls:-0.02em;--rc:10px;--rb:6px;--motif:repeating-linear-gradient(135deg, rgba(214,162,30,0.1) 0 2px, transparent 2px 16px);--motif-dark:repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 16px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--head);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.07;margin:0 0 .45em}
+h1{font-size:clamp(2.3rem,5.6vw,4rem)}h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}h3{font-size:1.25rem}
+p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+ font-weight:600;padding:13px 24px;border-radius:var(--rb);border:2px solid var(--accent);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
+.sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
+.hours-list{list-style:none;padding:0;margin:0}
+.hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
+ padding:10px 18px;border-radius:999px;font-weight:600}
+.numbered{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.numbered li{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);font-size:1.1rem;font-weight:600}
+.numbered b{font-family:var(--head);color:var(--accent);font-size:1.3rem;min-width:2ch}
+.rules{list-style:none;padding:0;margin:0}.rules li{display:flex;justify-content:space-between;padding:20px 0;
+ border-top:1px solid var(--line);font-size:1.2rem;font-family:var(--head)}.rules li span{color:var(--accent)}
+.diamonds{list-style:none;padding:0;margin:0 auto;max-width:760px;columns:2;column-gap:48px}
+.diamonds li{break-inside:avoid;padding:10px 0 10px 26px;position:relative}
+.diamonds li::before{content:"";position:absolute;left:4px;top:19px;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
+.tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
+.tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
+ .chips span{padding:8px 14px}}
+.callbar{display:none}
+footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
+@media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
+ .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;text-align:center;background:var(--accent);
+  color:var(--accent-ink);padding:15px;font-weight:700;text-decoration:none}body{padding-bottom:54px}}
+
+.l-layout{display:grid;grid-template-columns:340px 1fr;min-height:100vh}
+.l-side{position:sticky;top:0;height:100vh;overflow:auto;background:var(--motif),var(--soft);padding:40px 32px;border-right:1px solid var(--line)}
+.l-name{display:block;font:var(--hw) 1.9rem/1.1 var(--head);text-decoration:none;margin-bottom:10px}
+.l-tag{color:var(--muted)}.l-meta{margin:26px 0;font-size:.95rem}.l-meta div{margin:6px 0}.l-hours{font-size:.88rem}
+.l-main{padding:0 6vw}.l-sec{padding:72px 0;border-bottom:1px solid var(--line)}
+.mono{display:block;font-family:var(--body);font-size:1rem;font-weight:600;color:var(--accent);margin-bottom:18px}
+.l-hero{padding-top:12vh}.l-hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);max-width:16ch}
+.l-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--rc);margin-top:24px}
+.l-big{font-size:1.3rem;line-height:1.55;max-width:46ch}.l-map{border-radius:var(--rc)}
+@media(max-width:900px){.l-layout{grid-template-columns:1fr}.l-side{position:static;height:auto}.l-main{padding:0 22px}}</style></head><body>
+<div class="l-layout"><aside class="l-side"><a class="l-name" href="#">Dynamic Property Services LLC</a><p class="l-tag">Manchester home care, done right</p>
+<div class="l-meta"><div><a class="" href="tel:+16032167903">(603) 216-7903</a></div><div><a href="mailto:jordan4u67@gmail.com">jordan4u67@gmail.com</a></div><div><span>102 O Malley Street, Manchester, NH 03103</span></div></div>
+<div style="margin-top:22px"><a class="btn" href="tel:+16032167903">Call us</a></div></aside>
+<main class="l-main"><section class="l-sec l-hero"><span class="mono">Manchester, NH</span>
+<h1>For the jobs around your home</h1><p class="lede">From fall cleanups and snow removal to decks, roofing, and painting, we handle the work that keeps your place in shape. You can also call us for small repairs, odd jobs, and cleanup work when you want it done fast.</p></section>
+<section class="l-sec"><span class="mono">Home care help</span><p class="l-big">We work across Manchester, NH on landscaping, yard cleanup, garage cleanouts, and a long list of home projects. That includes additions, siding jobs, gutters, flooring, and plumbing, along with painting and deck work. People call us for affordable pricing, quality work, and quick response when they need something handled without a long wait. If it’s a one-off job or a bigger project, we’re ready to talk it through and get moving.</p></section>
+<section class="l-sec"><span class="mono">Services we handle</span><ul class="rules"><li>Landscaping</li><li>Fall cleanups</li><li>Snow removal</li><li>Decks</li><li>Roofing</li><li>Painting</li><li>Gutters</li><li>Flooring</li></ul></section>
+<section class="l-sec" id="contact"><span class="mono">Call or email</span><iframe class="map l-map" loading="lazy" title="Map to Dynamic Property Services LLC" src="https://www.google.com/maps?q=Dynamic%20Property%20Services%20LLC%2C%20102%20O%20Malley%20Street%2C%20Manchester%2C%20NH%2003103&output=embed"></iframe></section>
+<footer class="foot wrap">© 2026 Dynamic Property Services LLC · Manchester, NH</footer></main></div><a class="callbar" href="tel:+16032167903">Call (603) 216-7903</a></body></html>
