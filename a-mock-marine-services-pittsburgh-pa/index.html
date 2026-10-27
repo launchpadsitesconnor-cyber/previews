@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -74,7 +75,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <section class="b-hero"><div class="wrap b-grid"><div><div class="eyebrow">Jet boat repairs in Pittsburgh</div><h1>Get your watercraft back on the water</h1>
 <p>When your personal watercraft or jet boat needs work, bring it to us in Pittsburgh. We handle the repairs and upkeep that keep you moving on the water.</p><div class="row"><a class="btn b-dark" href="tel:+14128056625">Call now</a><a class="btn ghost" href="#contact">Contact</a></div></div></div></section>
 <section class="b-facts"><div class="wrap b-three"><div>Based in Pittsburgh, PA</div><div>Call (412) 805-6625</div></div></section>
-<section class="sec"><div class="wrap"><h2>Services</h2><ul class="tiles"><li>Personal watercraft repair</li><li>Jet boat repair</li><li>Routine maintenance</li><li>Engine troubleshooting</li><li>Electrical repairs</li><li>Seasonal checkups</li></ul></div></section>
+<section class="sec"><div class="wrap"><h2>Services</h2><ul class="tiles wide"><li>Personal watercraft repair</li><li>Jet boat repair</li><li>Routine maintenance</li><li>Engine troubleshooting</li><li>Electrical repairs</li><li>Seasonal checkups</li></ul></div></section>
 <section class="b-about"><div class="wrap b-grid"><h2>Repairs that matter</h2><p>We work on personal watercraft and jet boats with a practical approach and steady hands. If something’s not right, we’ll take a look and get to the root of it. From routine maintenance to tougher repair work, we handle the jobs that keep your machine running the way it should. You can count on straight answers and work that’s focused on getting you back out there.</p></div></section>
 
 <section class="sec" id="contact"><div class="wrap b-grid"><div><h2>Contact us</h2><div><a class="big-phone" href="tel:+14128056625">(412) 805-6625</a></div><div><a href="mailto:amockmarine@gmail.com">amockmarine@gmail.com</a></div><div><span>6 Werner Camp Rd., Pittsburgh, PA 15238</span></div>
