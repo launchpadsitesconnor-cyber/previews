@@ -48,7 +48,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -67,7 +68,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 .l-big{font-size:1.3rem;line-height:1.55;max-width:46ch}.l-map{border-radius:var(--rc)}
 @media(max-width:900px){.l-layout{grid-template-columns:1fr}.l-side{position:static;height:auto}.l-main{padding:0 22px}}</style></head><body><div id="lp-offer" style="position:relative;z-index:99999;background:#0f172a;color:#fff;font:14px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.35)"><span style="opacity:.92">This is a preview built for <b>Body Of Waters</b>. Like it? Make it yours:</span><a href="https://buy.stripe.com/3cI28q3Wtaxi0T09TpaIM0o" style="display:inline-block;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;background:#22c55e;color:#052e14">$650 + $35/mo</a><a href="https://buy.stripe.com/fZu9AS8cJ0WI1X47LhaIM0p" style="display:inline-block;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)">$0 down · $100/mo</a><a href="mailto:launchpadsitesconnor@gmail.com?subject=Changes to the Body Of Waters website" style="color:#cbd5e1;font-size:13px">Want changes? Email me</a></div>
 <div class="l-layout"><aside class="l-side"><a class="l-name" href="#">Body Of Waters</a><p class="l-tag">Massage in Newcastle</p>
-<div class="l-meta"><div><a class="" href="tel:+12075633056">(207) 563-3056</a></div><div><a href="mailto:bodyofwaters@gmail.com">bodyofwaters@gmail.com</a></div><div><span>61 Lewis Hill Rd, Newcastle, ME 04553</span></div></div>
+<div class="l-meta"><div><a class="" href="tel:+12075633056">(207) 563-3056</a></div><div><span>61 Lewis Hill Rd, Newcastle, ME 04553</span></div></div>
 <div style="margin-top:22px"><a class="btn" href="tel:+12075633056">Call now</a></div></aside>
 <main class="l-main"><section class="l-sec l-hero"><span class="mono">Newcastle, Maine</span>
 <h1>Your body gets space to reset</h1><p class="lede">Come in for massage in Newcastle, Maine, and let the day slow down for a while. We keep it simple, calm, and focused on how you want to feel when you leave.</p></section>
