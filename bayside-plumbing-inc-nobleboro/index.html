@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -74,7 +75,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <section class="b-hero"><div class="wrap b-grid"><div><div class="eyebrow">Plumbing work in Nobleboro</div><h1>Plumbing help for your home</h1>
 <p>When a pipe leaks, a drain backs up, or the heat acts up, we’re here to get it sorted. We work in Nobleboro and the surrounding Maine area with practical plumbing and heating service.</p><div class="row"><a class="btn b-dark" href="tel:+12075638696">Call us</a><a class="btn ghost" href="#contact">Contact</a></div></div></div></section>
 <section class="b-facts"><div class="wrap b-three"><div>Based in Nobleboro, Maine</div><div>Call (207) 563-8696</div></div></section>
-<section class="sec"><div class="wrap"><h2>Services</h2><ul class="tiles"><li>Plumbing repairs</li><li>Drain cleaning</li><li>Water heater service</li><li>Fixture installation</li><li>Heating repairs</li><li>Pipe replacement</li></ul></div></section>
+<section class="sec"><div class="wrap"><h2>Services</h2><ul class="tiles wide"><li>Plumbing repairs</li><li>Drain cleaning</li><li>Water heater service</li><li>Fixture installation</li><li>Heating repairs</li><li>Pipe replacement</li></ul></div></section>
 <section class="b-about"><div class="wrap b-grid"><h2>What we do</h2><p>We handle everyday plumbing problems and heating work for homes and businesses in the Nobleboro area. That can mean repairs, replacements, new installs, or getting a stubborn system back in working order. If something in your plumbing or heating needs attention, we’ll talk it through and get to work.</p></div></section>
 
 <section class="sec" id="contact"><div class="wrap b-grid"><div><h2>Call or visit</h2><div><a class="big-phone" href="tel:+12075638696">(207) 563-8696</a></div><div><a href="mailto:bayside@tidewater.net">bayside@tidewater.net</a></div><div><span>42 Oyster Creek Lane, Nobleboro, ME 04555</span></div>
