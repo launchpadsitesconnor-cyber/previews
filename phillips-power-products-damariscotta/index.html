@@ -19,11 +19,19 @@ p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
 .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
 .btn.ghost{background:transparent;color:inherit;border-color:currentColor}
 .row{display:flex;gap:12px;flex-wrap:wrap}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:600}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
 .sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
 iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--rc)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
 .hours-list{list-style:none;padding:0;margin:0}
 .hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
@@ -39,6 +47,9 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+ .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 @media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
@@ -50,7 +61,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 .l-name{display:block;font:var(--hw) 1.9rem/1.1 var(--head);text-decoration:none;margin-bottom:10px}
 .l-tag{color:var(--muted)}.l-meta{margin:26px 0;font-size:.95rem}.l-meta div{margin:6px 0}.l-hours{font-size:.88rem}
 .l-main{padding:0 6vw}.l-sec{padding:72px 0;border-bottom:1px solid var(--line)}
-.mono{display:block;font-family:'IBM Plex Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:22px}
+.mono{display:block;font-family:var(--body);font-size:1rem;font-weight:600;color:var(--accent);margin-bottom:18px}
 .l-hero{padding-top:12vh}.l-hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);max-width:16ch}
 .l-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--rc);margin-top:24px}
 .l-big{font-size:1.3rem;line-height:1.55;max-width:46ch}.l-map{border-radius:var(--rc)}
@@ -61,6 +72,6 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <main class="l-main"><section class="l-sec l-hero"><span class="mono">Damariscotta, Maine</span>
 <h1>Get your mower running again</h1><p class="lede">When your mower, trimmer, or other small engine quits, you want it handled without the runaround. Bring it to us in Damariscotta and get back to yard work with less hassle.</p></section>
 <section class="l-sec"><span class="mono">Repair work</span><p class="l-big">We handle small engine repair and lawn mower repair for customers in Damariscotta and the surrounding area. If it won’t start, runs rough, or just isn’t cutting like it should, we’ll take a look and get to work. We keep the focus on practical repairs that make sense for your machine. Stop in or call when you’re ready to get it checked out.</p></section>
-<section class="l-sec"><span class="mono">Repair services</span><ul class="rules"><li>Lawn mower repair<span aria-hidden='true'>→</span></li><li>Small engine repair<span aria-hidden='true'>→</span></li><li>Trimmer repair<span aria-hidden='true'>→</span></li><li>Tune-ups<span aria-hidden='true'>→</span></li><li>Blade sharpening<span aria-hidden='true'>→</span></li><li>Seasonal maintenance<span aria-hidden='true'>→</span></li></ul></section>
+<section class="l-sec"><span class="mono">Repair services</span><ul class="rules"><li>Lawn mower repair</li><li>Small engine repair</li><li>Trimmer repair</li><li>Tune-ups</li><li>Blade sharpening</li><li>Seasonal maintenance</li></ul></section>
 <section class="l-sec" id="contact"><span class="mono">Call or visit</span><iframe class="map l-map" loading="lazy" title="Map to Phillips Power Products" src="https://www.google.com/maps?q=Phillips%20Power%20Products%2C%20146%20Biscay%20Road%2C%20Damariscotta%2C%20ME%2004543&output=embed"></iframe></section>
 <footer class="foot wrap">© 2026 Phillips Power Products · Damariscotta, Maine</footer></main></div><a class="callbar" href="tel:+12075633607">Call (207) 563-3607</a></body></html>
