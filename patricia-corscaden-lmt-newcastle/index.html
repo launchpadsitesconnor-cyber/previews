@@ -18,11 +18,19 @@ p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
 .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
 .btn.ghost{background:transparent;color:inherit;border-color:currentColor}
 .row{display:flex;gap:12px;flex-wrap:wrap}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:600}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
 .sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
 iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--rc)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
 .hours-list{list-style:none;padding:0;margin:0}
 .hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
@@ -38,6 +46,9 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+ .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 @media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
@@ -45,7 +56,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
   color:var(--accent-ink);padding:15px;font-weight:700;text-decoration:none}body{padding-bottom:54px}}
 
 .j-head{border-bottom:1px solid var(--ink)}
-.j-topline{display:flex;justify-content:space-between;font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.j-topline{display:flex;justify-content:space-between;font-size:.95rem;padding-top:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .j-topline a{text-decoration:none}
 .j-name{display:block;text-align:center;font:var(--hw) clamp(1.8rem,4vw,2.6rem) var(--head);text-decoration:none;padding:22px 0}
 .j-hero{padding:80px 0 56px}.j-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:end}
@@ -64,7 +75,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <div><div class="eyebrow" style="color:var(--accent)">Massage for sore, tired bodies</div><p class="lede">When your muscles are tight, stiff, or just worn out, a massage can help you slow down and let some of that tension ease off. Patricia Corscaden, LMT sees clients in Newcastle, Maine with care that fits the pace of your day.</p><a class="btn" href="tel:+12075922355">Call to Book</a></div></div></section>
 <div class="wrap"><div class="j-band"></div></div>
 <section class="sec"><div class="wrap j-grid"><h2>About Patricia</h2><p class="dropcap">Patricia Corscaden is a licensed massage therapist serving Newcastle, Maine. Her work centers on steady, thoughtful bodywork that gives you time to breathe and let your body settle. If you’ve been carrying stress in your neck, shoulders, back, or somewhere else, this is a place to come in and get hands-on care. We keep the focus on what you need when you arrive.</p></div></section>
-<section class="sec" style="padding-top:0"><div class="wrap"><h2>Massage services</h2><ul class="rules"><li>Swedish massage<span aria-hidden='true'>→</span></li><li>Deep tissue massage<span aria-hidden='true'>→</span></li><li>Relaxation massage<span aria-hidden='true'>→</span></li><li>Back and shoulder work<span aria-hidden='true'>→</span></li><li>Neck and upper body work<span aria-hidden='true'>→</span></li><li>Custom session focus<span aria-hidden='true'>→</span></li></ul></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><h2>Massage services</h2><ul class="rules"><li>Swedish massage</li><li>Deep tissue massage</li><li>Relaxation massage</li><li>Back and shoulder work</li><li>Neck and upper body work</li><li>Custom session focus</li></ul></div></section>
 
 <section class="j-contact" id="contact"><div class="wrap j-grid"><div><h2>Book a Session</h2><div><a class="big-phone" href="tel:+12075922355">(207) 592-2355</a></div><div><span>Newcastle, ME 04553</span></div></div></div></section>
 <iframe class="map" loading="lazy" title="Map to Patricia Corscaden, LMT" src="https://www.google.com/maps?q=Patricia%20Corscaden%2C%20LMT%2C%20Newcastle%2C%20ME%2004553&output=embed"></iframe><footer class="foot wrap">© 2026 Patricia Corscaden, LMT · Newcastle, Maine</footer><a class="callbar" href="tel:+12075922355">Call (207) 592-2355</a></body></html>
