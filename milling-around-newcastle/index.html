@@ -46,7 +46,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -71,9 +72,9 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <a class="btn" href="tel:+12075631210">(207) 563-1210</a></div></header>
 <section class="h-hero"><div class="wrap h-split"><div><div class="eyebrow" style="color:var(--accent)">Find something small and special</div>
 <h1>Gifts picked for your day</h1><p class="lede">Stop in and browse for the kind of gift you can hand over with a smile. We keep it simple, friendly, and easy to shop in Newcastle.</p><div class="row"><a class="btn" href="tel:+12075631210">Stop in today</a><a class="btn ghost" href="#contact">Find us</a></div></div>
-<aside class="h-card"><a class=big-phone href=tel:+12075631210>(207) 563-1210</a><p class="muted">67 Main St, Newcastle, ME 04553</p><a class="btn" href="#contact">Directions</a></aside></div></section>
+<aside class="h-card"><a class=big-phone href=tel:+12075631210>(207) 563-1210</a><p class="muted">67 Main St, Newcastle, ME 04553</p><a class=btn href=#contact>Directions</a></aside></div></section>
 <section class="sec"><div class="wrap h-two"><div><h2>Inside the shop</h2><p>Milling Around is a gift shop and mercantile shop in Newcastle, Maine. We keep a mix of useful and giftable items on hand, so you can pick up something for a neighbor, a host, or yourself. It’s the kind of place where you can take your time, wander a little, and leave with something that feels right. Come by when you’re in town and see what’s on the shelves.</p></div></div></section>
 <section class="sec" style="padding-top:0"><div class="wrap"><h2>What we carry</h2><ul class="tiles"><li>Gifts</li><li>Mercantile goods</li><li>Household items</li><li>Small local finds</li></ul></div></section>
 
-<section class="h-contact" id="contact"><div class="wrap h-two"><div><h2>Visit the shop</h2><div><a class="big-phone" href="tel:+12075631210">(207) 563-1210</a></div><div><a href="mailto:ma@woodenbobbins.com">ma@woodenbobbins.com</a></div><div><span>67 Main St, Newcastle, ME 04553</span></div></div><iframe class="map" loading="lazy" title="Map to Milling Around" src="https://www.google.com/maps?q=Milling%20Around%2C%2067%20Main%20St%2C%20Newcastle%2C%20ME%2004553&output=embed"></iframe></div></section>
+<section class="h-contact" id="contact"><div class="wrap h-two"><div><h2>Visit the shop</h2><div><a class="big-phone" href="tel:+12075631210">(207) 563-1210</a></div><div><span>67 Main St, Newcastle, ME 04553</span></div></div><iframe class="map" loading="lazy" title="Map to Milling Around" src="https://www.google.com/maps?q=Milling%20Around%2C%2067%20Main%20St%2C%20Newcastle%2C%20ME%2004553&output=embed"></iframe></div></section>
 <footer class="foot wrap">© 2026 Milling Around · Newcastle, Maine</footer><a class="callbar" href="tel:+12075631210">Call (207) 563-1210</a></body></html>
