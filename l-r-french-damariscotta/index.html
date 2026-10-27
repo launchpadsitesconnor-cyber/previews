@@ -18,11 +18,19 @@ p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
 .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
 .btn.ghost{background:transparent;color:inherit;border-color:currentColor}
 .row{display:flex;gap:12px;flex-wrap:wrap}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:600}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
 .sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
 iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--rc)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
 .hours-list{list-style:none;padding:0;margin:0}
 .hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
 .chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
@@ -38,6 +46,9 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+ .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 @media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
@@ -49,17 +60,17 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 .l-name{display:block;font:var(--hw) 1.9rem/1.1 var(--head);text-decoration:none;margin-bottom:10px}
 .l-tag{color:var(--muted)}.l-meta{margin:26px 0;font-size:.95rem}.l-meta div{margin:6px 0}.l-hours{font-size:.88rem}
 .l-main{padding:0 6vw}.l-sec{padding:72px 0;border-bottom:1px solid var(--line)}
-.mono{display:block;font-family:'IBM Plex Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:22px}
+.mono{display:block;font-family:var(--body);font-size:1rem;font-weight:600;color:var(--accent);margin-bottom:18px}
 .l-hero{padding-top:12vh}.l-hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);max-width:16ch}
 .l-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--rc);margin-top:24px}
 .l-big{font-size:1.3rem;line-height:1.55;max-width:46ch}.l-map{border-radius:var(--rc)}
 @media(max-width:900px){.l-layout{grid-template-columns:1fr}.l-side{position:static;height:auto}.l-main{padding:0 22px}}</style></head><body><div id="lp-offer" style="position:relative;z-index:99999;background:#0f172a;color:#fff;font:14px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.35)"><span style="opacity:.92">This is a preview built for <b>L. R. French</b>. Like it? Make it yours:</span><a href="https://buy.stripe.com/cNicN4fFb34Q1X46HdaIM0K" style="display:inline-block;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;background:#22c55e;color:#052e14">$650 + $25/mo</a><a href="https://buy.stripe.com/aFabJ09gN6h27ho3v1aIM0L" style="display:inline-block;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)">$0 down · $90/mo</a><a href="mailto:launchpadsitesconnor@gmail.com?subject=Changes to the L. R. French website" style="color:#cbd5e1;font-size:13px">Want changes? Email me</a></div>
 <div class="l-layout"><aside class="l-side"><a class="l-name" href="#">L. R. French</a><p class="l-tag">Plumbing in Damariscotta</p>
-<div class="l-meta"><div><a class="" href="tel:+12075633814">(207) 563-3814</a></div><div><a href="mailto:[email protected]">[email protected]</a></div><div><span>90 School St, Damariscotta, ME 04543</span></div></div>
+<div class="l-meta"><div><a class="" href="tel:+12075633814">(207) 563-3814</a></div><div><a href="mailto:lrfrench@tidewater.net">lrfrench@tidewater.net</a></div><div><span>90 School St, Damariscotta, ME 04543</span></div></div>
 <div style="margin-top:22px"><a class="btn" href="tel:+12075633814">Call now</a></div></aside>
 <main class="l-main"><section class="l-sec l-hero"><span class="mono">Damariscotta, Maine</span>
 <h1>Fix plumbing problems without the wait</h1><p class="lede">When a pipe leaks, a drain backs up, or a fixture quits, you want someone who can get to work fast. We handle plumbing jobs in Damariscotta with straightforward service and clear communication.</p></section>
 <section class="l-sec"><span class="mono">Local plumbing work</span><p class="l-big">We handle the plumbing jobs that keep homes and businesses running day to day. That can mean repairs, replacements, fixture work, or help with a stubborn clog. If something in your plumbing isn&#x27;t working right, we&#x27;ll take a look and get it handled. We work right here in Damariscotta, so it&#x27;s easy to reach us when you need help.</p></section>
-<section class="l-sec"><span class="mono">Plumbing services</span><ul class="rules"><li>Leak repairs<span aria-hidden='true'>→</span></li><li>Drain cleaning<span aria-hidden='true'>→</span></li><li>Fixture replacement<span aria-hidden='true'>→</span></li><li>Pipe repairs<span aria-hidden='true'>→</span></li><li>Toilet repairs<span aria-hidden='true'>→</span></li><li>Water heater service<span aria-hidden='true'>→</span></li></ul></section>
+<section class="l-sec"><span class="mono">Plumbing services</span><ul class="rules"><li>Leak repairs</li><li>Drain cleaning</li><li>Fixture replacement</li><li>Pipe repairs</li><li>Toilet repairs</li><li>Water heater service</li></ul></section>
 <section class="l-sec" id="contact"><span class="mono">Call today</span><iframe class="map l-map" loading="lazy" title="Map to L. R. French" src="https://www.google.com/maps?q=L.%20R.%20French%2C%2090%20School%20St%2C%20Damariscotta%2C%20ME%2004543&output=embed"></iframe></section>
 <footer class="foot wrap">© 2026 L. R. French · Damariscotta, Maine</footer></main></div><a class="callbar" href="tel:+12075633814">Call (207) 563-3814</a></body></html>
