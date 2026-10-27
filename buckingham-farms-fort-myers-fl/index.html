@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buckingham Farms | Fort Myers, FL</title><meta name="description" content="Farm-to-table meals, market goods, and event space in Fort Myers. Stop in for breakfast, lunch, dinner, or shop sauces, jams, and jellies.">
+<meta name="theme-color" content="#3a8f83">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap">
+<style>:root{--bg:#f1f7f5;--ink:#173330;--muted:#55706b;--accent:#3a8f83;--accent-ink:#ffffff;--soft:#d6ebe6;--card:#ffffff;--dark:#173330;--dark-ink:#e9f4f1;--line:rgba(23,51,48,0.13);--head:'Outfit',Georgia,serif;--body:'Outfit',system-ui,sans-serif;--hw:700;--hls:-0.01em;--rc:22px;--rb:999px;--motif:repeating-linear-gradient(135deg, rgba(58,143,131,0.1) 0 2px, transparent 2px 16px);--motif-dark:repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 16px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--head);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.07;margin:0 0 .45em}
+h1{font-size:clamp(2.3rem,5.6vw,4rem)}h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}h3{font-size:1.25rem}
+p{margin:0 0 1em}.lede{font-size:1.15rem;color:var(--muted);max-width:54ch}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+ font-weight:600;padding:13px 24px;border-radius:var(--rb);border:2px solid var(--accent);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px -10px var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:0;margin-bottom:.35em}
+.sec{padding:84px 0}.center{text-align:center}.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:190px;gap:10px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:var(--rc)}
+.gallery img{grid-column:span 2}.gallery img:first-child{grid-column:span 4;grid-row:span 2}
+.g1 img:first-child{grid-column:span 6}.g2 img{grid-column:span 3!important;grid-row:span 2}
+.g4 img{grid-column:span 3!important;grid-row:span 2}
+.g5 img:nth-child(n+4){grid-column:span 3}
+@media(max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .gallery img,.g2 img,.g4 img,.g5 img:nth-child(n+4){grid-column:span 1!important;grid-row:span 1}
+ .gallery img:first-child{grid-column:span 2!important;grid-row:span 2}
+ .gallery img:last-child:nth-child(even){grid-column:span 2!important}}
+.hours-list{list-style:none;padding:0;margin:0}
+.hours-list li{display:flex;justify-content:space-between;gap:18px;padding:8px 0;border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{background:var(--card);border:1px solid var(--line);
+ padding:10px 18px;border-radius:999px;font-weight:600}
+.numbered{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 40px}
+.numbered li{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);font-size:1.1rem;font-weight:600}
+.numbered b{font-family:var(--head);color:var(--accent);font-size:1.3rem;min-width:2ch}
+.rules{list-style:none;padding:0;margin:0}.rules li{display:flex;justify-content:space-between;padding:20px 0;
+ border-top:1px solid var(--line);font-size:1.2rem;font-family:var(--head)}.rules li span{color:var(--accent)}
+.diamonds{list-style:none;padding:0;margin:0 auto;max-width:760px;columns:2;column-gap:48px}
+.diamonds li{break-inside:avoid;padding:10px 0 10px 26px;position:relative}
+.diamonds li::before{content:"";position:absolute;left:4px;top:19px;width:9px;height:9px;background:var(--accent);transform:rotate(45deg)}
+.tiles{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
+.tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
+ .chips span{padding:8px 14px}}
+.callbar{display:none}
+footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
+@media(max-width:780px){.sec{padding:60px 0}.diamonds{columns:1}
+ .callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;text-align:center;background:var(--accent);
+  color:var(--accent-ink);padding:15px;font-weight:700;text-decoration:none}body{padding-bottom:54px}}
+
+body{position:relative;overflow-x:hidden}
+.p-blobs{position:absolute;inset:0 0 auto 0;height:900px;z-index:-1;background:
+ radial-gradient(420px 320px at 12% 10%,var(--soft),transparent 70%),radial-gradient(520px 380px at 90% 6%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),
+ radial-gradient(380px 300px at 70% 60%,var(--soft),transparent 70%)}
+.p-head{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px}
+.p-pill{background:var(--card);border:1px solid var(--line);padding:10px 20px;border-radius:999px;font:var(--hw) 1.1rem var(--head);box-shadow:0 10px 30px -18px rgba(0,0,0,.3)}
+.p-hero{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:stretch;padding-top:40px;padding-bottom:30px}
+.p-card{background:var(--card);border-radius:28px;padding:48px;box-shadow:0 30px 70px -40px rgba(0,0,0,.35)}
+.p-photo{width:100%;height:100%;object-fit:cover;border-radius:28px}
+.p-side{background:var(--motif),var(--accent);color:var(--accent-ink);border-radius:28px;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px}
+.p-addr{font:var(--hw) 1.5rem/1.25 var(--head);margin:10px 0}.p-small{opacity:.85;margin:4px 0}
+.p-call{font:var(--hw) 1.8rem var(--head);text-decoration:none;margin-top:14px}
+.p-row{display:grid;grid-template-columns:2fr 1.2fr 1.2fr;gap:18px;padding-top:10px}
+.p-box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}.p-box div{margin:5px 0}
+.p-accent{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}.p-map{border-radius:22px}
+.btn{border-radius:999px}
+@media(max-width:860px){.p-hero,.p-row{grid-template-columns:1fr}.p-card{padding:30px}}</style></head><body>
+<div class="p-blobs" aria-hidden="true"></div>
+<header class="wrap p-head"><span class="p-pill">Buckingham Farms</span>
+<a class="btn" href="tel:+12392062303">(239) 206-2303</a></header>
+<section class="wrap p-hero"><div class="p-card"><div class="eyebrow" style="color:var(--accent)">Farm food, market finds, and events</div>
+<h1>Fresh meals and market stops in Fort Myers</h1><p class="lede">Come in for breakfast, lunch, or dinner made with fresh, locally grown food. Browse the country store, then stay for the rustic barn, the gardens, and the easy pace of a working farm.</p><div class="row"><a class="btn" href="tel:+12392062303">Call us</a><a class="btn ghost" href="#contact">Find us</a></div></div><img class="p-photo" src="photos/photo1.jpg" alt="Buckingham Farms"></section>
+<section class="wrap sec"><h2>What we serve and sell</h2><div class="chips"><span>Breakfast, lunch, and dinner</span><span>Salads</span><span>Coffee</span><span>Sauces, jams, and jellies</span><span>Farm-to-table catering</span></div></section>
+
+<section class="wrap p-row" id="contact"><div class="p-box p-wide"><h3>Farm and table</h3><p>Buckingham Farms brings together a farm-to-table restaurant, a local market, and a rustic barn venue in Fort Myers. The land started as a hog farm in the 1950s, later became part of a citrus grove, and was bought by a local family in 2009. By 2012, it had grown into a full-service dining and event spot, with the barn opening in 2013. You can also order online, and we serve Fort Myers and Southwest Florida.</p></div>
+<div class="p-box"><h3>Hours</h3><ul class="hours-list"><li><span>Monday</span><span>Closed</span></li><li><span>Tuesday</span><span>8:00 AM - 4:00 PM</span></li><li><span>Wednesday</span><span>8:00 AM - 4:00 PM</span></li><li><span>Thursday</span><span>8:00 AM - 4:00 PM</span></li><li><span>Friday</span><span>8:00 AM - 4:00 PM</span></li><li><span>Saturday</span><span>8:00 AM - 4:00 PM</span></li><li><span>Sunday</span><span>Closed</span></li></ul></div>
+<div class="p-box p-accent"><h3>Call or visit</h3><div><a class="" href="tel:+12392062303">(239) 206-2303</a></div><div><a href="mailto:info@buckingham-farms.com">info@buckingham-farms.com</a></div><div><span>12931 Orange River Blvd, Fort Myers, FL 33905</span></div></div></section>
+<div class="wrap" style="margin-top:20px"><iframe class="map p-map" loading="lazy" title="Map to Buckingham Farms" src="https://www.google.com/maps?q=Buckingham%20Farms%2C%2012931%20Orange%20River%20Blvd%2C%20Fort%20Myers%2C%20FL%2033905&output=embed"></iframe></div><footer class="foot wrap">© 2026 Buckingham Farms · Fort Myers, FL</footer><a class="callbar" href="tel:+12392062303">Call (239) 206-2303</a></body></html>
