@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -72,7 +73,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <a class="btn" href="tel:+12074075544">(207) 407-5544</a></div></header>
 <section class="h-hero"><div class="wrap h-split"><div><div class="eyebrow" style="color:var(--accent)">Beer made in Searsport</div>
 <h1>Your stop for beer in Searsport</h1><p class="lede">We pour beer right here in Searsport, Maine, for folks passing through town and neighbors heading home. Come in for a pint, pick up a few to go, and make your way back to the coast with something local in hand.</p><div class="row"><a class="btn" href="tel:+12074075544">Call us</a><a class="btn ghost" href="#contact">Find us</a></div></div>
-<aside class="h-card"><a class=big-phone href=tel:+12074075544>(207) 407-5544</a><p class="muted">34 E Main St, Searsport, ME 04974</p><a class="btn" href="#contact">Directions</a></aside></div></section>
+<aside class="h-card"><a class=big-phone href=tel:+12074075544>(207) 407-5544</a><p class="muted">34 E Main St, Searsport, ME 04974</p><a class=btn href=#contact>Directions</a></aside></div></section>
 <section class="sec"><div class="wrap h-two"><div><h2>Our Brewpub</h2><p>Maineport Brewing Company is part of Searsport’s waterfront town life, where the pace is easy and the view is hard to beat. We make beer for the people who live here and the people coming through to see the Midcoast. Stop by for a pint, take a few with you, and settle into the evening your way.</p></div></div></section>
 
 
