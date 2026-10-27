@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="300">
+<meta name="theme-color" content="#06121c"><title>Jarvis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06121c;--panel:#0b1c2a;--line:#17334a;--ink:#e6f1f8;--muted:#8aa4b8;--cyan:#4fd1ff;--good:#3ddc97;--warn:#ffb547;--bad:#ff6b6b}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+ padding:max(16px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom))}
+a{color:var(--cyan)}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{font:700 1.9rem/1 Rajdhani,sans-serif;letter-spacing:.06em}
+.state{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--good);box-shadow:0 0 10px var(--good)}
+.dot.idle{background:var(--warn);box-shadow:0 0 10px var(--warn)}.dot.off{background:var(--bad);box-shadow:0 0 10px var(--bad)}
+.money{background:linear-gradient(160deg,#0e2a3d,#0b1c2a);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:12px}
+.money .big{font:700 2.6rem/1 Rajdhani,sans-serif;color:var(--good)}.money .sub{color:var(--muted);font-size:.9rem;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.tile b{display:block;font:700 1.7rem/1.1 Rajdhani,sans-serif}.tile span{color:var(--muted);font-size:.85rem}
+.bar{height:6px;background:#10283a;border-radius:6px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--cyan)}
+h2{font:600 1.15rem Rajdhani,sans-serif;letter-spacing:.04em;margin:24px 0 10px;color:var(--cyan)}
+.alert{background:#2a1a10;border:1px solid #5a3a1c;color:#ffd9a8;border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.alert.red{background:#2a1014;border-color:#5a1c24;color:#ffc2c8}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border-top:1px solid var(--line);align-items:center}
+.row:first-child{border-top:0}.row .n{font-weight:600}.row .m{color:var(--muted);font-size:.83rem}
+.chip{font-size:.75rem;padding:3px 9px;border-radius:999px;background:#10283a;color:var(--muted);white-space:nowrap}
+.chip.emailed{color:var(--cyan)}.chip.interested,.chip.replied{color:var(--warn);background:#2a1f0e}.chip.won{color:var(--good);background:#0e2a1d}
+.feed .row{display:block}.feed .t{color:var(--muted);font-size:.78rem}.feed .success{color:#c8f5df}.feed .warn{color:#ffd9a8}
+.empty{color:var(--muted);padding:14px}
+footer{color:var(--muted);font-size:.8rem;margin-top:22px;text-align:center}
+</style></head><body>
+<div class="top"><div class="brand">JARVIS</div><div class="state"><i class="dot" id="dot"></i><span id="st"></span></div></div>
+<div id="app"></div>
+<footer>Updates every few minutes while the laptop is on. Pull down to refresh.</footer>
+<script>
+const D = {"updated": 1793108001.2923074, "autopilot": true, "openai_out": false, "today": {"built": 36, "emailed": 37, "cap": 40}, "totals": {"pitched": 67, "replies": 0, "sales": 0, "revenue": 0.0, "monthly": 0, "ready": 0, "call_list": 5}, "sales": [], "latest": [{"name": "Tree of Life Massage Therapy Studio", "town": "Charlotte, NC", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/tree-of-life-massage-therapy-studio-charlotte-nc/", "price": 650.0, "mo": 35.0, "views": 0, "when": 1793106180.338588}, {"name": "Bella luxe home cleaning", "town": "Louisville, KY", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/bella-luxe-home-cleaning-louisville-ky/", "price": 650.0, "mo": 35.0, "views": 0, "when": 1793085774.4148467}, {"name": "Tree Care USA LLC", "town": "Houston, TX", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/tree-care-usa-llc-houston-tx/", "price": 850.0, "mo": 35.0, "views": 0, "when": 1793085740.2190645}, {"name": "Sweet E's Bake Shop", "town": "Los Angeles, CA", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/sweet-e-s-bake-shop-los-angeles-ca/", "price": 1200.0, "mo": 35.0, "views": 0, "when": 1793084644.8720572}, {"name": "Luis's Tree Service", "town": "Little Rock, AR", "status": "pending_price", "url": "https://launchpadsitesconnor-cyber.github.io/previews/luis-s-tree-service-little-rock-ar/", "price": 650.0, "mo": 35.0, "views": 0, "when": null}, {"name": "Gary small engines", "town": "Memphis, TN", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/gary-small-engines-memphis-tn/", "price": 650.0, "mo": 35.0, "views": 0, "when": 1793083946.4667325}, {"name": "Organic Garden Girl", "town": "Manchester, NH", "status": "pending_price", "url": "https://launchpadsitesconnor-cyber.github.io/previews/organic-garden-girl-manchester-nh/", "price": 700.0, "mo": 35.0, "views": 0, "when": null}, {"name": "Small Spaces Cleaning", "town": "Louisville, KY", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/small-spaces-cleaning-louisville-ky/", "price": 650.0, "mo": 35.0, "views": 0, "when": 1793082908.4250526}, {"name": "Margarets house cleaning", "town": "Louisville, KY", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/margarets-house-cleaning-louisville-ky/", "price": 650.0, "mo": 35.0, "views": 0, "when": 1793082873.5862882}, {"name": "Dynamic Property Services LLC", "town": "Manchester, NH", "status": "pending_price", "url": "https://launchpadsitesconnor-cyber.github.io/previews/dynamic-property-services-llc-manchester-nh/", "price": 850.0, "mo": 35.0, "views": 0, "when": null}, {"name": "Less Mess LLC", "town": "Louisville, KY", "status": "pending_price", "url": "https://launchpadsitesconnor-cyber.github.io/previews/less-mess-llc-louisville-ky/", "price": 650.0, "mo": 35.0, "views": 0, "when": null}, {"name": "Jaimes cleaning service", "town": "Louisville, KY", "status": "emailed", "url": "https://launchpadsitesconnor-cyber.github.io/previews/jaimes-cleaning-service-louisville-ky/", "price": 650.0, "mo": 35.0, "views": 0, "when": 1793082262.5211637}], "needs": ["CJ wallet is low ($0.00)", "CJ wallet is low ($0.00)", "Ads are on but Jarvis can't reach Meta", "Luis's Tree Service's site needs your eye", "Organic Garden Girl's site needs your eye", "Dynamic Property Services LLC's site needs your eye", "Less Mess LLC's site needs your eye", "Wastewater Transport Services's site needs your eye", "Landscaping Dallas TX's site needs your eye", "Ivan's Auto Electric's site needs your eye", "Cake and Art's site needs your eye", "Papillon International Bakery's site needs your eye"], "feed": [{"ts": 1793108001.269814, "level": "info", "msg": "Started job: Updating the phone dashboard"}, {"ts": 1793107973.2366896, "level": "info", "msg": "Jarvis online"}, {"ts": 1793107969.2555146, "level": "info", "msg": "Restarting Jarvis (dashboard hosting)"}, {"ts": 1793107917.3854864, "level": "info", "msg": "Skipped Gerstner Electric Inc: research found their website https://gerstnerelectric.com/ and it's decent"}, {"ts": 1793107901.2799385, "level": "info", "msg": "Skipped T.R.E. Electric LLC: research found their website https://www.tre-ent.com/ and it's decent"}, {"ts": 1793107849.1756468, "level": "info", "msg": "Started job: Updating the phone dashboard"}, {"ts": 1793107833.5958233, "level": "success", "msg": "Phone dashboard is live: https://launchpadsitesconnor-cyber.github.io/jarvis-status/64cf208952b138f04843/"}, {"ts": 1793107801.1346233, "level": "info", "msg": "Jarvis online"}, {"ts": 1793107796.423736, "level": "info", "msg": "Restarting Jarvis (phone dashboard)"}, {"ts": 1793107144.2590628, "level": "info", "msg": "Found a published email for Gerstner Electric Inc"}, {"ts": 1793107105.222382, "level": "info", "msg": "Found 25 new businesses to look at"}, {"ts": 1793107105.216639, "level": "info", "msg": "Web search: 3 plumber businesses around Portland, ME"}, {"ts": 1793107098.0513735, "level": "info", "msg": "Web search: 5 cleaning service businesses around Allentown, PA"}, {"ts": 1793107089.5001185, "level": "info", "msg": "Web search: 1 bed and breakfast businesses around Worcester, MA"}, {"ts": 1793107081.8699563, "level": "info", "msg": "Web search: 12 gift shop businesses around Jackson, MS"}, {"ts": 1793107065.5862088, "level": "info", "msg": "Web search: 4 boat repair businesses around Fayetteville, AR"}, {"ts": 1793107025.2581496, "level": "info", "msg": "Found a published email for T.R.E. Electric LLC"}, {"ts": 1793106987.063911, "level": "info", "msg": "Skipped Synergy Electrical: research found their website https://www.synergyelectricalllc.com/ and it's decent"}, {"ts": 1793106285.6042097, "level": "info", "msg": "Found a published email for Synergy Electrical"}, {"ts": 1793106180.339281, "level": "success", "msg": "Sent Tree of Life Massage Therapy Studio their website preview"}, {"ts": 1793106154.8374183, "level": "info", "msg": "Price approved for Tree of Life Massage Therapy Studio: $650 + $35/mo \u2014 emailing them now"}, {"ts": 1793106154.8350894, "level": "info", "msg": "Checked Tree of Life Massage Therapy Studio's site \u2014 looks right (fixed 1 thing first)"}, {"ts": 1793106122.2985203, "level": "info", "msg": "Built 1 more preview site"}, {"ts": 1793106122.2953944, "level": "info", "msg": "Skipped Holt Electric: research found their website https://holtelectricohio.com/ and it's decent"}, {"ts": 1793106105.5363116, "level": "success", "msg": "Built a site for Tree of Life Massage Therapy Studio \u2014 suggesting $650. Checking it like a customer next."}]};
+const $ = (s) => document.querySelector(s), esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ago = (t) => { const m = Math.round((Date.now()/1000 - t)/60); return m < 1 ? "just now" : m < 60 ? m + " min ago" : m < 1440 ? Math.round(m/60) + " h ago" : Math.round(m/1440) + " d ago"; };
+const money = (n) => "$" + Math.round(n).toLocaleString();
+const age = (Date.now()/1000 - D.updated)/60;
+if (age > 30) { $("#dot").className = "dot off"; $("#st").textContent = "No update for " + ago(D.updated).replace(" ago","") + " — laptop may be asleep"; }
+else if (D.openai_out) { $("#dot").className = "dot off"; $("#st").textContent = "Stopped: OpenAI out of credit"; }
+else if (!D.autopilot) { $("#dot").className = "dot idle"; $("#st").textContent = "Autopilot paused"; }
+else { $("#st").textContent = "Working · " + ago(D.updated); }
+const T = D.totals, d = D.today;
+let h = `<div class="money"><div class="big">${money(T.revenue)}</div>
+  <div class="sub">${T.sales} sale${T.sales===1?"":"s"}${T.monthly ? " · " + money(T.monthly) + "/mo recurring" : ""}</div></div>
+<div class="grid">
+  <div class="tile"><b>${d.emailed}<small style="font-size:1rem;color:var(--muted)"> / ${d.cap}</small></b><span>pitched today</span>
+    <div class="bar"><i style="width:${Math.min(100, d.cap ? d.emailed/d.cap*100 : 0)}%"></i></div></div>
+  <div class="tile"><b>${d.built}</b><span>sites built today</span></div>
+  <div class="tile"><b>${T.replies}</b><span>owners replied</span></div>
+  <div class="tile"><b>${T.pitched}</b><span>pitched in total</span></div>
+</div>`;
+if (D.needs.length) h += `<h2>Needs you</h2>` + D.needs.map(n => `<div class="alert${/OpenAI|failed|on hold|paid/i.test(n) ? " red" : ""}">${esc(n)}</div>`).join("");
+if (D.sales.length) h += `<h2>Clients</h2><div class="list">` + D.sales.map(s => `<div class="row"><div><div class="n">${esc(s.name)}</div><div class="m">${esc(s.town)}</div></div>${s.url ? `<a href="${esc(s.url)}">site</a>` : ""}</div>`).join("") + `</div>`;
+h += `<h2>Latest sites</h2><div class="list">` + (D.latest.map(s => `<div class="row"><div><div class="n">${esc(s.name)}</div>
+  <div class="m">${esc(s.town)} · ${money(s.price||0)}${s.mo ? " + " + money(s.mo) + "/mo" : ""}${s.views ? " · 👀 " + s.views : ""}</div></div>
+  <div style="text-align:right"><span class="chip ${esc(s.status)}">${esc(s.status.replace("_"," "))}</span><br><a href="${esc(s.url)}" style="font-size:.85rem">view</a></div></div>`).join("") || `<div class="empty">Nothing yet.</div>`) + `</div>`;
+h += `<h2>What Jarvis has been doing</h2><div class="list feed">` + D.feed.map(e => `<div class="row"><div class="t">${ago(e.ts)}</div><div class="${esc(e.level)}">${esc(e.msg)}</div></div>`).join("") + `</div>`;
+$("#app").innerHTML = h;
+</script></body></html>
