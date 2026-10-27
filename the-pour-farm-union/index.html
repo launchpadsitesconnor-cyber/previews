@@ -46,7 +46,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -71,9 +72,9 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <a class="btn" href="tel:+12077850016">(207) 785-0016</a></div></header>
 <section class="h-hero"><div class="wrap h-split"><div><div class="eyebrow" style="color:var(--accent)">Beer made in Union, Maine</div>
 <h1>Grab a pint in Union</h1><p class="lede">Come by The Pour Farm in Union for beer close to home. We’re here for an easy stop with a warm Maine welcome.</p><div class="row"><a class="btn" href="tel:+12077850016">Visit us</a><a class="btn ghost" href="#contact">Find us</a></div></div>
-<aside class="h-card"><a class=big-phone href=tel:+12077850016>(207) 785-0016</a><p class="muted">56 Crawfordsburn Ln, Union, ME 04862</p><a class="btn" href="#contact">Directions</a></aside></div></section>
+<aside class="h-card"><a class=big-phone href=tel:+12077850016>(207) 785-0016</a><p class="muted">56 Crawfordsburn Ln, Union, ME 04862</p><a class=btn href=#contact>Directions</a></aside></div></section>
 <section class="sec"><div class="wrap h-two"><div><h2>About The Pour Farm</h2><p>We pour beer for folks in Union, Maine and the surrounding area. Stop in for a pint, bring a friend, and settle in for a visit that feels easy and local. If you’re planning a stop nearby, we’re a simple place to add to the day.</p></div></div></section>
 
 
-<section class="h-contact" id="contact"><div class="wrap h-two"><div><h2>Hours &amp; contact</h2><div><a class="big-phone" href="tel:+12077850016">(207) 785-0016</a></div><div><a href="mailto:bill@thepourfarm.com">bill@thepourfarm.com</a></div><div><span>56 Crawfordsburn Ln, Union, ME 04862</span></div></div><iframe class="map" loading="lazy" title="Map to The Pour Farm" src="https://www.google.com/maps?q=The%20Pour%20Farm%2C%2056%20Crawfordsburn%20Ln%2C%20Union%2C%20ME%2004862&output=embed"></iframe></div></section>
+<section class="h-contact" id="contact"><div class="wrap h-two"><div><h2>Get in touch</h2><div><a class="big-phone" href="tel:+12077850016">(207) 785-0016</a></div><div><a href="mailto:bill@thepourfarm.com">bill@thepourfarm.com</a></div><div><span>56 Crawfordsburn Ln, Union, ME 04862</span></div></div><iframe class="map" loading="lazy" title="Map to The Pour Farm" src="https://www.google.com/maps?q=The%20Pour%20Farm%2C%2056%20Crawfordsburn%20Ln%2C%20Union%2C%20ME%2004862&output=embed"></iframe></div></section>
 <footer class="foot wrap">© 2026 The Pour Farm · Union, Maine</footer><a class="callbar" href="tel:+12077850016">Call (207) 785-0016</a></body></html>
