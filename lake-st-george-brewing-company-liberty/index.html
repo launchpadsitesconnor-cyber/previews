@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -72,9 +73,9 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <a class="btn" href="tel:+12072807159">(207) 280-7159</a></div></header>
 <section class="h-hero"><div class="wrap h-split"><div><div class="eyebrow" style="color:var(--accent)">Maine beer in Liberty</div>
 <h1>Beer for your next stop in Liberty</h1><p class="lede">We pour beer in Liberty, Maine, and we’d love to see you. Stop in for a pint, a conversation, and a look at what we have on tap.</p><div class="row"><a class="btn" href="tel:+12072807159">Call (207) 280-7159</a><a class="btn ghost" href="#contact">Find us</a></div></div>
-<aside class="h-card"><a class=big-phone href=tel:+12072807159>(207) 280-7159</a><p class="muted">4 Marshall Shore Rd, Liberty, ME 04949</p><a class="btn" href="#contact">Directions</a></aside></div></section>
+<aside class="h-card"><a class=big-phone href=tel:+12072807159>(207) 280-7159</a><p class="muted">4 Marshall Shore Rd, Liberty, ME 04949</p><a class=btn href=#contact>Directions</a></aside></div></section>
 <section class="sec"><div class="wrap h-two"><div><h2>Our taproom</h2><p>We pour fresh beer right here in Liberty, Maine. Stop in when you want something cold and local, or when you’re meeting friends and want a laid-back place to sit for a while. We keep things simple so you can spend less time deciding and more time enjoying your drink.</p></div></div></section>
 
 
-<section class="h-contact" id="contact"><div class="wrap h-two"><div><h2>Visit us</h2><div><a class="big-phone" href="tel:+12072807159">(207) 280-7159</a></div><div><a href="mailto:info@lakestgeorgebrewing.com">info@lakestgeorgebrewing.com</a></div><div><span>4 Marshall Shore Rd, Liberty, ME 04949</span></div></div><iframe class="map" loading="lazy" title="Map to Lake St. George Brewing Company" src="https://www.google.com/maps?q=Lake%20St.%20George%20Brewing%20Company%2C%204%20Marshall%20Shore%20Rd%2C%20Liberty%2C%20ME%2004949&output=embed"></iframe></div></section>
+<section class="h-contact" id="contact"><div class="wrap h-two"><div><h2>Visit us</h2><div><a class="big-phone" href="tel:+12072807159">(207) 280-7159</a></div><div><span>4 Marshall Shore Rd, Liberty, ME 04949</span></div></div><iframe class="map" loading="lazy" title="Map to Lake St. George Brewing Company" src="https://www.google.com/maps?q=Lake%20St.%20George%20Brewing%20Company%2C%204%20Marshall%20Shore%20Rd%2C%20Liberty%2C%20ME%2004949&output=embed"></iframe></div></section>
 <footer class="foot wrap">© 2026 Lake St. George Brewing Company · Liberty, Maine</footer><a class="callbar" href="tel:+12072807159">Call (207) 280-7159</a></body></html>
