@@ -47,7 +47,8 @@ iframe.map{width:100%;height:360px;border:0;display:block;filter:saturate(.85)}
 .tiles li{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:22px;font-weight:600;font-size:1.05rem}
 .tiles small{display:block;color:var(--accent);font-family:var(--head);font-size:.95rem;margin-bottom:10px}
 a[href^="tel:"]{white-space:nowrap}
-@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles li{padding:15px;font-size:.97rem}
+@media(max-width:700px){.tiles{grid-template-columns:1fr 1fr;gap:8px}.tiles.wide{grid-template-columns:1fr}
+ .tiles li{padding:15px;font-size:.97rem;overflow-wrap:break-word;hyphens:auto}
  .chips span{padding:8px 14px}}
 .callbar{display:none}
 footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
@@ -72,7 +73,7 @@ footer.foot{padding:28px 0;font-size:.85rem;color:var(--muted)}
 <a class="btn" href="tel:+12075635685">(207) 563-5685</a></div></header>
 <section class="h-hero"><div class="wrap h-split"><div><div class="eyebrow" style="color:var(--accent)">Stay in Newcastle, Maine</div>
 <h1>Rest easy by the river</h1><p class="lede">Settle in at our inn in Newcastle, where the pace is slower and the mornings start quietly. You’ll have a comfortable place to stay while you explore town, the coast, and nearby Damariscotta.</p><div class="row"><a class="btn" href="tel:+12075635685">Book a stay</a><a class="btn ghost" href="#contact">Find us</a></div></div>
-<aside class="h-card"><a class=big-phone href=tel:+12075635685>(207) 563-5685</a><p class="muted">60 River Rd, Newcastle, ME 04553</p><a class="btn" href="#contact">Directions</a></aside></div></section>
+<aside class="h-card"><a class=big-phone href=tel:+12075635685>(207) 563-5685</a><p class="muted">60 River Rd, Newcastle, ME 04553</p><a class=btn href=#contact>Directions</a></aside></div></section>
 <section class="sec"><div class="wrap h-two"><div><h2>About the inn</h2><p>We’re a bed and breakfast in Newcastle, Maine, with a simple, welcoming place to stay. Our location makes it easy to spend time in town and come back to a quiet room at the end of the day. If you’re planning a visit to Midcoast Maine, we make a handy home base for it. Call or book ahead to check availability.</p></div></div></section>
 
 
