@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menu favorites | Sea Dog Brewing Co.</title><meta name="description" content="Sea Dog Brewing Co. In Camden serves coastal food, draft beer, cocktails, brunch, and takeout. Stop in for waterfront views and house favorites."><meta name="theme-color" content="#c2412d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%23c2412d%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2742%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2730%27%20font-weight%3D%27700%27%20text-anchor%3D%27middle%27%20fill%3D%27%23ffffff%27%3ESD%3C/text%3E%3C/svg%3E"><meta property="og:type" content="website"><meta property="og:title" content="Menu favorites | Sea Dog Brewing Co."><meta property="og:description" content="Sea Dog Brewing Co. In Camden serves coastal food, draft beer, cocktails, brunch, and takeout. Stop in for waterfront views and house favorites."><meta property="og:image" content="https://sites.launchpadsites.co/sea-dog-brewing-co-camden/photos/stock1-2f0d7a.jpg"><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap">
+<style>:root{--bg:#fbf6ef;--ink:#2a1c14;--muted:#6e5d50;--accent:#c2412d;--accent-ink:#ffffff;--soft:#f3e3d3;--card:#ffffff;--dark:#2a1c14;--dark-ink:#f7ede3;--line:rgba(42,28,20,0.13);--head:'Fraunces',Georgia,serif;--body:'Figtree',system-ui,sans-serif;--hw:700;--hls:-0.01em;--rc:8px;--rb:6px;--motif-dark:repeating-linear-gradient(135deg, rgba(255,255,255,0.07) 0 2px, transparent 2px 16px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}button{font:inherit;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}.narrow{max-width:760px}.center{text-align:center}
+h1,h2,h3{font-family:var(--head);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.08;margin:0 0 .45em}
+h1{font-size:clamp(2.4rem,6vw,4.6rem)}h2{font-size:clamp(1.7rem,3.3vw,2.5rem)}h3{font-size:1.22rem}
+p{margin:0 0 1em}.muted{color:var(--muted)}.small{font-size:.9rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);
+ text-decoration:none;font-weight:600;padding:13px 24px;border-radius:var(--rb);border:2px solid var(--accent);cursor:pointer;
+ transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -12px var(--accent)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.sm{padding:8px 16px;font-size:.92rem}
+.row{display:flex;gap:12px;flex-wrap:wrap}.center-row{justify-content:center}
+.eyebrow{font-weight:600;margin-bottom:.4em;opacity:.92}.eyebrow.acc{color:var(--accent);opacity:1}
+.more{color:var(--accent);font-weight:600;text-decoration:none}.more:hover{text-decoration:underline}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);
+ border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:22px;height:72px}
+.brand{font:var(--hw) 1.22rem/1.15 var(--head);text-decoration:none;letter-spacing:var(--hls)}
+.links{display:flex;gap:4px;margin-left:auto}
+.links a{text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:500;font-size:.97rem;color:var(--muted)}
+.links a:hover{color:var(--ink);background:var(--soft)}.links a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
+.nav-r{display:flex;align-items:center;gap:10px}
+.hrs{position:relative}.hrs-btn{display:flex;align-items:center;gap:7px;background:var(--soft);border:1px solid var(--line);
+ border-radius:999px;padding:6px 12px;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.hrs-btn svg{width:12px;height:12px;transition:transform .2s}.hrs-btn[aria-expanded=true] svg{transform:rotate(180deg)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block;flex:none}
+.is-open .dot{background:#22a35a;box-shadow:0 0 0 3px rgba(34,163,90,.2)}.is-closed .dot{background:#d0463b}
+.hrs-pop{position:absolute;right:0;top:calc(100% + 8px);background:var(--card);color:var(--ink);border:1px solid var(--line);
+ border-radius:12px;box-shadow:0 20px 50px -20px rgba(0,0,0,.35);padding:10px 16px;min-width:260px}
+.hrs-pop ul,.hlist{list-style:none;padding:0;margin:0}
+.hrs-pop li,.hlist li{display:flex;justify-content:space-between;gap:18px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.hrs-pop li:last-child,.hlist li:last-child{border-bottom:0}
+li.today{font-weight:700;color:var(--accent)}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer;flex-direction:column;gap:5px}
+.burger span{display:block;width:22px;height:2px;background:currentColor;transition:.2s}
+/* hero */
+.hero{min-height:84vh;min-height:84svh;background-size:cover;background-position:center;color:#fff;display:flex;align-items:flex-end}
+.hero-in{padding:120px 22px 9vh}.hero h1{max-width:15ch;text-shadow:0 2px 30px rgba(0,0,0,.3)}
+.hero .lede{font-size:1.18rem;max-width:54ch;color:rgba(255,255,255,.92)}.hero .btn.ghost{color:#fff}
+.phero{background-size:cover;background-position:center;color:#fff;padding:120px 0 64px}
+.phero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:0}.phero .lede{max-width:60ch;margin-top:12px;color:rgba(255,255,255,.9);font-size:1.12rem}
+/* sections */
+.sec{padding:88px 0}.sec.alt{background:var(--soft)}
+.facts{background:var(--soft);padding:34px 0;border-bottom:1px solid var(--line)}
+.fgrid{display:grid;gap:22px}.fgrid.n2{grid-template-columns:1fr 1fr}.fgrid.n3{grid-template-columns:repeat(3,1fr)}.fgrid.n4{grid-template-columns:repeat(4,1fr)}
+.fact b{display:block;font:var(--hw) clamp(1.2rem,2.1vw,1.6rem)/1.15 var(--head);color:var(--accent)}
+.fact span{display:block;color:var(--muted);font-size:.94rem;line-height:1.4;margin-top:4px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.split.noimg{grid-template-columns:1fr;max-width:780px}
+.split-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--rc)}
+.svc.rev .split-img{order:2}.big-p{font:400 clamp(1.15rem,1.9vw,1.45rem)/1.55 var(--head)}
+.shead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.scard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--rc);
+ padding:24px;text-decoration:none;border-top:3px solid var(--accent);transition:transform .2s,box-shadow .2s}
+.scard:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(0,0,0,.4)}
+.scard p{color:var(--muted);font-size:.97rem;line-height:1.55;flex:1}.arrow{color:var(--accent);font-weight:600;font-size:.92rem}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.why b{display:block;font:var(--hw) 1.2rem var(--head);margin-bottom:6px}
+.why p{color:var(--muted);margin:0}
+.band{background-size:cover;background-position:center;color:#fff;padding:120px 0}.band h2{font-size:clamp(1.9rem,4vw,3rem)}
+.band p{font-size:1.1rem;opacity:.9}
+.visit .vgrid,.vgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}.vgrid.one{grid-template-columns:1fr}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:28px}
+.card .big{display:block;font:var(--hw) 1.8rem var(--head);text-decoration:none;margin-bottom:8px}
+.jump{position:sticky;top:72px;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.jump-in{display:flex;gap:8px;align-items:center;overflow-x:auto;padding-top:12px;padding-bottom:12px;scrollbar-width:none}
+.jump-in::-webkit-scrollbar{display:none}.jump-in span{color:var(--muted);font-size:.9rem;white-space:nowrap}
+.jump a{white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:500}
+.jump a:hover,.jump a.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.svc{padding:80px 0;border-bottom:1px solid var(--line)}.num{font:var(--hw) .95rem var(--head);color:var(--accent);margin-bottom:6px}
+.plist{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.prod{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.prod b{font-weight:600}.prod span{display:block;color:var(--muted);font-size:.92rem}
+.prod em{font:var(--hw) 1.15rem var(--head);font-style:normal;color:var(--accent);white-space:nowrap}.prod.sold b,.prod.sold em{opacity:.45}
+.psearch{width:100%;font:inherit;padding:13px 16px;border:1px solid var(--line);border-radius:var(--rb);background:var(--card);
+ color:var(--ink);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.chips span{background:var(--card);border:1px solid var(--line);
+ padding:10px 18px;border-radius:999px;font-weight:600}
+.story p{font-size:1.08rem}.story p:first-child{font:400 clamp(1.15rem,1.8vw,1.4rem)/1.55 var(--head)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gi{padding:0;border:0;background:none;cursor:zoom-in;border-radius:var(--rc);overflow:hidden}
+.gi img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .4s}.gi:hover img{transform:scale(1.04)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:20px}
+.lb img{max-height:86vh;max-width:92vw;border-radius:6px}.lb button{position:absolute;background:rgba(255,255,255,.12);border:0;
+ color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer}
+.lb .x{top:18px;right:18px}.lb .p{left:14px}.lb .n{right:14px}
+.q{border-bottom:1px solid var(--line)}.q summary{cursor:pointer;font-weight:600;padding:18px 0;list-style:none;display:flex;
+ justify-content:space-between;gap:14px}.q summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+.q[open] summary::after{content:"–"}.q summary::-webkit-details-marker{display:none}.q p{color:var(--muted);margin:0 0 18px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.ccard{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:24px;text-decoration:none;
+ transition:transform .2s,border-color .2s}.ccard:hover{transform:translateY(-2px);border-color:var(--accent)}
+.ccard small{display:block;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
+.ccard b{display:block;font:var(--hw) 1.2rem/1.3 var(--head);margin:6px 0;overflow-wrap:anywhere}.ccard span{color:var(--muted);font-size:.9rem}
+.hhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.status{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:600}
+.cform label{display:block;font-size:.9rem;font-weight:600;margin-bottom:12px}
+.cform input,.cform select,.cform textarea{display:block;width:100%;margin-top:6px;font:inherit;font-weight:400;padding:11px 13px;
+ border:1px solid var(--line);border-radius:var(--rb);background:var(--bg);color:var(--ink)}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fmsg{margin:12px 0 0;font-weight:600;color:var(--accent)}
+iframe.map{width:100%;height:380px;border:0;border-radius:var(--rc);display:block;margin-bottom:12px}
+/* footer */
+.foot{background:var(--dark);color:var(--dark-ink);padding:56px 0 24px;margin-top:0}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:32px}.foot .muted{color:var(--dark-ink);opacity:.7}
+.fnav,.fcon{display:flex;flex-direction:column;gap:8px}.foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1;text-decoration:underline}
+.fsmall{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem;opacity:.65}
+.callbar{display:none}
+/* polish */
+::selection{background:var(--accent);color:var(--accent-ink)}
+.label{display:inline-flex;align-items:center;gap:10px;font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;
+ color:var(--accent);margin-bottom:14px}.label::before{content:"";width:26px;height:2px;background:var(--accent)}
+.label.center{display:flex;justify-content:center}.eyebrow.line{display:inline-flex;align-items:center;gap:12px}
+.eyebrow.line::before{content:"";width:34px;height:2px;background:currentColor;opacity:.8}
+.ico{width:24px;height:24px}.ia{width:16px;height:16px;vertical-align:-3px;transition:transform .2s}
+.more:hover .ia,.scard:hover .ia{transform:translateX(4px)}
+.ibox{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,transparent);
+ color:var(--accent);margin-bottom:14px;flex:none}
+.hero{position:relative;overflow:hidden}.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;
+ animation:settle 14s ease-out both}.hero-in,.phero .wrap{position:relative}
+@keyframes settle{from{transform:scale(1.09)}to{transform:scale(1)}}
+.hero h1{animation:rise .9s .1s ease both}.hero .lede{animation:rise .9s .25s ease both}.hero .row{animation:rise .9s .4s ease both}
+.hero .eyebrow{animation:rise .8s ease both}.trust{animation:rise .9s .55s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:.95rem;color:rgba(255,255,255,.9)}
+.trust span{display:inline-flex;align-items:center;gap:7px}.ti{width:17px;height:17px;color:var(--accent);filter:brightness(1.4)}
+.scroll-cue{position:absolute;left:50%;bottom:22px;width:26px;height:42px;border:2px solid rgba(255,255,255,.6);border-radius:14px;transform:translateX(-50%)}
+.scroll-cue span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.8s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+.phero{position:relative;overflow:hidden;background:var(--dark)}.crumbs{font-size:.88rem;opacity:.85;margin-bottom:10px;display:flex;gap:8px}
+.crumbs a{text-decoration:none}.crumbs a:hover{text-decoration:underline}
+/* header over the photo on the home page */
+.home .nav{background:transparent;border-color:transparent;backdrop-filter:none;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
+.home .nav .links a{color:rgba(255,255,255,.85)}.home .nav .links a:hover{background:rgba(255,255,255,.12);color:#fff}
+.home .nav .hrs-btn{background:rgba(0,0,0,.25);border-color:rgba(255,255,255,.25);color:#fff}
+.home .nav.solid{background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);color:var(--ink);
+ border-color:var(--line);box-shadow:0 8px 30px -18px rgba(0,0,0,.35)}
+.home .nav.solid .links a{color:var(--muted)}.home .nav.solid .hrs-btn{background:var(--soft);border-color:var(--line);color:var(--ink)}
+.home .hero{margin-top:-72px}.home .hero-in{padding-top:150px}
+.frame{position:relative}.frame .split-img{aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--accent);border-radius:var(--rc);z-index:-1;opacity:.5}
+.badge{position:absolute;left:-18px;bottom:28px;background:var(--accent);color:var(--accent-ink);padding:16px 20px;border-radius:var(--rc);
+ box-shadow:0 18px 40px -18px rgba(0,0,0,.5);max-width:220px}.badge b{display:block;font:var(--hw) 1.5rem/1.1 var(--head)}
+.badge span{font-size:.85rem;opacity:.9}
+.split-img{transition:transform .6s ease}.frame:hover .split-img{transform:scale(1.015)}
+.scard .ibox{margin-bottom:16px}.scard h3{font-size:1.18rem}
+.why{position:relative;padding-top:8px}.wn{display:block;font:var(--hw) 2.6rem/1 var(--head);color:var(--accent);opacity:.25;margin-bottom:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:28px;position:relative}
+.step small{display:block;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem}
+.step b{display:block;font:var(--hw) 1.2rem var(--head);margin:4px 0 6px}.step p{color:var(--muted);margin:0}
+.num{display:flex;align-items:center;gap:12px;font:var(--hw) 1rem var(--head);color:var(--accent);margin-bottom:6px}.num .ibox{margin:0}
+.closer{background:var(--dark);color:var(--dark-ink);padding:90px 0;position:relative;overflow:hidden}
+.closer::after{content:"";position:absolute;inset:0;background:var(--motif-dark);opacity:.9;pointer-events:none}
+.cl-in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;z-index:1}
+.closer h2{font-size:clamp(2rem,4.5vw,3.4rem)}.closer p{opacity:.8;font-size:1.1rem;margin:0}
+.cl-r{text-align:right}.cl-phone{display:block;font:var(--hw) clamp(1.8rem,4vw,3rem)/1.1 var(--head);text-decoration:none;margin-bottom:18px;color:#fff}
+.cl-r .row{justify-content:flex-end}.closer .btn.ghost{color:#fff}
+.ccard .ibox{margin-bottom:12px}
+.fhrs{display:flex;flex-direction:column;gap:4px;font-size:.9rem}.fhrs b,.fnav b{margin-bottom:6px;opacity:1;font-weight:700}
+.fh{display:flex;justify-content:space-between;gap:14px;opacity:.75}.fh.today{opacity:1;font-weight:700;color:var(--accent);filter:brightness(1.3)}
+.fcols{grid-template-columns:1.3fr .8fr 1fr}.foot .fcon{margin-top:14px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+ display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s}
+.totop.on{opacity:1;pointer-events:auto}.ico.up{transform:rotate(-90deg)}
+.rv{transition-delay:var(--d,0ms)!important}
+.board{list-style:none;padding:0;margin:0;display:grid;gap:4px 56px}.board.c2{grid-template-columns:1fr 1fr}
+.board li{padding:14px 0;border-bottom:1px dashed var(--line)}
+.mi-top{display:flex;align-items:baseline;gap:10px}.mi-top b{font:var(--hw) 1.08rem/1.3 var(--head)}
+.mi-top i{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px);min-width:16px}
+.mi-top em{font-style:normal;font-weight:700;color:var(--accent);white-space:nowrap}
+.board span{display:block;color:var(--muted);font-size:.93rem;margin-top:3px}
+.mgroup{padding:56px 0 20px}.gnote{color:var(--muted);margin:-2px 0 10px;max-width:70ch}.mgroup .label{margin-bottom:6px}
+.locs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:10px}
+.locs .card p{margin:0 0 6px}
+.blogo{height:44px;width:auto;max-width:200px;object-fit:contain;display:block}
+.blogo.chip{background:#fff;padding:4px 10px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.hlogo{min-height:auto}.hlogo .hero-in{padding:150px 22px 80px;max-width:900px;margin:0 auto}
+.biglogo{display:inline-block;margin:0 auto 28px;animation:rise .9s ease both}.biglogo img{max-height:220px;max-width:min(520px,80vw);width:auto}
+.biglogo.chip{background:#fff;padding:22px 30px;border-radius:16px;box-shadow:0 24px 60px -24px rgba(0,0,0,.6)}
+.hlogo .lede{margin:0 auto 1em}.h1-sm{font-size:clamp(2rem,4.4vw,3.2rem);max-width:none!important}
+.cap{font-weight:700;color:var(--accent);margin:-4px 0 8px}.chips.left{justify-content:flex-start;margin-top:14px}
+.ticks{list-style:none;padding:0;margin:0}.ticks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line)}
+.ticks li:last-child{border-bottom:0}.ticks .ti{color:var(--accent);flex:none;margin-top:4px;filter:none}
+/* motion */
+.rv-on .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}.rv-on .rv.rv-in{opacity:1;transform:none}
+@media(max-width:900px){
+ .board.c2{grid-template-columns:1fr}
+ .steps,.cl-in{grid-template-columns:1fr}.cl-r{text-align:left}.cl-r .row{justify-content:flex-start}
+ .badge{left:12px;bottom:12px}.frame::before{display:none}.frame .split-img{aspect-ratio:4/3}
+ .totop{bottom:70px}.home .hero-in{padding-top:120px}.scroll-cue{display:none}
+ .home .nav .links a{color:var(--muted)}.home.menu-open .nav{background:var(--bg);color:var(--ink)}
+ .links{position:fixed;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);padding:10px 16px 18px;
+  border-bottom:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.3);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s}
+ .links a{padding:13px 10px;font-size:1.05rem;border-bottom:1px solid var(--line);border-radius:0}.links a[aria-current]{box-shadow:none;color:var(--accent)}
+ .menu-open .links{transform:none;opacity:1;pointer-events:auto}.burger{display:flex}
+ .menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-open .burger span:nth-child(2){opacity:0}
+ .menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+ .nav-call{display:none}.nav-in{gap:10px}.brand{font-size:1.02rem;max-width:46vw}
+ .split,.vgrid,.fcols,.wgrid{grid-template-columns:1fr;gap:28px}.svc.rev .split-img{order:0}
+ .fgrid.n3,.fgrid.n4{grid-template-columns:1fr 1fr}.sec{padding:60px 0}.svc{padding:56px 0}.band{padding:84px 0}
+ .gal{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.hero-in{padding-bottom:8vh}
+ .hrs-pop{position:fixed;left:12px;right:12px;top:78px;min-width:0}
+ .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(0,0,0,.15)}
+ .callbar a{flex:1;text-align:center;padding:15px;font-weight:700;text-decoration:none;background:var(--accent);color:var(--accent-ink)}
+ .callbar a+a{background:var(--dark);color:var(--dark-ink)}body.has-bar{padding-bottom:54px}}
+.hrs-head{font-weight:700;padding:4px 0 8px;border-bottom:1px solid var(--line);margin-bottom:2px}
+.hrs-head.is-open{color:#1d8a4c}.hrs-head.is-closed{color:#c0392b}
+.links a,.nav-call{white-space:nowrap}
+@media(max-width:1180px){.nav-call{display:none}}
+@media(max-width:600px){.hrs-btn .hrs-more{display:none}}
+</style></head><body class="inner"><div id="lp-offer" style="position:relative;z-index:99999;background:#0f172a;color:#fff;font:14px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.35)"><span style="opacity:.92">This is a preview built for <b>Sea Dog Brewing Co.</b>. Like it? Make it yours:</span><a href="https://buy.stripe.com/dRm7sK2Sp20McBI5D9aIM0y" style="display:inline-block;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;background:#22c55e;color:#052e14">$900 + $35/mo</a><a href="https://buy.stripe.com/00waEWcsZ7l6bxE7LhaIM0z" style="display:inline-block;padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)">$0 down · $125/mo</a><span style="color:#cbd5e1;font-size:13px">Photos are samples. Yours replace them.</span><a href="mailto:launchpadsitesconnor@gmail.com?subject=Changes to the Sea Dog Brewing Co. website" style="color:#cbd5e1;font-size:13px">Want changes? Email me</a></div>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="../"><img class="blogo" src="../photos/logo-624ee6.png" alt="Sea Dog Brewing Co."></a><nav class="links" id="menu"><a href="../">Home</a><a href="../menu/" aria-current=page>Menu</a><a href="../about/">About</a><a href="../contact/">Contact</a></nav><div class="nav-r"><div class="hrs"><button class="hrs-btn" aria-expanded="false"><i class="dot"></i><span class="hrs-now">Hours</span><span class="hrs-more"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="hrs-pop" hidden><div class="hrs-head"><span class="hrs-now"></span><span class="hrs-more"></span></div><ul><li data-day="0"><span>Monday</span><span>11:00 AM - 9:00 PM</span></li><li data-day="1"><span>Tuesday</span><span>11:00 AM - 9:00 PM</span></li><li data-day="2"><span>Wednesday</span><span>11:00 AM - 9:00 PM</span></li><li data-day="3"><span>Thursday</span><span>11:00 AM - 9:00 PM</span></li><li data-day="4"><span>Friday</span><span>11:00 AM - 10:00 PM</span></li><li data-day="5"><span>Saturday</span><span>10:00 AM - 10:00 PM</span></li><li data-day="6"><span>Sunday</span><span>10:00 AM - 8:00 PM</span></li></ul></div></div><a class="btn sm nav-call" href="tel:+12072301306">(207) 230-1306</a><button class="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header><main><section class="phero"><div class="hero-bg" style="background-image:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.66)),url('../photos/stock3-c67b85.jpg')"></div><div class="wrap"><div class="crumbs"><a href="../">Home</a><span>/</span>Menu</div><h1>Menu</h1><p class=lede>See what you can order, enjoy, or take home from our Camden brewpub.</p></div></section><nav class="jump"><div class="wrap jump-in"><span>Jump to:</span><a href="#appetizers-soups-salads">Appetizers, Soups &amp; Salads</a><a href="#soups">Soups</a><a href="#salads">Salads</a><a href="#specialty-sandwiches">Specialty Sandwiches</a><a href="#entrees">Entrees</a><a href="#side-dishes">Side Dishes</a><a href="#brunch-dishes">Brunch Dishes</a></div></nav><div class="wrap center row center-row" style="padding-top:36px"><a class="btn" href="https://form.jotform.com/" target="_blank" rel="noopener">Reserve a table</a><a class="btn ghost" href="https://order.toasttab.com/online/locations/478a485c-e20d-4443-ba82-2bbdee4895c4/0e9404ec-54f2-4a0e-8bb8-f65cfd4fae8d" target="_blank" rel="noopener">Order online</a></div><section class="sec mgroup" id="appetizers-soups-salads"><div class="wrap"><div class="label rv">Appetizers, Soups &amp; Salads</div><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>SEARED TUNA SASHIMI*</b><i></i></div><span>Sesame crusted sushi grade rare tuna with orange-soy glaze, pickled ginger and wakame salad</span></li><li><div class="mi-top"><b>Warm Crab Rangoon Dip</b><i></i></div><span>Panko crusted Atlantic crab and cream cheese laced with sweet chili sauce. Served with wonton chips</span></li><li><div class="mi-top"><b>Brewhaus Pretzel</b><i></i></div><span>Warmed Bavarian style with whole grain beer mustard. Add Windjammer beer cheese</span></li><li><div class="mi-top"><b>BANG BANG CRISPY SHRIMP</b><i></i></div><span>Fried large shrimp tossed in our house sweet and spicy sauce</span></li><li><div class="mi-top"><b>FRIED CHICKEN TENDERS</b><i></i></div><span>House breaded and tossed with Buffalo, wild blueberry BBQ, hickory smoked BBQ, chili crisp and honey, wombat habanero or honey mustard. Additional sauces 50¢ ea</span></li><li><div class="mi-top"><b>Hummus &amp; Country Olives</b><i></i></div><span>Smooth hummus, “everything” seasoning, extra virgin olive oil, cut vegetables and pita wedges</span></li><li><div class="mi-top"><b>BEE STING HONEY WINGS</b><i></i></div><span>Bone-in wings tossed in our sweet &amp; spicy chili crisp and honey sauce. Also available traditional Buffalo, wild blueberry BBQ, wombat habanero, hickory smoked B</span></li><li><div class="mi-top"><b>FRIED DILL PICKLE CHIPS</b><i></i></div><span>House breading with ranch dip</span></li><li><div class="mi-top"><b>Crispy Calamari</b><i></i></div><span>Lightly battered, cherry pepper aioli</span></li></ul></div></div></section><section class="sec mgroup" id="soups"><div class="wrap"><div class="label rv">Soups</div><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>French Onion Gratinee</b><i></i></div><span>Caramelized onions, toasted croustades, melted Swiss</span></li><li><div class="mi-top"><b>New England Clam Chowder</b><i></i></div><span>Cut clams and Maine potatoes</span></li><li><div class="mi-top"><b>Beef &amp; Bean Chili</b><i></i></div><span>Pico de gallo, shredded cheese, tortilla chips</span></li><li><div class="mi-top"><b>VEGGIE LIFE JACKFRUIT CHILI</b><i></i></div><span>Kidney and black beans, tomatoes, corn, red quinoa, green chiles, onion, garlic. Vegan cheddar and banana peppers</span></li></ul></div></div></section><section class="sec mgroup" id="salads"><div class="wrap"><div class="label rv">Salads</div><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>House Caesar</b><i></i></div><span>Chopped romaine tossed in our homemade dressing with croutons. Anchovies available upon request</span></li><li><div class="mi-top"><b>BREWER’S COBB</b><i></i></div><span>Mixed greens, cucumber, tomato, bacon, egg, avocado, crumbled blue cheese, choice of dressing</span></li><li><div class="mi-top"><b>CASHEW QUINOA</b><i></i></div><span>Purple &amp; napa cabbage, red pepper, red onion, cucumber, carrot, edamame, cilantro, lime, peanut-ginger dressing</span></li><li><div class="mi-top"><b>Grilled Greek Chicken</b><i></i></div><span>Marinated chicken tenders, romaine, feta, cucumber, tomato, onion, kalamata olive, Greek dressing.</span></li><li><div class="mi-top"><b>BERRY GOAT CHEESE</b><i></i></div><span>Mixed greens, strawberries, cucumber, pickled red onion, goat cheese, sunflower seeds, wild Maine blueberry vinaigrette</span></li></ul></div></div></section><section class="sec mgroup" id="specialty-sandwiches"><div class="wrap"><div class="label rv">Specialty Sandwiches</div><p class="gnote rv">Served with a pickle and your choice of one side: potato chips, French fries, slaw, garden(+3) or Caesar salad(+3), sweet potato fries (+3), onion rings (+3), mac-n-cheese (+3) tater tots (+1). Add a </p><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>Sea Dog Stacker</b><i></i></div><span>Double 4 oz. burger patties cooked medium-well, American cheese, lettuce, tomato, signature sauce on brioche</span></li><li><div class="mi-top"><b>BBQ BACON CHEDDAR STACKER</b><i></i></div><span>Double 4 oz. burger patties cooked medium-well, hickory BBQ, cheddar cheese, bacon and fried onion crisps on brioche</span></li><li><div class="mi-top"><b>Veggie Sweet Potato Burger</b><i></i></div><span>Pinto beans, rice, sweet potato, oats, pumpkin seed, quinoa, avocado, pickled vegetable, serrano aioli, lettuce, tomato</span></li><li><div class="mi-top"><b>Pan-Blackened Haddock Tacos</b><i></i></div><span>Our most popular…shaved cabbage, avocado, pico de gallo, cilantro, serrano aioli. Available with pan-blackened shrimp</span></li><li><div class="mi-top"><b>Maine Lobster Roll</b><i></i></div><span>Lobster salad, shredded iceberg, butter grilled roll</span></li><li><div class="mi-top"><b>GRILLED CORNED BEEF REUBEN</b><i></i></div><span>Sauerkraut, Swiss, Thousand Island. Turkey available</span></li><li><div class="mi-top"><b>GRILLED STEAK AND CHEESE</b><i></i></div><span>Onions, peppers, mushrooms, American cheese</span></li><li><div class="mi-top"><b>Turkey Blt</b><i></i></div><span>Roast turkey, bacon, lettuce, tomato, cranberry mayo, toasted wheatberry bread</span></li><li><div class="mi-top"><b>Fried Haddock</b><i></i></div><span>Lettuce, tomato, tartar sauce on brioche. Available pan-blackened with Cajun tartar</span></li><li><div class="mi-top"><b>Buttermilk Fried Chicken</b><i></i></div><span>Spicy ranch, house made pickles, lettuce and tomato on brioche</span></li><li><div class="mi-top"><b>GRILLED CHICKEN CAPRESE</b><i></i></div><span>Melted mozzarella, vine-ripened tomato, arugula, balsamic glaze, and basil aioli on grilled sourdough</span></li></ul></div></div></section><section class="sec mgroup" id="entrees"><div class="wrap"><div class="label rv">Entrees</div><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>Haddock Fish &amp; Chips</b><i></i></div><span>Fresh Gulf of Maine haddock, French fries, cole slaw, tartar</span></li><li><div class="mi-top"><b>SHRIMP AND LOBSTER LINGUINE</b><i></i></div><span>Tender claw and knuckle lobster, sauteed shrimp, lobster cream sauce, sundried tomato, chive, parmesan, lemon, tossed with linguine. Served with warmed baguette</span></li><li><div class="mi-top"><b>CAJUN CHICKEN PASTA</b><i></i></div><span>Andouille, blackened chicken, roasted red peppers, with garlic, cream, and parmesan, tossed with penne. Served with a warmed baguette</span></li><li><div class="mi-top"><b>FOUR CHEESE MUSHROOM SACCHETTI</b><i></i></div><span>Pasta pillows stuffed with porcini mushroom and ricotta, mozzarella, fontina and parmesan cheeses. Tossed in a cremini and button mushroom sauce and served with</span></li><li><div class="mi-top"><b>SESAME CHICKEN BOWL</b><i></i></div><span>Cabbage, bell pepper, and rice tossed with garlic ginger sauce. Topped with scallions, pickled veggies, and spicy yum yum sauce</span></li><li><div class="mi-top"><b>Steak Tip Poutine</b><i></i></div><span>Pan-seared sirloin tips, brown gravy, cheese curds and French fries topped with onion crisps</span></li><li><div class="mi-top"><b>PAN SEARED SALMON WITH HONEY GARLIC GLAZE</b><i></i></div><span>Sesame jasmine rice and buttered broccoli</span></li><li><div class="mi-top"><b>CHICKEN AND BROCCOLI FETTUCCINE WITH PARMESAN CREAM</b><i></i></div><span>Sautéed chicken and broccoli in a parmesan cream sauce. Served with warmed baguette</span></li><li><div class="mi-top"><b>SAUTÉED LEMONY CHICKEN PICCATA</b><i></i></div><span>Sautéed with white wine, lemon, butter and capers. Served with mashed potatoes and buttered broccoli</span></li></ul></div></div></section><section class="sec mgroup" id="side-dishes"><div class="wrap"><div class="label rv">Side Dishes</div><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>FRENCH FRIES</b><i></i></div></li><li><div class="mi-top"><b>TATER TOTS</b><i></i></div></li><li><div class="mi-top"><b>SWEET POTATO FRIES</b><i></i></div></li><li><div class="mi-top"><b>ONION RINGS</b><i></i></div></li><li><div class="mi-top"><b>COLE SLAW</b><i></i></div></li><li><div class="mi-top"><b>WARM BAGUETTE</b><i></i></div></li><li><div class="mi-top"><b>BROCCOLI</b><i></i></div></li><li><div class="mi-top"><b>MASHED POTATO</b><i></i></div></li><li><div class="mi-top"><b>MAC -N- CHEESE</b><i></i></div></li><li><div class="mi-top"><b>DEMI MARKET SALAD</b><i></i></div></li><li><div class="mi-top"><b>DEMI CAESAR</b><i></i></div></li></ul></div></div></section><section class="sec mgroup" id="brunch-dishes"><div class="wrap"><div class="label rv">Brunch Dishes</div><p class="gnote rv">Brunch Menu served Saturday and Sunday 10am – 2pm</p><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>CINNAMON-PECAN STICKY BUN</b><i></i></div><span>Skillet-warmed with a sweet pecan glaze. Perfect to share</span></li><li><div class="mi-top"><b>ACAI BOWL</b><i></i></div><span>Refreshing mixed berry frozen puree topped with banana, strawberries, coconut, granola and chia seeds</span></li><li><div class="mi-top"><b>BELGIUM PEARL SUGAR WAFFLES</b><i></i></div><span>Made with butter and Belgian pearl sugar for a light, sweet crunch. Topped with frozen whipped cream.</span></li><li><div class="mi-top"><b>FRIED CHICKEN &amp; WAFFLE</b><i></i></div><span>A savory combination of fried chicken, our Belgian waffle and a sweet &amp; spicy peach syrup</span></li><li><div class="mi-top"><b>BUTTERMILK PANCAKE STACK</b><i></i></div></li><li><div class="mi-top"><b>CHOCOLATE CHIP PANCAKE STACK</b><i></i></div></li><li><div class="mi-top"><b>MAINE WILD BLUEBERRY PANCAKE STACK</b><i></i></div></li><li><div class="mi-top"><b>PANCAKE STACK TOPPED WITH MIXED BERRIES AND WHIPPED CREAM</b><i></i></div></li><li><div class="mi-top"><b>CRÈME BRULEE FRENCH TOAST</b><i></i></div><span>A decadent and sweet breakfast treat. Our baked French toast is topped with mixed</span></li></ul></div></div></section><div class="wrap" style="padding-bottom:40px"></div><section class="band" style="background-image:linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.64)),url('../photos/stock3-c67b85.jpg')"><div class="wrap narrow center rv"><h2>Hungry yet?</h2><p>Give us a call or stop by.</p><div class="row center-row"><a class="btn" href="tel:+12072301306">Call us</a><a class="btn ghost" href="../contact/">Hours &amp; directions</a></div></div></section><section class="closer"><div class="wrap cl-in rv"><div><div class="label">Get in touch</div><h2>Ready when you are.</h2><p>Call, send a message, or stop by. We'd be glad to help.</p></div><div class="cl-r"><a class="cl-phone" href="tel:+12072301306">(207) 230-1306</a><div class="row"><a class="btn" href="tel:+12072301306">Call us</a><a class="btn ghost" href="../contact/#write">Send a message</a></div></div></div></section></main><footer class="foot"><div class="wrap fcols"><div><div class="brand">Sea Dog Brewing Co.</div><p class="muted">Coastal food and house-brewed pours</p><div class="fcon"><a href="tel:+12072301306">(207) 230-1306</a><a href="mailto:robertl@seadogbrewing.com">robertl@seadogbrewing.com</a><span>1 Main St, Camden, ME 04843</span></div></div><div class="fnav"><b>Pages</b><a href="../">Home</a><a href="../menu/">Menu</a><a href="../about/">About</a><a href="../contact/">Contact</a></div><div class="fhrs"><b>Hours</b><div data-day="0" class="fh"><span>Mon</span><span>11:00 AM - 9:00 PM</span></div><div data-day="1" class="fh"><span>Tue</span><span>11:00 AM - 9:00 PM</span></div><div data-day="2" class="fh"><span>Wed</span><span>11:00 AM - 9:00 PM</span></div><div data-day="3" class="fh"><span>Thu</span><span>11:00 AM - 9:00 PM</span></div><div data-day="4" class="fh"><span>Fri</span><span>11:00 AM - 10:00 PM</span></div><div data-day="5" class="fh"><span>Sat</span><span>10:00 AM - 10:00 PM</span></div><div data-day="6" class="fh"><span>Sun</span><span>10:00 AM - 8:00 PM</span></div></div></div><div class="wrap fsmall">© 2026 Sea Dog Brewing Co. · Camden, Maine</div></footer><div class="callbar"><a href="tel:+12072301306">Call</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Sea%20Dog%20Brewing%20Co.%2C%201%20Main%20St%2C%20Camden%2C%20ME%2004843">Directions</a></div><a class="totop" href="#" aria-label="Back to top"><svg class="ico up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><script>(function(){
+var d=document,H={"Monday": "11:00 AM - 9:00 PM", "Tuesday": "11:00 AM - 9:00 PM", "Wednesday": "11:00 AM - 9:00 PM", "Thursday": "11:00 AM - 9:00 PM", "Friday": "11:00 AM - 10:00 PM", "Saturday": "10:00 AM - 10:00 PM", "Sunday": "10:00 AM - 8:00 PM"};
+// menu
+var b=d.querySelector('.burger');if(b)b.onclick=function(){var o=d.body.classList.toggle('menu-open');b.setAttribute('aria-expanded',o)};
+if(d.querySelector('.callbar'))d.body.classList.add('has-bar');
+// open now
+function mins(t){var m=t.trim().match(/(\d{1,2})(?::(\d{2}))?\s*([AaPp])?/);if(!m)return null;var h=+m[1]%12,mm=+(m[2]||0);
+ if(m[3]&&/p/i.test(m[3]))h+=12;if(!m[3]&&+m[1]===12)h=12;return h*60+mm}
+function spans(s){if(!s||/closed/i.test(s))return[];if(/24 hours/i.test(s))return[[0,1440]];var out=[];
+ s.split(/,|;| and /).forEach(function(p){var r=p.split(/\s*[-–]\s*|\s+to\s+/);if(r.length<2)return;
+  var a=mins(r[0]),z=mins(r[1]);if(a==null||z==null)return;if(!/[ap]m/i.test(r[0])&&/pm/i.test(r[1])&&a<720&&a+720<z)a+=720;
+  if(z<=a)z+=1440;out.push([a,z])});return out}
+var days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+function fmt(m){m=m%1440;var h=Math.floor(m/60),mm=m%60,ap=h>=12?'PM':'AM';h=h%12||12;return h+(mm?':'+(mm<10?'0':'')+mm:'')+' '+ap}
+function status(){if(!H)return null;var n=new Date(),di=(n.getDay()+6)%7,now=n.getHours()*60+n.getMinutes();
+ var prev=spans(H[days[(di+6)%7]]);for(var i=0;i<prev.length;i++)if(prev[i][1]>1440&&now<prev[i][1]-1440)return{open:1,t:'Open now · until '+fmt(prev[i][1])};
+ var t=spans(H[days[di]]);for(i=0;i<t.length;i++){if(t[i][0]===0&&t[i][1]===1440)return{open:1,t:'Open 24 hours'};
+  if(now>=t[i][0]&&now<t[i][1])return{open:1,t:'Open now · until '+fmt(t[i][1])}}
+ for(i=0;i<t.length;i++)if(now<t[i][0])return{open:0,t:'Closed · opens '+fmt(t[i][0])};
+ for(var k=1;k<8;k++){var s=spans(H[days[(di+k)%7]]);if(s.length)return{open:0,t:'Closed · opens '+(k===1?'tomorrow ':days[(di+k)%7].slice(0,3)+' ')+fmt(s[0][0])}}
+ return{open:0,t:'Closed'}}
+var st=status(),di=(new Date().getDay()+6)%7;
+d.querySelectorAll('li[data-day="'+di+'"]').forEach(function(li){li.classList.add('today')});
+d.querySelectorAll('.hrs-now').forEach(function(el){if(st){var i=st.t.indexOf(' · ');el.textContent=i>0?st.t.slice(0,i):st.t;
+ var mo=el.parentNode.querySelector('.hrs-more');if(mo)mo.textContent=i>0?st.t.slice(i):'';else if(i>0)el.textContent=st.t;
+ var p=el.closest('.hrs-btn,.status,.hrs-head');if(p)p.classList.add(st.open?'is-open':'is-closed')}});
+var hb=d.querySelector('.hrs-btn'),hp=d.querySelector('.hrs-pop');
+if(hb&&hp){hb.onclick=function(ev){ev.stopPropagation();var o=hp.hidden;hp.hidden=!o;hb.setAttribute('aria-expanded',o)};
+ d.addEventListener('click',function(ev){if(!hp.hidden&&!hp.contains(ev.target)){hp.hidden=true;hb.setAttribute('aria-expanded',false)}})}
+// header turns solid once you scroll; back-to-top button
+var nv=d.querySelector('.nav'),tt=d.querySelector('.totop');function sc(){var y=scrollY;if(nv)nv.classList.toggle('solid',y>40);if(tt)tt.classList.toggle('on',y>700)}
+addEventListener('scroll',sc,{passive:true});sc();if(tt)tt.onclick=function(ev){ev.preventDefault();scrollTo({top:0,behavior:'smooth'})};
+// numbers count up when they come into view
+var cs=[].slice.call(d.querySelectorAll('[data-count]'));if(cs.length&&'IntersectionObserver' in window){var io3=new IntersectionObserver(function(es){
+ es.forEach(function(x){if(!x.isIntersecting)return;io3.unobserve(x.target);var el=x.target,n=+el.dataset.count,t0=null,txt=el.textContent;
+  function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1400);el.textContent=txt.replace(/\d+/,Math.round(n*(1-Math.pow(1-k,3))));if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)})});
+ cs.forEach(function(c){io3.observe(c)})}
+d.querySelectorAll('.fh[data-day="'+((new Date().getDay()+6)%7)+'"]').forEach(function(x){x.classList.add('today')});
+// product search
+var ps=d.querySelector('.psearch');if(ps)ps.oninput=function(){var q=ps.value.toLowerCase().trim();
+ d.querySelectorAll('.prod').forEach(function(li){li.style.display=!q||li.dataset.q.indexOf(q)>-1?'':'none'})};
+// jump links highlight
+var jl=[].slice.call(d.querySelectorAll('.jump a'));if(jl.length&&'IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){
+ es.forEach(function(x){if(x.isIntersecting)jl.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+ d.querySelectorAll('.svc').forEach(function(s){io2.observe(s)})}
+// photo viewer
+var g=[].slice.call(d.querySelectorAll('.gi'));if(g.length){var lb,ix=0;function show(i){ix=(i+g.length)%g.length;lb.querySelector('img').src=g[ix].dataset.full}
+ g.forEach(function(x,i){x.onclick=function(){lb=d.createElement('div');lb.className='lb';lb.innerHTML='<img alt=""><button class="x" aria-label="Close">×</button><button class="p" aria-label="Previous">‹</button><button class="n" aria-label="Next">›</button>';
+  d.body.appendChild(lb);show(i);lb.onclick=function(ev){if(ev.target===lb||ev.target.className==='x')lb.remove();if(ev.target.className==='p')show(ix-1);if(ev.target.className==='n')show(ix+1)};
+  d.onkeydown=function(ev){if(!d.body.contains(lb))return;if(ev.key==='Escape')lb.remove();if(ev.key==='ArrowLeft')show(ix-1);if(ev.key==='ArrowRight')show(ix+1)}}})}
+// contact form
+var f=d.querySelector('.cform');if(f)f.onsubmit=function(ev){ev.preventDefault();var m=f.querySelector('.fmsg'),btn=f.querySelector('button');
+ if(f._honey&&f._honey.value)return;var preview=/(^|\.)sites\.launchpadsites\.co$|github\.io$|^localhost$|^$/.test(location.hostname);
+ if(preview||!f.dataset.to){m.textContent=preview?'Thanks! (This is a preview. On the live site, messages go straight to the owner\'s email.)':'Thanks! Please call us so we can help right away.';f.reset();return}
+ btn.disabled=true;m.textContent='Sending…';var data={};new FormData(f).forEach(function(v,k){data[k]=v});data._subject='New message from your website';
+ fetch('https://formsubmit.co/ajax/'+f.dataset.to,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+ .then(function(r){m.textContent=r.ok?'Thanks! We got your message and will get back to you soon.':'Sorry, that didn\'t go through. Please call us instead.';if(r.ok)f.reset()})
+ .catch(function(){m.textContent='Sorry, that didn\'t go through. Please call us instead.'}).then(function(){btn.disabled=false})};
+// reveal
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.documentElement.classList.add('rv-on');
+ var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('rv-in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+ d.querySelectorAll('.rv').forEach(function(el){io.observe(el)});setTimeout(function(){d.querySelectorAll('.rv').forEach(function(el){el.classList.add('rv-in')})},4000)}
+})();</script><script data-goatcounter="https://launchpadsites.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></body></html>
