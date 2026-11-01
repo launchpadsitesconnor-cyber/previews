@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  html { overflow-x: hidden; }
   .hero h1 { font-size: clamp(3.2rem, 11vw, 8.5rem); max-width: 15ch; }
   .hero .lede { max-width: 34rem; }
   .rows-label { font: 500 .75rem/1 var(--f-mono); letter-spacing: .18em; text-transform: uppercase; color: var(--accent-text); margin: var(--s-3) 0 .2rem; }
@@ -125,7 +124,7 @@
         <li class="board__row" data-day="6"><span class="board__day">Saturday<span class="flag">Today</span></span><span class="board__time">11:30 AM – 11:00 PM</span><span class="board__tags"><span class="tag">Dinner &amp; bar</span><span class="tag">Open late</span></span></li>
         <li class="board__row" data-day="0"><span class="board__day">Sunday<span class="flag">Today</span></span><span class="board__time">11:30 AM – 9:00 PM</span><span class="board__tags"><span class="tag">Dinner &amp; bar</span></span></li>
       </ul>
-      <p class="board-note">Times are Portland time. The coffee bar with light lunch runs weekdays from 9 to 4.</p>
+      <p class="board-note">Times are Portland time.</p>
     </div>
   </section>
 
@@ -138,7 +137,7 @@
       <div class="dn__body">
         <span class="plate">Day</span>
         <h2>Laptop open, espresso going.</h2>
-        <p>Weekdays from 9 to 4 we run a coffee bar with light lunch, and it's a nice spot to work.</p>
+        <p>Weekdays from 9 to 4 we run a coffee bar with lunch, and it's a good spot to work.</p>
         <ul class="day-list">
           <li><span class="n">01</span><h3>Espresso</h3><p>Weekdays start with it.</p></li>
           <li><span class="n">02</span><h3>Wi-Fi</h3><p>Bring the laptop.</p></li>
@@ -148,21 +147,26 @@
         <a class="link-arrow" href="#timetable">See the timetable <span aria-hidden="true">→</span></a>
       </div>
     </div>
-    <div class="dn dn--night">
-      <span class="plate">Night</span>
-      <h2>Dinner, a fire and a long bar.</h2>
-      <p>Dinner is seasonal and rooted in Maine and New England. The bar stays open until 11 on Friday and Saturday.</p>
-      <h3 class="rows-label">Plates</h3>
-      <ul class="rows">
-        <li><div class="row"><span class="row__name">Braised Beef Short Rib</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">$39</span></div><p class="desc">Smoked cheddar polenta, charred carrots, jus.</p></li>
-        <li><div class="row"><span class="row__name">Fresh Maine Lobster Roll</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">Market</span></div><p class="desc">Lemon, sea salt and mayo on brioche, with Kennebec fries.</p></li>
-      </ul>
-      <h3 class="rows-label">Drinks</h3>
-      <ul class="rows">
-        <li><div class="row"><span class="row__name">Maple Old Fashioned</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">$15</span></div><p class="desc">Old Grand-Dad Bonded, maple, orange bitters.</p></li>
-        <li><div class="row"><span class="row__name">Espresso Martini</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">$15</span></div><p class="desc">Mr. Black, vodka, nitro cold brew.</p></li>
-      </ul>
-      <a class="link-arrow" href="menu/">The whole menu <span aria-hidden="true">→</span></a>
+    <div class="dn dn--night dn--photo">
+      <div class="dn__photo">
+        <img src="photos/own-18ae0555.jpg" alt="Dark wood tables and floor in the dining room, lit by candles" loading="lazy">
+      </div>
+      <div class="dn__body">
+        <span class="plate">Night</span>
+        <h2>Dinner, a fire and a long bar.</h2>
+        <p>Dinner is seasonal and rooted in Maine and New England. The bar stays open until 11 on Friday and Saturday.</p>
+        <h3 class="rows-label">Plates</h3>
+        <ul class="rows">
+          <li><div class="row"><span class="row__name">Braised Beef Short Rib</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">$39</span></div><p class="desc">Smoked cheddar polenta, charred carrots, jus.</p></li>
+          <li><div class="row"><span class="row__name">Fresh Maine Lobster Roll</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">Market</span></div><p class="desc">Lemon, sea salt and mayo on brioche, with Kennebec fries.</p></li>
+        </ul>
+        <h3 class="rows-label">Drinks</h3>
+        <ul class="rows">
+          <li><div class="row"><span class="row__name">Maple Old Fashioned</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">$15</span></div><p class="desc">Old Grand-Dad Bonded, maple, orange bitters.</p></li>
+          <li><div class="row"><span class="row__name">Espresso Martini</span><span class="row__lead" aria-hidden="true"></span><span class="row__price">$15</span></div><p class="desc">Mr. Black, vodka, nitro cold brew.</p></li>
+        </ul>
+        <a class="link-arrow" href="menu/">The whole menu <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 
@@ -205,142 +209,5 @@
           <p>Espresso Martini $15, Coffee Negroni $13, Banana Crème Carajillo $16.</p>
         </div>
       </div>
-      <p style="margin-top: var(--s-3);"><a class="link-arrow" href="menu/#beer">Beer &amp; wine list <span aria-hidden="true">→</span></a></p>
-    </div>
-  </section>
-
-  <!-- 5. THIRTY-THREE CENTS -->
-  <section class="section ticket-sec" aria-labelledby="soup-title">
-    <div class="wrap">
-      <div class="ticket reveal">
-        <div class="ticket__stub">
-          <span class="ticket__admit">Admit one</span>
-          <span class="ticket__num" aria-hidden="true">33<small>¢</small></span>
-          <span class="ticket__per">A cup, per guest</span>
-        </div>
-        <div class="ticket__body">
-          <span class="plate">Prohibition Soup</span>
-          <h2 id="soup-title">Thirty-three cents.</h2>
-          <p>Soup is 33 cents a cup. One per guest. We're not sure how we're making money either.</p>
-          <div class="ticket__prices">
-            <div><span>Cup</span><b>33¢</b><em>One per guest</em></div>
-            <div><span>Bowl</span><b>$8</b><em>With baguette</em></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. PRIVATE EVENTS -->
-  <section class="section" aria-labelledby="ev-title">
-    <div class="wrap events-tease">
-      <div class="tease-copy reveal">
-        <span class="plate">Private events</span>
-        <h2 id="ev-title">Bring the whole group.</h2>
-        <p class="lede">Host 16 people in our private room or bring up to 100 for a full buyout. Our kitchen and bar take care of the food and drinks.</p>
-        <div class="caps">
-          <div class="cap-card"><b>16</b><span>Private room</span></div>
-          <div class="cap-card"><b>100</b><span>Full buyout</span></div>
-        </div>
-        <a class="btn" href="events/">Private events</a>
-      </div>
-      <figure class="reveal" data-d="1">
-        <img src="photos/own-d6b241bc.jpg" alt="Glass and steel doors with a long wooden table set up behind them" loading="lazy">
-        <figcaption>Glass doors and a long table.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-</main>
-
-<!-- 7. FOOTER -->
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="photos/logo-bf4379.png" alt="Rigby Yard, Wharf Street" width="900" height="317">
-        <p>Dinner, drinks &amp; events on Wharf Street.</p>
-      </div>
-      <div>
-        <h3>Visit</h3>
-        <address>
-          50 Wharf Street<br>Portland, Maine 04101<br>
-          <a href="mailto:info@rigbyyard.com">info@rigbyyard.com</a><br>
-          Street parking nearby.
-        </address>
-        <a class="foot-phone" href="tel:+12079567150">(207) 956-7150</a>
-      </div>
-      <div>
-        <h3>Book or order</h3>
-        <div class="btn-row">
-          <a class="btn btn--sm" href="https://resy.com/cities/pwm/rigby-yard" target="_blank" rel="noopener">Reserve a table</a>
-          <a class="btn btn--sm btn--ghost" href="https://www.toasttab.com/rigby-yard-50-wharf-street" target="_blank" rel="noopener">Order online</a>
-        </div>
-        <div class="foot-links">
-          <a href="menu/">Menu</a><a href="about/">About</a><a href="events/">Events</a><a href="contact/">Contact</a>
-        </div>
-      </div>
-    </div>
-    <p class="foot-bottom">© 2026 Rigby Yard.</p>
-  </div>
-</footer>
-
-<nav class="dock" aria-label="Quick actions">
-  <a class="dock__call" href="tel:+12079567150">Call</a>
-  <a href="https://resy.com/cities/pwm/rigby-yard" target="_blank" rel="noopener">Reserve</a>
-  <a href="https://www.toasttab.com/rigby-yard-50-wharf-street" target="_blank" rel="noopener">Order</a>
-</nav>
-
-<script>
-(function () {
-  /* mobile menu */
-  var t = document.querySelector('.menu-toggle'), m = document.getElementById('mobile-nav');
-  function closeNav() { m.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); t.textContent = 'Menu'; }
-  t.addEventListener('click', function () {
-    var o = m.classList.toggle('is-open');
-    t.setAttribute('aria-expanded', o ? 'true' : 'false');
-    t.textContent = o ? 'Close' : 'Menu';
-  });
-  m.addEventListener('click', function (e) { if (e.target.closest('a')) closeNav(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
-
-  /* open-now status and today's row, Portland time. Index 0 = Sunday */
-  var H = [[690,1260],[540,1260],[540,960],[540,960],[540,1260],[540,1380],[690,1380]];
-  var NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  function fmt(mins) {
-    var h = Math.floor(mins / 60), mm = mins % 60, ap = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-    return h + (mm ? ':' + (mm < 10 ? '0' : '') + mm : '') + ' ' + ap;
-  }
-  function nowPortland() {
-    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
-    var o = {}; parts.forEach(function (p) { o[p.type] = p.value; });
-    return { d: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday), t: ((+o.hour) % 24) * 60 + (+o.minute) };
-  }
-  try {
-    var n = nowPortland(), today = H[n.d], text, state = 'closed';
-    if (n.t >= today[0] && n.t < today[1]) { state = 'open'; text = 'Open now, until ' + fmt(today[1]); }
-    else if (n.t < today[0]) { text = 'Closed. Opens today at ' + fmt(today[0]); }
-    else { var nd = (n.d + 1) % 7; text = 'Closed. Opens tomorrow at ' + fmt(H[nd][0]); }
-    document.querySelectorAll('[data-status]').forEach(function (el) {
-      el.dataset.state = state;
-      el.querySelector('.status__text').textContent = text;
-    });
-    document.querySelectorAll('.board__row[data-day]').forEach(function (r) {
-      if (+r.getAttribute('data-day') === n.d) r.classList.add('is-today');
-    });
-  } catch (e) {
-    document.querySelectorAll('[data-status] .status__text').forEach(function (el) { el.textContent = 'See the timetable below'; });
-  }
-
-  /* reveal */
-  var els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }); }, { threshold: .12 });
-    els.forEach(function (el) { io.observe(el); });
-  } else { els.forEach(function (el) { el.classList.add('is-in'); }); }
-})();
-</script>
-<script id="lp-gc">(function(){var me=0;try{if(/[?&]me=1/.test(location.search))localStorage.setItem("skipgc","t");me=localStorage.getItem("skipgc")==="t"}catch(x){}var framed;try{framed=window.top!==window.self}catch(x){framed=true}if(me||framed)return;var s=document.createElement("script");s.async=true;s.setAttribute("data-goatcounter","https://launchpadsites.goatcounter.com/count");s.src="https://gc.zgo.at/count.js";document.body.appendChild(s)})()</script></body>
-</html>
+      <p style="margin-top: var(--s-3);"><a class="link-
 <!--lp-pages:rigby-yard-portland-me-->
