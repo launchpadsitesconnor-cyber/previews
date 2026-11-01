@@ -35,7 +35,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1>Breakfast <span class="hl-time">till 11:30.</span> Then the <span class="hl-names">sandwiches with names.</span></h1>
+          <h1>Breakfast <span class="hl-time">till 11:30.</span> <span class="hl-names">Lunch all day.</span></h1>
           <p class="lede">Two Portland cafes, Milk Street in the Old Port and Brighton Ave. Coffee and espresso from open to close.</p>
           <p class="clock-chip" id="clock-chip" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="clock-text">Breakfast till 11:30, lunch all day.</span></p>
           <div class="hero-actions">
@@ -55,7 +55,7 @@
         <div class="section-head">
           <p class="eyebrow">What time is it?</p>
           <h2 id="h-meals">Two menus, one clock.</h2>
-          <p>Breakfast runs till 11:30. After that, it's the sandwiches with names.</p>
+          <p>Breakfast runs till 11:30. After that, it's lunch for the rest of the day.</p>
         </div>
         <div class="meal-grid" id="meal-grid">
           <article class="meal meal--breakfast reveal">
@@ -96,7 +96,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Lunch, served all day</p>
-          <h2 id="h-names">The sandwiches with names.</h2>
+          <h2 id="h-names">Our sandwiches.</h2>
           <p>Tap one to see how it comes. Whole lunch $12.50, half $9.95.</p>
         </div>
         <ul class="names-grid">
@@ -324,5 +324,176 @@
     <section class="section" aria-labelledby="h-faq">
       <div class="wrap">
         <div class="section-head">
-          <p class="
+          <p class="eyebrow">Good to know</p>
+          <h2 id="h-faq">Questions we get.</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal">
+            <summary>When is breakfast served?</summary>
+            <p class="faq-a">Breakfast is until 11:30. Lunch is served all day, and coffee and espresso drinks are on from open to close.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Can I order ahead?</summary>
+            <p class="faq-a">Yes. Both cafes take orders online, and you can pick yours up when it's ready. Order from <a href="https://order.ehungry.com/the-crooked-mile-cafe-old-port">Old Port</a> or <a href="https://order.ehungry.com/the-crooked-mile-cafe-brighton-ave">Brighton Ave</a>.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do you have gluten-free bread?</summary>
+            <p class="faq-a">Yes, gluten-free bread is one of the choices for breakfast sandwiches and lunch.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Can you handle a big order?</summary>
+            <p class="faq-a">Yes. For orders of six or more, please call the store ahead of time: Old Port <a href="tel:+12077728708">(207) 772-8708</a>, Brighton Ave <a href="tel:+12078356033">(207) 835-6033</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="wordmark" href="./" aria-label="Crooked Mile Cafe, home"><span>Crooked</span><span class="wm-mile">Mile</span><span>Cafe</span></a>
+          <p class="footer-tag">Breakfast till 11:30, lunch all day, coffee open to close.</p>
+        </div>
+        <div>
+          <h3>Old Port</h3>
+          <address>8 Milk St<br>Portland, ME 04101</address>
+          <p><a href="tel:+12077728708">(207) 772-8708</a></p>
+          <p class="hours">Mon–Fri 7:30–3:00</p>
+        </div>
+        <div>
+          <h3>Brighton Ave</h3>
+          <address>428 Brighton Ave<br>Portland, ME</address>
+          <p><a href="tel:+12078356033">(207) 835-6033</a></p>
+          <p class="hours">Mon–Sat 7:00–3:00</p>
+        </div>
+        <div>
+          <h3>Around here</h3>
+          <ul class="footer-nav">
+            <li><a href="./">Home</a></li>
+            <li><a href="menu/">Menu</a></li>
+            <li><a href="about/">About</a></li>
+            <li><a href="#cafes">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base"><p>© 2026 Crooked Mile Cafe.</p></div>
+    </div>
+    <figure class="footer-cookie" aria-hidden="true"><img src="photos/own-cookie.jpg" alt="" loading="lazy" width="240" height="240"></figure>
+  </footer>
+
+  <nav class="call-bar" aria-label="Call a cafe">
+    <a href="tel:+12077728708">Call Old Port <small>(207) 772-8708</small></a>
+    <a href="tel:+12078356033">Call Brighton Ave <small>(207) 835-6033</small></a>
+  </nav>
+
+  <script>
+  (function () {
+    // mobile menu
+    var toggle = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      nav.classList.toggle('is-open', !open);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        nav.classList.remove('is-open');
+      });
+    });
+
+    // reveal on scroll
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      document.documentElement.classList.add('reveal-ok');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }
+
+    // flip tiles
+    document.querySelectorAll('.tile-btn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
+      });
+    });
+
+    // Portland time
+    function portland() {
+      var parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false
+      }).formatToParts(new Date());
+      var o = {};
+      parts.forEach(function (p) { o[p.type] = p.value; });
+      var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+      var h = parseInt(o.hour, 10) % 24;
+      var m = parseInt(o.minute, 10);
+      return { day: days[o.weekday], min: h * 60 + m, h: h, m: m };
+    }
+
+    var statuses = document.querySelectorAll('[data-cafe]');
+    statuses.forEach(function (c) {
+      var s = c.querySelector('[data-status]');
+      s.setAttribute('data-default', s.textContent);
+    });
+
+    function tick() {
+      var t = portland();
+      var oldOpen = t.day >= 1 && t.day <= 5 && t.min >= 450 && t.min < 900;
+      var brightOpen = t.day >= 1 && t.day <= 6 && t.min >= 420 && t.min < 900;
+      var anyOpen = oldOpen || brightOpen;
+      var onlyBrighton = brightOpen && !oldOpen;
+
+      // clock chip
+      var el = document.getElementById('clock-chip');
+      var txt = el.querySelector('.clock-text');
+      var clock = (t.h % 12 || 12) + ':' + String(t.m).padStart(2, '0');
+      var msg;
+      if (anyOpen) {
+        var suffix = onlyBrighton ? ', Brighton Ave only.' : '.';
+        if (t.min < 690) {
+          var left = 690 - t.min;
+          msg = "It's " + clock + ', breakfast for another ' + left + (left === 1 ? ' minute' : ' minutes') + suffix;
+        } else {
+          msg = 'Lunch is on till 3' + suffix;
+        }
+      } else if (t.day === 0) {
+        msg = "It's Sunday. Both cafes are closed today, back Monday at 7.";
+      } else if (t.min < 420) {
+        msg = t.day === 6 ? 'Brighton Ave opens at 7. Old Port is closed Saturdays.' : 'Brighton Ave opens at 7, Old Port at 7:30.';
+      } else {
+        msg = t.day === 5 ? 'Closed for today. Brighton Ave is open tomorrow at 7.' : (t.day === 6 ? 'Closed for today. Both cafes are back Monday.' : 'Closed for today. Back tomorrow at 7.');
+      }
+      txt.textContent = msg;
+      el.classList.toggle('is-open', anyOpen);
+
+      // meal badges
+      var bB = document.getElementById('badge-breakfast');
+      var bL = document.getElementById('badge-lunch');
+      bB.hidden = !(anyOpen && t.min < 690);
+      bL.hidden = !(anyOpen && t.min >= 690);
+      document.getElementById('meal-grid').classList.toggle('lunch-first', anyOpen && t.min >= 690);
+
+      // cafe status
+      statuses.forEach(function (c) {
+        var s = c.querySelector('[data-status]');
+        var open = c.getAttribute('data-cafe') === 'oldport' ? oldOpen : brightOpen;
+        s.textContent = open ? 'Open now, till 3' : s.getAttribute('data-default');
+        s.classList.toggle('is-open', open);
+      });
+    }
+    tick();
+    setInterval(tick, 30000);
+  })();
+  </script>
+<script id="lp-gc">(function(){var me=0;try{if(/[?&]me=1/.test(location.search))localStorage.setItem("skipgc","t");me=localStorage.getItem("skipgc")==="t"}catch(x){}var framed;try{framed=window.top!==window.self}catch(x){framed=true}if(me||framed)return;var s=document.createElement("script");s.async=true;s.setAttribute("data-goatcounter","https://launchpadsites.goatcounter.com/count");s.src="https://gc.zgo.at/count.js";document.body.appendChild(s)})()</script></body>
+</html>
 <!--lp-pages:crooked-mile-cafe-portland-me-->

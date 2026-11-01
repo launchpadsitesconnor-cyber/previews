@@ -215,7 +215,6 @@
         <div class="story-copy reveal">
           <p class="first">We're a neighborhood cafe with two Portland spots: Milk Street in the Old Port and Brighton Avenue.</p>
           <p>Mornings are for breakfast sandwiches, burritos and scramblers. After that it's lunch, made to order as a sandwich, wrap or salad, with soup on the side if you want it.</p>
-          <p>A lot of the sandwiches have people's names. Jersey Joe, Ruby, Shea. Ask at the counter if you're curious, or just order one.</p>
           <p>Ordering for the office or a group? For orders of six or more, give the store a call and we'll get it ready.</p>
         </div>
         <aside class="receipt reveal" aria-label="The short version">
@@ -392,5 +391,17 @@
 
     var els = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
+      document.documentElement.classList.add('reveal-ok');
       var io = new IntersectionObserver(function (entries) {
-        entries.forE
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  })();
+  </script>
+<script id="lp-gc">(function(){var me=0;try{if(/[?&]me=1/.test(location.search))localStorage.setItem("skipgc","t");me=localStorage.getItem("skipgc")==="t"}catch(x){}var framed;try{framed=window.top!==window.self}catch(x){framed=true}if(me||framed)return;var s=document.createElement("script");s.async=true;s.setAttribute("data-goatcounter","https://launchpadsites.goatcounter.com/count");s.src="https://gc.zgo.at/count.js";document.body.appendChild(s)})()</script></body>
+</html>
