@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The whole menu · Crooked Mile Cafe, Portland</title>
+  <meta name="description" content="Everything at the Crooked Mile Cafe counter: breakfast till 11:30, bagels, whole and half lunches, the sandwiches with names, soup and the everyday special. With prices.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    .menu-hero { padding: var(--s-8) 0 var(--s-6); }
+    .menu-hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: var(--s-6);
+      align-items: end;
+    }
+    .menu-hero h1 { font-size: var(--step-5); max-width: 12ch; margin-bottom: var(--s-5); }
+    .menu-hero h1 em { color: var(--accent-deep); }
+    .menu-hero .lede { margin-bottom: var(--s-5); }
+    .menu-hero .clock-chip { margin-bottom: 0; }
+
+    .tape {
+      background: var(--paper);
+      padding: var(--s-5) var(--s-5) var(--s-6);
+      font-family: var(--f-mono);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      box-shadow: var(--shadow);
+      transform: rotate(1.4deg);
+      position: relative;
+      max-width: 320px;
+      justify-self: end;
+      width: 100%;
+    }
+    .tape::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -10px;
+      height: 10px;
+      background:
+        linear-gradient(135deg, var(--paper) 50%, transparent 50%) 0 0 / 14px 10px repeat-x,
+        linear-gradient(225deg, var(--paper) 50%, transparent 50%) 0 0 / 14px 10px repeat-x;
+    }
+    .tape-title { text-transform: uppercase; letter-spacing: 0.1em; color: var(--tan-deep); margin-bottom: var(--s-3); }
+    .tape li { display: flex; justify-content: space-between; gap: var(--s-3); padding: 0.3rem 0; border-bottom: 1px dashed rgba(42, 36, 32, 0.2); }
+    .tape li:last-child { border-bottom: 0; }
+
+    .filter-bar {
+      position: sticky;
+      top: 68px;
+      z-index: 40;
+      background: rgba(244, 234, 219, 0.95);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-block: 1px solid rgba(42, 36, 32, 0.1);
+    }
+    .filter-list {
+      display: flex;
+      gap: var(--s-2);
+      overflow-x: auto;
+      padding: var(--s-3) 0;
+      scrollbar-width: none;
+    }
+    .filter-list::-webkit-scrollbar { display: none; }
+    .fchip {
+      flex: none;
+      min-height: 42px;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--f-mono);
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, transform 0.25s var(--ease);
+    }
+    .fchip:hover { transform: rotate(-1.5deg); }
+    .fchip[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+
+    .menu-group { padding: var(--s-8) 0; border-bottom: 1px dashed rgba(42, 36, 32, 0.2); }
+    .menu-group[hidden] { display: none; }
+    .group-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 300px) 1fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+    }
+    .group-aside { position: sticky; top: 150px; align-self: start; }
+    .group-aside h2 { font-size: var(--step-4); margin-bottom: var(--s-4); }
+    .group-note {
+      font-family: var(--f-mono);
+      font-size: 0.88rem;
+      color: var(--tan-deep);
+      line-height: 1.5;
+    }
+    .group-aside p + p { margin-top: var(--s-3); }
+    .group-aside .tags { margin-top: var(--s-5); }
+
+    .rows li { padding: var(--s-4) 0; border-bottom: 1px dashed rgba(42, 36, 32, 0.18); }
+    .rows li:first-child { padding-top: 0; }
+    .row-top { display: flex; align-items: baseline; gap: var(--s-3); }
+    .row-name {
+      font-family: var(--f-display);
+      font-variation-settings: var(--wonk);
+      font-weight: 560;
+      font-size: var(--step-2);
+      line-height: 1.1;
+    }
+    .row-dots { flex: 1; min-width: 1.5rem; border-bottom: 2px dotted rgba(42, 36, 32, 0.3); transform: translateY(-5px); }
+    .row-price { font-family: var(--f-mono); font-size: 1.05rem; color: var(--accent-deep); white-space: nowrap; }
+    .row-desc { color: var(--ink-soft); margin-top: var(--s-2); max-width: 56ch; }
+    .rows .tags { margin-top: var(--s-3); }
+
+    /* bagels */
+    .bagel-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: var(--s-6); align-items: center; }
+    .bagel-snap {
+      margin: 0;
+      background: var(--paper);
+      padding: 10px 10px 34px;
+      box-shadow: var(--shadow-lift);
+      transform: rotate(-1.6deg);
+      transition: transform 0.5s var(--ease);
+      position: relative;
+    }
+    .bagel-snap:hover { transform: rotate(0deg); }
+    .bagel-snap img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 18% 62%; transform: scale(1.35); transform-origin: 18% 62%; }
+    .bagel-snap .crop { overflow: hidden; }
+    .bagel-snap figcaption { position: absolute; left: 12px; bottom: 9px; font-family: var(--f-mono); font-size: 0.76rem; color: var(--tan-deep); }
+
+    .bagel-card {
+      background: var(--paper);
+      border: 2px solid var(--violet);
+      border-radius: 3px;
+      padding: var(--s-5) var(--s-5) var(--s-4);
+      transform: rotate(1deg);
+      box-shadow: 4px 4px 0 rgba(122, 91, 166, 0.2);
+    }
+    .bagel-card h3 {
+      font-size: var(--step-2);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--violet);
+      margin-bottom: var(--s-4);
+      font-style: italic;
+    }
+    .bagel-card li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--s-3);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(122, 91, 166, 0.2);
+      font-family: var(--f-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.92rem;
+    }
+    .bagel-card li:last-child { border-bottom: 0; }
+
+    /* lunch sizes */
+    .sizes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); margin-bottom: var(--s-6); }
+    .size {
+      background: var(--paper);
+      border: 1.5px solid var(--ink);
+      border-radius: 10px;
+      padding: var(--s-5) var(--s-4);
+      text-align: center;
+      transform: rotate(var(--t, 0deg));
+      transition: transform 0.4s var(--ease);
+    }
+    .size:nth-child(1) { --t: -1.2deg; }
+    .size:nth-child(2) { --t: 0.9deg; background: var(--accent-tint); }
+    .size:nth-child(3) { --t: -0.6deg; background: var(--lime-tint); }
+    .size:hover { transform: rotate(0deg) translateY(-3px); }
+    .size h3 { font-size: var(--step-1); margin-bottom: var(--s-2); }
+    .size .row-price { font-size: var(--step-2); }
+    .size p { font-size: 0.9rem; color: var(--ink-soft); margin-top: var(--s-2); }
+
+    .base-lists { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); margin-bottom: var(--s-7); }
+    .base-lists h3 { font-family: var(--f-mono); font-variation-settings: normal; font-weight: 500; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tan-deep); margin-bottom: var(--s-3); }
+
+    /* picker */
+    .picker {
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 14px;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      box-shadow: var(--shadow-lift);
+    }
+    .picker-title { font-size: var(--step-3); margin-bottom: var(--s-2); }
+    .picker-sub { color: rgba(251, 245, 234, 0.75); margin-bottom: var(--s-6); }
+    .picker fieldset { border: 0; padding: 0; margin: 0 0 var(--s-5); min-width: 0; }
+    .picker fieldset[hidden] { display: none; }
+    .picker legend {
+      display: flex;
+      align-items: center;
+      gap: var(--s-3);
+      font-family: var(--f-display);
+      font-variation-settings: var(--wonk);
+      font-size: var(--step-1);
+      margin-bottom: var(--s-3);
+      padding: 0;
+    }
+    .step-n {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--ink);
+      font-family: var(--f-mono);
+      font-size: 0.85rem;
+      transform: rotate(-6deg);
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+    .chip { position: relative; }
+    .chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+    .chip span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: 1.5px solid rgba(251, 245, 234, 0.45);
+      font-size: 0.95rem;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.25s var(--ease);
+    }
+    .chip span b { font-family: var(--f-mono); font-weight: 400; margin-left: 0.4em; color: var(--lime); }
+    .chip:hover span { border-color: var(--cream); }
+    .chip input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--ink); transform: rotate(-1.2deg); }
+    .chip input:checked + span b { color: var(--ink); }
+    .chip input:focus-visible + span { outline: 3px solid var(--lime); outline-offset: 3px; }
+    .picker select {
+      width: 100%;
+      max-width: 420px;
+      min-height: 48px;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border-radius: 10px;
+      border: 1.5px solid rgba(251, 245, 234, 0.45);
+      background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%232A2420' stroke-width='2'/%3E%3C/svg%3E") right 1rem center no-repeat;
+      color: var(--ink);
+      font: inherit;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .picker-out {
+      display: block;
+      margin-top: var(--s-6);
+      padding: var(--s-5);
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 10px;
+      border: 2px solid var(--violet);
+      transform: rotate(-0.6deg);
+    }
+    .out-label { font-family: var(--f-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--violet); }
+    .out-line { font-family: var(--f-display); font-variation-settings: var(--wonk); font-size: var(--step-2); line-height: 1.15; margin: var(--s-2) 0; }
+    .out-price { font-family: var(--f-mono); font-size: var(--step-1); color: var(--accent-deep); }
+    .picker-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-5); }
+    .picker-actions .btn-ghost { color: var(--cream); border-color: var(--cream); }
+    .picker-actions .btn-ghost:hover { background: var(--cream); color: var(--ink); }
+    .picker-fine { margin-top: var(--s-4); font-family: var(--f-mono); font-size: 0.8rem; color: rgba(251, 245, 234, 0.65); }
+
+    /* named grid */
+    .named-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--s-5) var(--s-4); }
+    .named {
+      background: var(--paper);
+      border: 1.5px solid rgba(42, 36, 32, 0.85);
+      border-radius: 8px;
+      padding: var(--s-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      transform: rotate(var(--t, -0.8deg));
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .named:nth-child(3n+2) { --t: 1deg; background: var(--accent-tint); }
+    .named:nth-child(3n) { --t: -1.3deg; background: var(--lime-tint); }
+    .named:nth-child(4n) { --t: 0.6deg; background: var(--tan-tint); }
+    .named:hover { transform: rotate(0deg) translateY(-3px); box-shadow: var(--shadow); }
+    .named h3 { font-size: var(--step-2); font-weight: 620; }
+    .named p { font-size: 0.94rem; color: var(--ink-soft); line-height: 1.45; }
+    .named .via { margin-top: auto; padding-top: var(--s-2); font-family: var(--f-mono); font-size: 0.78rem; color: var(--tan-deep); }
+    .named .tags { margin-top: auto; padding-top: var(--s-2); }
+
+    .plain-head { font-size: var(--step-2); margin: var(--s-7) 0 var(--s-4); }
+
+    /* soup */
+    .soup-banner { margin: 0 0 var(--s-6); position: relative; overflow: hidden; border-radius: 12px; }
+    .soup-banner img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 45% 45%; }
+    .soup-banner figcaption {
+      position: absolute;
+      left: var(--s-4);
+      bottom: var(--s-4);
+      background: var(--paper);
+      font-family: var(--f-mono);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      transform: rotate(-1.5deg);
+    }
+
+    .coffee-note {
+      margin-top: var(--s-7);
+      padding: var(--s-5);
+      border: 1.5px dashed var(--tan);
+      border-radius: 10px;
+      font-family: var(--f-display);
+      font-variation-settings: var(--wonk);
+      font-style: italic;
+      font-size: var(--step-1);
+    }
+
+    .menu-order { padding: var(--s-8) 0 var(--s-9); text-align: center; }
+    .menu-order h2 { font-size: var(--step-4); margin-bottom: var(--s-4); }
+    .menu-order p { color: var(--ink-soft); font-size: var(--step-1); max-width: 40ch; margin: 0 auto var(--s-5); }
+    .menu-order .hero-actions { justify-content: center; }
+
+    @media (max-width: 860px) {
+      .menu-hero-grid { grid-template-columns: 1fr; }
+      .tape { justify-self: start; }
+      .group-grid { grid-template-columns: 1fr; gap: var(--s-5); }
+      .group-aside { position: static; }
+      .bagel-layout { grid-template-columns: 1fr; }
+      .bagel-snap { width: min(80%, 340px); margin-inline: auto; }
+    }
+    @media (max-width: 600px) {
+      .sizes { grid-template-columns: 1fr; }
+      .base-lists { grid-template-columns: 1fr; }
+      .filter-bar { top: 68px; }
+      .soup-banner img { aspect-ratio: 4 / 3; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="../" aria-label="Crooked Mile Cafe, home"><span>Crooked</span><span class="wm-mile">Mile</span><span>Cafe</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../services/" aria-current="page">Menu</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+        <div class="order-pills">
+          <a class="pill" href="https://order.ehungry.com/the-crooked-mile-cafe-old-port">Order · Old Port</a>
+          <a class="pill pill--lime" href="https://order.ehungry.com/the-crooked-mile-cafe-brighton-ave">Order · Brighton Ave</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="menu-hero">
+      <div class="wrap menu-hero-grid">
+        <div>
+          <p class="eyebrow">The whole menu, both cafes</p>
+          <h1>What's in it, what it costs, <em>until when.</em></h1>
+          <p class="lede">Breakfast runs till 11:30. Lunch is on all day, any sandwich made as a sandwich, wrap or salad. Soup's on too.</p>
+          <p class="clock-chip" id="clock-chip" aria-live="polite"><span class="dot" aria-hidden="true"></span><span class="clock-text">Breakfast till 11:30, lunch all day.</span></p>
+        </div>
+        <aside class="tape reveal" aria-label="Quick prices">
+          <p class="tape-title">Register tape</p>
+          <ul>
+            <li><span>Egg &amp; cheese</span><span>$4.95</span></li>
+            <li><span>Whole lunch</span><span>$12.50</span></li>
+            <li><span>Half lunch</span><span>$9.95</span></li>
+            <li><span>Half + cup of soup</span><span>$12.50</span></li>
+            <li><span>Everyday special</span><span>$11.50</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="filter-bar">
+      <div class="wrap">
+        <div class="filter-list" role="group" aria-label="Show part of the menu">
+          <button class="fchip" type="button" data-filter="all" aria-pressed="true">Everything</button>
+          <button class="fchip" type="button" data-filter="breakfast" aria-pressed="false">Breakfast</button>
+          <button class="fchip" type="button" data-filter="bagels" aria-pressed="false">Bagels</button>
+          <button class="fchip" type="button" data-filter="lunch" aria-pressed="false">Lunch</button>
+          <button class="fchip" type="button" data-filter="sandwiches" aria-pressed="false">Sandwiches, wraps &amp; salads</button>
+          <button class="fchip" type="button" data-filter="soup" aria-pressed="false">Soup &amp; specials</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breakfast -->
+    <section class="menu-group" id="breakfast" data-group="breakfast" aria-labelledby="h-breakfast">
+      <div class="wrap group-grid">
+        <div class="group-aside">
+          <p class="eyebrow">Morning</p>
+          <h2 id="h-breakfast">Breakfast</h2>
+          <p class="group-note">Served until 11:30.</p>
+          <p class="group-note">After that, it's the sandwiches with names.</p>
+          <div class="tags" aria-label="Breakfast add-ons">
+            <span class="tag">Veggies $1</span>
+            <span class="tag">Bacon $1</span>
+            <span class="tag">Turkey sausage $1</span>
+            <span class="tag">Ham $1</span>
+            <span class="tag">Croissant +$0.75</span>
+          </div>
+        </div>
+        <ul class="rows">
+          <li class="reveal">
+            <div class="row-top"><h3 class="row-name">Egg &amp; cheese breakfast sandwich</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$4.95</span></div>
+            <p class="row-desc">On 12-grain, a bagel, English muffin, gluten-free bread or a croissant (+$0.75). Add veggies $1, or bacon, turkey sausage or ham $1.</p>
+          </li>
+          <li class="reveal">
+            <div class="row-top"><h3 class="row-name">Breakfast burrito</h3></div>
+            <p class="row-desc">In a white, wheat or spinach wrap.</p>
+          </li>
+          <li class="reveal">
+            <div class="row-top"><h3 class="row-name">Scrambler</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$5.95</span></div>
+            <p class="row-desc">Egg and cheese. Add meat $1, add veggies $1.</p>
+          </li>
+          <li class="reveal">
+            <div class="row-top"><h3 class="row-name">Mexican scrambler</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$7.50</span></div>
+            <p class="row-desc">Black bean corn salsa, turkey sausage, egg and cheese.</p>
+          </li>
+          <li class="reveal">
+            <div class="row-top"><h3 class="row-name">Geraldo scrambler</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$7.50</span></div>
+            <p class="row-desc">Bacon, sausage, pesto, Frank's hot sauce, eggs and cheese.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bagels -->
+    <section class="menu-group" id="bagels" data-group="bagels" aria-labelledby="h-bagels">
+      <div class="wrap group-grid">
+        <div class="group-aside">
+          <p class="eyebrow">From the case</p>
+          <h2 id="h-bagels">Bagels</h2>
+          <p class="group-note">Straight off the card on the counter.</p>
+        </div>
+        <div class="bagel-layout">
+          <figure class="bagel-snap reveal">
+            <div class="crop"><img src="../photos/own-pastry.jpg" alt="The basket of bagels in the Crooked Mile pastry case" loading="lazy" width="800" height="800"></div>
+            <figcaption>the bagel basket</figcaption>
+          </figure>
+          <div class="bagel-card reveal">
+            <h3>Bagels</h3>
+            <ul>
+              <li><span>Buttered</span><span class="tag">$2.50</span></li>
+              <li><span>Plain cream cheese</span><span class="tag">$3.25</span></li>
+              <li><span>Veggie cream cheese</span><span class="tag">$3.75</span></li>
+              <li><span>Peanut butter</span><span class="tag">$3.50</span></li>
+              <li><span>Hummus</span><span class="tag">$3.25</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lunch -->
+    <section class="menu-group" id="lunch" data-group="lunch" aria-labelledby="h-lunch">
+      <div class="wrap group-grid">
+        <div class="group-aside">
+          <p class="eyebrow">Served all day</p>
+          <h2 id="h-lunch">Lunch</h2>
+          <p class="group-note">Every lunch comes as a sandwich, wrap or salad, with chips or an apple.</p>
+        </div>
+        <div>
+          <div class="sizes">
+            <div class="size reveal">
+              <h3>Whole lunch</h3>
+              <span class="row-price">$12.50</span>
+              <p>Any sandwich, wrap or salad below, with chips or an apple.</p>
+            </div>
+            <div class="size reveal">
+              <h3>Half lunch</h3>
+              <span class="row-price">$9.95</span>
+              <p>Half of any of them.</p>
+            </div>
+            <div class="size reveal">
+              <h3>Half lunch + cup of soup</h3>
+              <span class="row-price">$12.50</span>
+              <p>Half, plus a cup of the soup of the day.</p>
+            </div>
+          </div>
+
+          <div class="base-lists">
+            <div>
+              <h3>Breads</h3>
+              <div class="tags"><span class="tag">Baguette</span><span class="tag">Marble rye</span><span class="tag">12-grain</span><span class="tag">Sourdough</span><span class="tag">Gluten free</span></div>
+            </div>
+            <div>
+              <h3>Wraps</h3>
+              <div class="tags"><span class="tag">Wheat</span><span class="tag">White</span><span class="tag">Spinach</span></div>
+            </div>
+          </div>
+
+          <form class="picker reveal" id="picker" aria-labelledby="picker-title">
+            <h3 class="picker-title" id="picker-title">Build your lunch</h3>
+            <p class="picker-sub">Four taps and you'll know exactly what to order and what it costs.</p>
+
+            <fieldset>
+              <legend><span class="step-n">1</span> How hungry?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="size" value="Whole lunch" data-price="12.50" checked><span>Whole <b>$12.50</b></span></label>
+                <label class="chip"><input type="radio" name="size" value="Half lunch" data-price="9.95"><span>Half <b>$9.95</b></span></label>
+                <label class="chip"><input type="radio" name="size" value="Half lunch + cup of soup" data-price="12.50"><span>Half + cup of soup <b>$12.50</b></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="step-n">2</span> Made as a</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="style" value="sandwich" checked><span>Sandwich</span></label>
+                <label class="chip"><input type="radio" name="style" value="wrap"><span>Wrap</span></label>
+                <label class="chip"><input type="radio" name="style" value="salad"><span>Salad</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset id="step-bread">
+              <legend><span class="step-n">3</span> On which bread?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="bread" value="baguette" checked><span>Baguette</span></label>
+                <label class="chip"><input type="radio" name="bread" value="marble rye"><span>Marble rye</span></label>
+                <label class="chip"><input type="radio" name="bread" value="12-grain"><span>12-grain</span></label>
+                <label class="chip"><input type="radio" name="bread" value="sourdough"><span>Sourdough</span></label>
+                <label class="chip"><input type="radio" name="bread" value="gluten-free bread"><span>Gluten free</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset id="step-wrap" hidden>
+              <legend><span class="step-n">3</span> Which wrap?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="wrap" value="wheat" checked><span>Wheat</span></label>
+                <label class="chip"><input type="radio" name="wrap" value="white"><span>White</span></label>
+                <label class="chip"><input type="radio" name="wrap" value="spinach"><span>Spinach</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="step-n" id="step-last-n">4</span> <label for="pick-name">Which one?</label></legend>
+              <select id="pick-name" name="name">
+                <option>Jersey Joe Italian</option>
+                <option>Ruby's Roast Beef</option>
+                <option>Cranberry Bog</option>
+                <option>The Beetnik</option>
+                <option>Spice of Life</option>
+                <option>Shea's Veggie Wrap</option>
+                <option>Fresh Mozzarella</option>
+                <option>Turkey Chop</option>
+                <option>Chicken Bleu</option>
+                <option>Tuna Melt</option>
+                <option>Southwest Turkey Melt</option>
+                <option>TBLT</option>
+                <option>Fiesta</option>
+                <option>Grilled Chicken Caesar</option>
+                <option>Greek</option>
+                <option>Buffalo Chicken</option>
+                <option>T.C.P.</option>
+                <option>Cobb</option>
+                <option>Chicken salad</option>
+                <option>Curry chicken salad</option>
+                <option>Tuna salad</option>
+                <option>BLT</option>
+                <option>Ham &amp; cheese</option>
+                <option>Turkey &amp; cheese</option>
+              </select>
+            </fieldset>
+
+            <output class="picker-out" id="picker-out" for="pick-name" aria-live="polite">
+              <span class="out-label">Your order</span>
+              <span class="out-line" id="out-line" style="display:block">Whole lunch: Jersey Joe Italian as a sandwich on baguette, with chips or an apple.</span>
+              <span class="out-price" id="out-price">$12.50</span>
+            </output>
+
+            <div class="picker-actions">
+              <a class="btn btn-turq" href="https://order.ehungry.com/the-crooked-mile-cafe-old-port">Order this at Old Port <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-ghost" href="https://order.ehungry.com/the-crooked-mile-cafe-brighton-ave">Order this at Brighton Ave <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+            <p class="picker-fine">The order buttons open each cafe's online ordering page. Pick the same things there.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sandwiches, wraps & salads -->
+    <section class="menu-group" id="sandwiches" data-group="sandwiches" aria-labelledby="h-sandwiches">
+      <div class="wrap group-grid">
+        <div class="group-aside">
+          <p class="eyebrow">The sandwiches with names</p>
+          <h2 id="h-sandwiches">Sandwiches, wraps &amp; salads</h2>
+          <p class="group-note">Pick any of these for a whole or half lunch.</p>
+          <p class="group-note">Whole $12.50 · Half $9.95 · Half + cup of soup $12.50</p>
+        </div>
+        <div>
+          <ul class="named-grid">
+            <li class="named reveal"><h3>Jersey Joe Italian</h3><p>Ham, salami, pepperoni, provolone, lettuce, tomato, onion, mayo or mustard, red wine vinaigrette and oregano.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Ruby's Roast Beef</h3><p>Roast beef, cheddar, red onion, tomato, horseradish mayo and greens on marble rye.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Cranberry Bog</h3><p>Chicken salad, cranberries, walnuts, red onion and greens with balsamic vinaigrette.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>The Beetnik</h3><p>Beets, grilled chicken, roasted almond slivers, feta and red onion on arugula with red wine vinaigrette.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Spice of Life</h3><p>Curry chicken salad, cranberries, walnuts, red onion and greens with balsamic vinaigrette.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Shea's Veggie Wrap</h3><p>Provolone, hummus, cucumber, tomato, carrots, red onion and greens.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Fresh Mozzarella</h3><p>Mozzarella, tomato, pesto and greens, with basil, balsamic vinaigrette, oregano and red onion.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Turkey Chop</h3><p>Turkey, provolone, cucumber, tomato, romaine, red wine vinaigrette and oregano.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Chicken Bleu</h3><p>Grilled chicken, bleu cheese crumbles, walnuts, red onion and greens with balsamic vinaigrette.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Tuna Melt</h3><p>Tuna salad grilled on 12-grain with tomato and cheese.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Southwest Turkey Melt</h3><p>Turkey, cheddar, guacamole and tomato grilled on 12-grain.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>TBLT</h3><p>Turkey, bacon, lettuce and tomato with mayo.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Fiesta</h3><p>Grilled chicken, guacamole, black bean and corn salsa, cheese, tomato and greens with lime vinaigrette.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Grilled Chicken Caesar</h3><p>Grilled chicken, romaine, croutons, Parmesan and tomato.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Greek</h3><p>Grilled chicken, feta, kalamata olives, tomato, cucumber and greens with Greek dressing.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Buffalo Chicken</h3><p>Spicy buffalo chicken, blue cheese crumbles, carrots, tomato and greens with balsamic vinaigrette.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>T.C.P.</h3><p>Turkey, cheddar and pesto with romaine and tomato.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Cobb</h3><p>Grilled chicken, hard-boiled egg, bacon, tomato, blue cheese, guacamole and greens with ranch.</p><span class="via">As a whole or half lunch</span></li>
+            <li class="named reveal"><h3>Chicken, curry chicken or tuna salad</h3><p>With lettuce and tomato.</p><span class="via">As a whole or half lunch</span></li>
+          </ul>
+
+          <h3 class="plain-head">The classics, priced on their own</h3>
+          <ul class="rows">
+            <li class="reveal">
+              <div class="row-top"><h4 class="row-name">BLT</h4><span class="row-dots" aria-hidden="true"></span><span class="row-price">$9.95</span></div>
+              <p class="row-desc">Bacon, lettuce, tomato and mayo.</p>
+            </li>
+            <li class="reveal">
+              <div class="row-top"><h4 class="row-name">Ham or turkey &amp; cheese</h4><span class="row-dots" aria-hidden="true"></span><span class="row-price">$9.95</span></div>
+              <p class="row-desc">With lettuce, tomato, mayo and mustard.</p>
+            </li>
+            <li class="reveal">
+              <div class="row-top"><h4 class="row-name">Garden salad</h4><span class="row-dots" aria-hidden="true"></span><span class="row-price">$10.50</span></div>
+              <p class="row-desc">Cucumber, tomato, carrots and onion on greens with balsamic.</p>
+              <div class="tags"><span class="tag">Add meat $2</span></div>
+            </li>
+            <li class="reveal">
+              <div class="row-top"><h4 class="row-name">Grilled cheese</h4><span class="row-dots" aria-hidden="true"></span><span class="row-price">$4.95</span></div>
+              <div class="tags"><span class="tag">Bacon $1</span><span class="tag">Tomato 50¢</span><span class="tag">Ham $1</span></div>
+            </li>
+            <li class="reveal">
+              <div class="row-top"><h4 class="row-name">Grilled PB&amp;J</h4><span class="row-dots" aria-hidden="true"></span><span class="row-price">$4.95</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soup -->
+    <section class="menu-group" id="soup" data-group="soup" aria-labelledby="h-soup">
+      <div class="wrap">
+        <figure class="soup-banner reveal">
+          <img src="../photos/own-3a1de332.jpg" alt="A cup of soup with baguette on a turquoise plate at the Crooked Mile" loading="lazy" width="1600" height="900">
+          <figcaption>soup of the day, on the turquoise plate</figcaption>
+        </figure>
+        <div class="group-grid">
+          <div class="group-aside">
+            <p class="eyebrow">Every day</p>
+            <h2 id="h-soup">Soup &amp; specials</h2>
+            <p class="group-note">One soup of the day. Ask at the counter what's on.</p>
+          </div>
+          <div>
+            <ul class="rows">
+              <li class="reveal">
+                <div class="row-top"><h3 class="row-name">Everyday special</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$11.50</span></div>
+                <p class="row-desc">Grilled cheese and a cup of the soup of the day.</p>
+              </li>
+              <li class="reveal">
+                <div class="row-top"><h3 class="row-name">Cup of soup</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$5.95</span></div>
+              </li>
+              <li class="reveal">
+                <div class="row-top"><h3 class="row-name">Bowl of soup</h3><span class="row-dots" aria-hidden="true"></span><span class="row-price">$6.95</span></div>
+              </li>
+            </ul>
+            <p class="coffee-note">And coffee and espresso drinks, open to close, at both cafes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-order">
+      <div class="wrap">
+        <h2>Order ahead, skip the line.</h2>
+        <p>Both cafes take orders online. Pick it up when it's ready.</p>
+        <div class="hero-actions">
+          <a class="btn btn-ink" href="https://order.ehungry.com/the-crooked-mile-cafe-old-port">Order · Old Port <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="https://order.ehungry.com/the-crooked-mile-cafe-brighton-ave">Order · Brighton Ave <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="big-order" aria-label="Big orders">
+      <div class="wrap big-order-inner">
+        <p>Six or more? Call the cafe you're picking up from and we'll get it ready.</p>
+        <div class="call-pair">
+          <a class="btn" href="tel:+12077728708">Old Port <small>(207) 772-8708</small></a>
+          <a class="btn" href="tel:+12078356033">Brighton Ave <small>(207) 835-6033</small></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="wordmark" href="../" aria-label="Crooked Mile Cafe, home"><span>Crooked</span><span class="wm-mile">Mile</span><span>Cafe</span></a>
+          <p class="footer-tag">Breakfast till 11:30, lunch all day, coffee open to close.</p>
+        </div>
+        <div>
+          <h3>Old Port</h3>
+          <address>8 Milk St<br>Portland, ME 04101</address>
+          <p><a href="tel:+12077728708">(207) 772-8708</a></p>
+          <p class="hours">Mon–Fri 7:30–3:00</p>
+        </div>
+        <div>
+          <h3>Brighton Ave</h3>
+          <address>428 Brighton Ave<br>Portland, ME</address>
+          <p><a href="tel:+12078356033">(207) 835-6033</a></p>
+          <p class="hours">Mon–Sat 7:00–3:00</p>
+        </div>
+        <div>
+          <h3>Around here</h3>
+          <ul class="footer-nav">
+            <li><a href="../">Home</a></li>
+            <li><a href="../services/">Menu</a></li>
+            <li><a href="../about/">About</a></li>
+            <li><a href="../contact/">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base"><p>© 2026 Crooked Mile Cafe.</p></div>
+    </div>
+    <figure class="footer-cookie" aria-hidden="true"><img src="../photos/own-cookie.jpg" alt="" loading="lazy" width="240" height="240"></figure>
+  </footer>
+
+  <nav class="call-bar" aria-label="Call a cafe">
+    <a href="tel:+12077728708">Call Old Port <small>(207) 772-8708</small></a>
+    <a href="tel:+12078356033">Call Brighton Ave <small>(207) 835-6033</small></a>
+  </nav>
+
+  <script>
+  (function () {
+    // mobile menu
+    var toggle = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      nav.classList.toggle('is-open', !open);
+    });
+
+    // reveal on scroll
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    // Portland time
+    function portland() {
+      var parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false
+      }).formatToParts(new Date());
+      var o = {};
+      parts.forEach(function (p) { o[p.type] = p.value; });
+      var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+      var h = parseInt(o.hour, 10) % 24;
+      return { day: days[o.weekday], min: h * 60 + parseInt(o.minute, 10), h: h, m: parseInt(o.minute, 10) };
+    }
+
+    function chip() {
+      var el = document.getElementById('clock-chip');
+      if (!el) return;
+      var t = portland();
+      var txt = el.querySelector('.clock-text');
+      var clock = (t.h % 12 || 12) + ':' + String(t.m).padStart(2, '0');
+      var open = false, msg;
+      var openAt = t.day === 6 ? 420 : 420;
+      if (t.day === 0) {
+        msg = "It's Sunday. Both cafes are closed today, back Monday at 7.";
+      } else if (t.min < openAt) {
+        msg = t.day === 6 ? 'Brighton Ave opens at 7. Old Port is closed Saturdays.' : 'Brighton Ave opens at 7, Old Port at 7:30.';
+      } else if (t.min < 690) {
+        open = true;
+        var left = 690 - t.min;
+        msg = "It's " + clock + ', breakfast for another ' + left + (left === 1 ? ' minute' : ' minutes') + (t.day === 6 ? ', Brighton Ave only.' : '.');
+      } else if (t.min < 900) {
+        open = true;
+        msg = 'Lunch is on till 3' + (t.day === 6 ? ', Brighton Ave only.' : '.');
+      } else {
+        msg = t.day === 5 ? 'Closed for today. Brighton Ave is open tomorrow at 7.' : (t.day === 6 ? 'Closed for today. Both cafes are back Monday.' : 'Closed for today. Back tomorrow at 7.');
+      }
+      txt.textContent = msg;
+      el.classList.toggle('is-open', open);
+    }
+    chip();
+    setInterval(chip, 30000);
+
+    // menu filter
+    var chips = document.querySelectorAll('.fchip');
+    var groups = document.querySelectorAll('.menu-group');
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        var f = c.getAttribute('data-filter');
+        chips.forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
+        groups.forEach(function (g) {
+          g.hidden = !(f === 'all' || g.getAttribute('data-group') === f);
+          if (!g.hidden) g.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('is-visible'); });
+        });
+        var top = document.querySelector('.filter-bar').getBoundingClientRect().top + window.scrollY;
+        if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+
+    // build-a-lunch picker
+    var form = document.getElementById('picker');
+    var breadStep = document.getElementById('step-bread');
+    var wrapStep = document.getElementById('step-wrap');
+    var lastN = document.getElementById('step-last-n');
+    var outLine = document.getElementById('out-line');
+    var outPrice = document.getElementById('out-price');
+    function val(name) { var i = form.querySelector('input[name="' + name + '"]:checked'); return i ? i : null; }
+    function update() {
+      var size = val('size');
+      var style = val('style').value;
+      breadStep.hidden = style !== 'sandwich';
+      wrapStep.hidden = style !== 'wrap';
+      lastN.textContent = style === 'salad' ? '3' : '4';
+      var name = document.getElementById('pick-name').value;
+      var how;
+      if (style === 'sandwich') how = 'as a sandwich on ' + val('bread').value;
+      else if (style === 'wrap') how = 'in a ' + val('wrap').value + ' wrap';
+      else how = 'as a salad';
+      outLine.textContent = size.value + ': ' + name + ' ' + how + ', with chips or an apple.';
+      outPrice.textContent = '$' + size.getAttribute('data-price');
+    }
+    form.addEventListener('change', update);
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    update();
+  })();
+  </script>
+</body>
+</html>
