@@ -209,5 +209,77 @@
           <p>Espresso Martini $15, Coffee Negroni $13, Banana Crème Carajillo $16.</p>
         </div>
       </div>
-      <p style="margin-top: var(--s-3);"><a class="link-<script>(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add('is-in')})},2500);})();</script>
+      <p style="margin-top: var(--s-3);"><a class="link-arrow" href="menu/#beer">See the full drink list <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="photos/logo-bf4379.png" alt="Rigby Yard, Wharf Street" width="900" height="317">
+        <p>Dinner, drinks &amp; events on Wharf Street.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <address>
+          50 Wharf Street<br>Portland, Maine 04101<br>
+          <a href="mailto:info@rigbyyard.com">info@rigbyyard.com</a><br>
+          Street parking nearby.
+        </address>
+        <a class="foot-phone" href="tel:+12079567150">(207) 956-7150</a>
+      </div>
+      <div>
+        <h3>Book or order</h3>
+        <div class="btn-row">
+          <a class="btn btn--sm" href="https://resy.com/cities/pwm/rigby-yard" target="_blank" rel="noopener">Reserve a table</a>
+          <a class="btn btn--sm btn--ghost" href="https://www.toasttab.com/rigby-yard-50-wharf-street" target="_blank" rel="noopener">Order online</a>
+        </div>
+        <div class="foot-links">
+          <a href="menu/">Menu</a><a href="about/">About</a><a href="events/">Events</a><a href="contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <p class="foot-bottom">© 2026 Rigby Yard.</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Quick actions">
+  <a class="dock__call" href="tel:+12079567150">Call</a>
+  <a href="https://resy.com/cities/pwm/rigby-yard" target="_blank" rel="noopener">Reserve</a>
+  <a href="https://www.toasttab.com/rigby-yard-50-wharf-street" target="_blank" rel="noopener">Order</a>
+</nav>
+
+<script>
+(function () {
+  var t = document.querySelector('.menu-toggle'), m = document.getElementById('mobile-nav');
+  if (t && m) {
+    var closeNav = function () { m.classList.remove('is-open'); t.setAttribute('aria-expanded', 'false'); t.textContent = 'Menu'; };
+    t.addEventListener('click', function () { var o = m.classList.toggle('is-open'); t.setAttribute('aria-expanded', o ? 'true' : 'false'); t.textContent = o ? 'Close' : 'Menu'; });
+    m.addEventListener('click', function (e) { if (e.target.closest('a')) closeNav(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+  }
+  var H = [[690,1260],[540,1260],[540,960],[540,960],[540,1260],[540,1380],[690,1380]];
+  function fmt(x) { var h = Math.floor(x / 60), mm = x % 60, ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return h + (mm ? ':' + (mm < 10 ? '0' : '') + mm : '') + ' ' + ap; }
+  var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+  var o = {}; parts.forEach(function (p) { o[p.type] = p.value; });
+  var d = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday), now = (+o.hour) * 60 + (+o.minute), td = H[d], text, state = 'closed';
+  if (now >= td[0] && now < td[1]) { state = 'open'; text = 'Open now, until ' + fmt(td[1]); }
+  else if (now < td[0]) { text = 'Closed. Opens at ' + fmt(td[0]); }
+  else { text = 'Closed. Opens tomorrow at ' + fmt(H[(d + 1) % 7][0]); }
+  document.querySelectorAll('[data-status]').forEach(function (el) { el.dataset.state = state; var s = el.querySelector('.status__text'); if (s) s.textContent = text; });
+  document.querySelectorAll('.board__row[data-day="' + d + '"]').forEach(function (r) { r.classList.add('is-today'); });
+  var els = [].slice.call(document.querySelectorAll('.reveal'));
+  function show(e) { e.classList.add('is-in'); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } }); }, { threshold: .05 });
+    els.forEach(function (el) { io.observe(el); });
+    setTimeout(function () { els.forEach(show); }, 2500);
+  } else { els.forEach(show); }
+})();
+</script>
+<script id="lp-gc">(function(){var me=0;try{if(/[?&]me=1/.test(location.search))localStorage.setItem("skipgc","t");me=localStorage.getItem("skipgc")==="t"}catch(x){}var framed;try{framed=window.top!==window.self}catch(x){framed=true}if(me||framed)return;var s=document.createElement("script");s.async=true;s.setAttribute("data-goatcounter","https://launchpadsites.goatcounter.com/count");s.src="https://gc.zgo.at/count.js";document.body.appendChild(s)})()</script><script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>
 <!--lp-pages:rigby-yard-portland-me-->
