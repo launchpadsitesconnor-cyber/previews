@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Old Port Deli &amp; Pizza, Portland, ME</title>
+<meta name="description" content="Easy meals for downtown Portland: deli sandwiches, hot pizza and quick bites in the Old Port, made fresh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .about-hero { padding-block: var(--s6) var(--s8); }
+  .about-hero h1 { font-size: var(--step-4); }
+  .about-hero .lead { font-size: var(--step-1); margin-top: var(--s5); max-width: 32ch; color: var(--muted-text); }
+  .about-hero .stub img { aspect-ratio: 4 / 5; object-position: 50% 50%; }
+  .story { display: grid; gap: var(--s5); }
+  .story h2 { font-size: var(--step-3); max-width: 14ch; }
+  .story .prose p { font-size: var(--step-1); line-height: 1.55; }
+  .story .prose p + p { color: var(--muted-text); font-size: var(--step-0); }
+  .counter-list .ticket__body p { color: var(--muted-text); }
+  .counter-list .tickets { grid-template-columns: 1fr; }
+  .cta-band h2 { font-size: var(--step-3); max-width: 18ch; }
+  .cta-band .hero__actions { margin-top: var(--s5); }
+  @media (min-width: 760px) {
+    .about-hero .hero__grid { grid-template-columns: 1.15fr .85fr; gap: var(--s7); }
+    .story { grid-template-columns: .85fr 1.15fr; gap: var(--s7); align-items: start; }
+    .counter-list .tickets { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Old Port Deli &amp; Pizza, home">
+      <span class="brand__no" aria-hidden="true">No. 1</span>
+      Old Port Deli &amp; Pizza
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../menu/">Menu</a>
+      <a href="../about/" aria-current="page">About</a>
+      <a href="../contact/">Contact</a>
+      <a class="btn btn--sm" id="nav-directions" href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Directions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="about-hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">About us</p>
+        <h1>Easy meals for downtown Portland.</h1>
+        <p class="lead">Stacked deli sandwiches, hot pizza, and quick bites you can grab on the go.</p>
+      </div>
+      <figure class="stub" style="margin:0">
+        <img src="../photos/stock3-1cee76.jpg" alt="Pizza dough and sauce being prepped on a counter" width="900" height="600" fetchpriority="high">
+        <figcaption class="stub__label"><span>Dough &amp; sauce prep</span><span class="stub__num">No. 03</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="cobble" role="presentation"></div>
+
+  <section class="section">
+    <div class="wrap story">
+      <h2 class="reveal">Simple, filling, and made fresh.</h2>
+      <div class="prose reveal">
+        <p>We serve food people in Portland come back for when they want something simple, filling, and made fresh.</p>
+        <p>Our menu brings together deli counter comfort and pizza shop staples. Build a lunch that fits your day, or pick up dinner without slowing down.</p>
+        <p>Stop in when you want lunch, dinner, or something warm after a walk through the Old Port. We're right here, close to the pace of the neighborhood and ready when you are.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu-band counter-list">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What's on the counter</p>
+        <h2>Four things we do.</h2>
+      </div>
+      <ol class="tickets">
+        <li class="ticket"><span class="ticket__no">01</span><div class="ticket__body"><h3>Deli sandwiches</h3><p>Deli counter comfort that works for lunch or dinner. Filling and easy to carry, whether you want a classic sandwich or a faster meal between stops.</p></div></li>
+        <li class="ticket"><span class="ticket__no">02</span><div class="ticket__body"><h3>Pizza</h3><p>A whole pie or by the slice, depending on what fits your day. Warm, filling, and ready to eat.</p></div></li>
+        <li class="ticket"><span class="ticket__no">03</span><div class="ticket__body"><h3>Quick lunch plates</h3><p>Hot or cold plates for days when you want a meal that's fast but still feels complete, without a long sit-down.</p></div></li>
+        <li class="ticket"><span class="ticket__no">04</span><div class="ticket__body"><h3>Grab-and-go bites</h3><p>Set up for pick up and keep moving. A snack, a lunch add-on, or a small meal on the run.</p></div></li>
+      </ol>
+      <div class="menu-foot">
+        <a class="btn" href="../menu/">See the menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <div class="wrap reveal">
+      <p class="eyebrow">Come on by</p>
+      <h2>Same counter, same hot oven.</h2>
+      <div class="hero__actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn--ghost" href="../contact/">Contact</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h2>Old Port Deli &amp; Pizza</h2>
+        <p style="margin-top:.75rem;max-width:28ch">Fresh deli sandwiches, hot pizza.</p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <address>1 Exchange St<br>Portland, ME</address>
+        <ul style="margin-top:.75rem">
+          <li id="f-phone" hidden><a href="#"></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Get directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../menu/">Menu</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Old Port Deli &amp; Pizza</p>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Quick actions">
+  <a href="../menu/">Menu<small>See the board</small></a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Directions<small>Exchange St</small></a>
+  <a href="../contact/">Contact<small>Say hi</small></a>
+</nav>
+
+<script>
+(function () {
+  // Phone: leave empty until the owner gives us a number, e.g. "+12075550100".
+  var PHONE = "";
+  var PHONE_TEXT = "";
+
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  if (PHONE) {
+    var c = document.createElement('a');
+    c.className = 'btn btn--sm'; c.href = 'tel:' + PHONE; c.textContent = 'Call';
+    nav.insertBefore(c, document.getElementById('nav-directions'));
+    var dock = document.getElementById('dock');
+    var d = document.createElement('a');
+    d.href = 'tel:' + PHONE; d.innerHTML = 'Call<small>to order</small>';
+    dock.insertBefore(d, dock.firstChild);
+    var f = document.getElementById('f-phone');
+    f.firstChild.href = 'tel:' + PHONE; f.firstChild.textContent = PHONE_TEXT || PHONE; f.hidden = false;
+  }
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else { items.forEach(function (el) { el.classList.add('in'); }); }
+})();
+</script>
+<script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>

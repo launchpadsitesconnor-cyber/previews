@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu | Old Port Deli &amp; Pizza, Portland, ME</title>
+<meta name="description" content="Deli sandwiches, pizza by the slice or whole pie, quick lunch plates and grab-and-go bites at Old Port Deli &amp; Pizza in Portland, Maine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .chipbar .tabs { margin: 0; padding: 0 0 2px; }
+  .chipbar .tab { color: var(--ink); border-color: var(--ink); background: var(--paper); }
+  .chipbar .tab:hover { background: rgba(232, 168, 30, .35); }
+  .chipbar .tab[aria-pressed="true"] { background: var(--accent2); color: var(--ink); border-color: var(--ink); box-shadow: 2px 2px 0 var(--ink); }
+  .menu-sec + .menu-sec { margin-top: var(--s7); padding-top: var(--s7); border-top: 2px dashed rgba(246, 239, 224, .35); }
+  .menu-sec__head { display: flex; align-items: center; flex-wrap: wrap; gap: var(--s4); margin-bottom: var(--s5); }
+  .menu-sec__head h2 { font-size: var(--step-3); }
+  .menu-sec__no {
+    font-family: var(--font-mono); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--accent2); color: var(--ink); border: 2px solid var(--bg); border-radius: 4px; padding: 3px 10px; transform: rotate(-3deg);
+  }
+  .menu-sec__body { display: grid; gap: var(--s5); }
+  .menu-sec__intro { display: grid; gap: var(--s4); align-content: start; }
+  .menu-sec__intro .panel__lead { margin-bottom: 0; }
+  .menu-sec__long { color: #D9CFBB; max-width: 34rem; }
+  .menu-sec .tickets { grid-template-columns: 1fr; }
+  .menu-sec__photo {
+    margin: 0 0 var(--s5); border: 2px solid var(--bg); border-radius: 10px; overflow: hidden; aspect-ratio: 21 / 9;
+    box-shadow: 6px 6px 0 var(--accent2);
+  }
+  .menu-sec__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; }
+  .callout {
+    background: var(--accent2); color: var(--ink); border: 2px solid var(--bg); border-radius: 8px;
+    padding: var(--s4) var(--s5); width: fit-content; max-width: 100%;
+  }
+  .callout strong { font-family: var(--font-display); font-weight: 400; font-size: var(--step-1); display: block; line-height: 1.1; }
+  .menu-sec[hidden] { display: none; }
+  .cta-band { text-align: left; }
+  .cta-band h2 { font-size: var(--step-3); max-width: 18ch; }
+  .cta-band .hero__actions { margin-top: var(--s5); }
+  @media (min-width: 900px) {
+    .menu-sec__body { grid-template-columns: .9fr 1.1fr; gap: var(--s7); align-items: start; }
+    .menu-sec__photo { aspect-ratio: 21 / 7; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Old Port Deli &amp; Pizza, home">
+      <span class="brand__no" aria-hidden="true">No. 1</span>
+      Old Port Deli &amp; Pizza
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../menu/" aria-current="page">Menu</a>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
+      <a class="btn btn--sm" id="nav-directions" href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Directions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">The menu</p>
+      <h1>The counter board.</h1>
+      <p>Four lanes: sandwiches, pizza, plates, and food to go. Read one or read them all.</p>
+    </div>
+  </section>
+
+  <div class="chipbar" style="top:70px">
+    <div class="wrap">
+      <div class="tabs" role="group" aria-label="Filter the menu">
+        <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="tab" type="button" data-filter="deli" aria-pressed="false">Deli sandwiches</button>
+        <button class="tab" type="button" data-filter="pizza" aria-pressed="false">Pizza</button>
+        <button class="tab" type="button" data-filter="plates" aria-pressed="false">Lunch plates</button>
+        <button class="tab" type="button" data-filter="go" aria-pressed="false">Grab-and-go</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section menu-band" style="padding-top:var(--s7)">
+    <div class="wrap" id="menu-list" style="scroll-margin-top:150px">
+
+      <!-- Prices: add a <span class="ticket__price">$0.00</span> to a ticket only once the owner gives real ones. -->
+
+      <article class="menu-sec" id="deli" data-cat="deli">
+        <div class="menu-sec__head">
+          <span class="menu-sec__no">Lane 01</span>
+          <h2>Deli sandwiches</h2>
+        </div>
+        <div class="menu-sec__body">
+          <div class="menu-sec__intro">
+            <p class="panel__lead">We make sandwiches you can grab for lunch or take home for later.</p>
+            <p class="menu-sec__long">Our sandwiches bring deli counter comfort in a form that works for lunch or dinner. Order something filling and easy to carry, a classic sandwich or a faster meal between stops.</p>
+          </div>
+          <ol class="tickets">
+            <li class="ticket"><span class="ticket__no">01</span><div class="ticket__body"><h3>Classic sandwich</h3><p>Deli counter comfort, filling and easy to carry.</p></div><span class="tag ticket__tag">Deli</span></li>
+            <li class="ticket"><span class="ticket__no">02</span><div class="ticket__body"><h3>Lunch or dinner</h3><p>Works for either one.</p></div><span class="tag ticket__tag">Deli</span></li>
+            <li class="ticket"><span class="ticket__no">03</span><div class="ticket__body"><h3>Faster meal between stops</h3><p>Grab one for lunch.</p></div><span class="tag ticket__tag">Deli</span></li>
+            <li class="ticket"><span class="ticket__no">04</span><div class="ticket__body"><h3>Take it home for later</h3><p>Pick one up now, eat it when you're ready.</p></div><span class="tag tag--red ticket__tag">To go</span></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="menu-sec" id="pizza" data-cat="pizza">
+        <div class="menu-sec__head">
+          <span class="menu-sec__no">Lane 02</span>
+          <h2>Pizza</h2>
+        </div>
+        <figure class="menu-sec__photo">
+          <img src="../photos/stock5-c2ce78.jpg" alt="An uncooked cheese pizza on a wooden peel with a tomato, olive oil and flour beside it" width="900" height="600" loading="lazy">
+        </figure>
+        <div class="menu-sec__body">
+          <div class="menu-sec__intro">
+            <p class="panel__lead">We serve pizza for a quick meal or an easy dinner.</p>
+            <p class="menu-sec__long">Whole pie or by the slice, depending on what fits your day. Pick it when you want something warm, filling, and ready to eat.</p>
+            <div class="callout"><strong>Pizza by the slice?</strong>Yes. The pizza menu includes slices.</div>
+          </div>
+          <ol class="tickets">
+            <li class="ticket"><span class="ticket__no">01</span><div class="ticket__body"><h3>Pizza by the slice</h3><p>A quick meal when you're on your lunch break.</p></div><span class="tag tag--red ticket__tag">Slice</span></li>
+            <li class="ticket"><span class="ticket__no">02</span><div class="ticket__body"><h3>Whole pie</h3><p>An easy dinner, or one for the table.</p></div><span class="tag ticket__tag">Pie</span></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="menu-sec" id="plates" data-cat="plates">
+        <div class="menu-sec__head">
+          <span class="menu-sec__no">Lane 03</span>
+          <h2>Lunch plates</h2>
+        </div>
+        <div class="menu-sec__body">
+          <div class="menu-sec__intro">
+            <p class="panel__lead">We put together hot or cold plates that work for a fast midday meal.</p>
+            <p class="menu-sec__long">These plates are for days when you want a meal that's fast but still feels complete. Lunch without a long sit-down.</p>
+          </div>
+          <ol class="tickets">
+            <li class="ticket"><span class="ticket__no">01</span><div class="ticket__body"><h3>Hot plates</h3><p>A fast midday meal, served hot.</p></div><span class="tag tag--red ticket__tag">Hot</span></li>
+            <li class="ticket"><span class="ticket__no">02</span><div class="ticket__body"><h3>Cold plates</h3><p>A fast midday meal, served cold.</p></div><span class="tag ticket__tag">Cold</span></li>
+            <li class="ticket"><span class="ticket__no">03</span><div class="ticket__body"><h3>A complete meal, quick</h3><p>No long sit-down needed.</p></div><span class="tag ticket__tag">Lunch</span></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="menu-sec" id="go" data-cat="go">
+        <div class="menu-sec__head">
+          <span class="menu-sec__no">Lane 04</span>
+          <h2>Grab-and-go</h2>
+        </div>
+        <div class="menu-sec__body">
+          <div class="menu-sec__intro">
+            <p class="panel__lead">Ready-to-pick-up bites for when you want food without a wait.</p>
+            <p class="menu-sec__long">Set up for customers who want to pick something up and keep moving. Good for a snack, a lunch add-on, or a small meal on the run.</p>
+          </div>
+          <ol class="tickets">
+            <li class="ticket"><span class="ticket__no">01</span><div class="ticket__body"><h3>Pick up and keep moving</h3><p>Ready when you are.</p></div><span class="tag ticket__tag">To go</span></li>
+            <li class="ticket"><span class="ticket__no">02</span><div class="ticket__body"><h3>Snack</h3><p>A little something for the walk.</p></div><span class="tag ticket__tag">To go</span></li>
+            <li class="ticket"><span class="ticket__no">03</span><div class="ticket__body"><h3>Lunch add-on</h3><p>Round out your order.</p></div><span class="tag ticket__tag">To go</span></li>
+            <li class="ticket"><span class="ticket__no">04</span><div class="ticket__body"><h3>Small meal on the run</h3><p>Food without a wait.</p></div><span class="tag tag--red ticket__tag">To go</span></li>
+          </ol>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="cobble" role="presentation"></div>
+
+  <section class="section cta-band">
+    <div class="wrap reveal">
+      <p class="eyebrow">Hungry yet?</p>
+      <h2>Lunch shouldn't take longer than the walk here.</h2>
+      <div class="hero__actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn--ghost" href="../contact/">Contact</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h2>Old Port Deli &amp; Pizza</h2>
+        <p style="margin-top:.75rem;max-width:28ch">Fresh deli sandwiches, hot pizza.</p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <address>1 Exchange St<br>Portland, ME</address>
+        <ul style="margin-top:.75rem">
+          <li id="f-phone" hidden><a href="#"></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Get directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../menu/">Menu</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Old Port Deli &amp; Pizza</p>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Quick actions">
+  <a href="../index.html">Home<small>Start here</small></a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Directions<small>Exchange St</small></a>
+  <a href="../contact/">Contact<small>Say hi</small></a>
+</nav>
+
+<script>
+(function () {
+  // Phone: leave empty until the owner gives us a number, e.g. "+12075550100".
+  var PHONE = "";
+  var PHONE_TEXT = "";
+
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  if (PHONE) {
+    var c = document.createElement('a');
+    c.className = 'btn btn--sm'; c.href = 'tel:' + PHONE; c.textContent = 'Call';
+    nav.insertBefore(c, document.getElementById('nav-directions'));
+    var dock = document.getElementById('dock');
+    var d = document.createElement('a');
+    d.href = 'tel:' + PHONE; d.innerHTML = 'Call<small>to order</small>';
+    dock.insertBefore(d, dock.firstChild);
+    var f = document.getElementById('f-phone');
+    f.firstChild.href = 'tel:' + PHONE; f.firstChild.textContent = PHONE_TEXT || PHONE; f.hidden = false;
+  }
+
+  // Menu filter
+  var chips = Array.prototype.slice.call(document.querySelectorAll('[data-filter]'));
+  var secs = Array.prototype.slice.call(document.querySelectorAll('.menu-sec'));
+  var list = document.getElementById('menu-list');
+  function apply(filter, scroll) {
+    chips.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-filter') === filter); });
+    secs.forEach(function (s) { s.hidden = !(filter === 'all' || s.getAttribute('data-cat') === filter); });
+    if (scroll && list.getBoundingClientRect().top < 100) list.scrollIntoView();
+  }
+  chips.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-filter'), true); }); });
+  var h = location.hash.replace('#', '');
+  if (h && secs.some(function (s) { return s.id === h; })) apply(h, false);
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else { items.forEach(function (el) { el.classList.add('in'); }); }
+})();
+</script>
+<script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>

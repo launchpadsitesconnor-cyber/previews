@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Old Port Deli &amp; Pizza, Portland, ME</title>
+<meta name="description" content="Find Old Port Deli &amp; Pizza in the Old Port, Portland, Maine. Get directions and see the menu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .callblock {
+    display: flex; flex-direction: column; gap: var(--s3); align-items: flex-start;
+    background: var(--accent); color: #fff; text-decoration: none;
+    border: 2px solid var(--ink); border-radius: 12px; padding: var(--s5) var(--s5) var(--s6);
+    box-shadow: 8px 8px 0 var(--ink); margin-bottom: var(--s6);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .callblock:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0 var(--ink); background: var(--accent-dark); }
+  .callblock .label { color: #fff; opacity: .9; }
+  .callblock__num { font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 5vw, 4.2rem); line-height: 1; overflow-wrap: anywhere; }
+  .contact-grid { display: grid; gap: var(--s6); align-items: start; }
+  .contact-cards { display: grid; gap: var(--s5); }
+  .address-big { font-size: var(--step-2); font-family: var(--font-display); font-weight: 400; line-height: 1.1; font-style: normal; }
+  .menucard { box-shadow: 6px 6px 0 var(--accent2); }
+  .menucard h2 { font-size: var(--step-2); }
+  .menucard p { color: var(--muted-text); }
+  @media (min-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; gap: var(--s7); }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Old Port Deli &amp; Pizza, home">
+      <span class="brand__no" aria-hidden="true">No. 1</span>
+      Old Port Deli &amp; Pizza
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../menu/">Menu</a>
+      <a href="../about/">About</a>
+      <a href="../contact/" aria-current="page">Contact</a>
+      <a class="btn btn--sm" id="nav-directions" href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Directions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Come by the counter.</h1>
+      <p>Stop in for lunch, dinner, or something warm after a walk through the Old Port.</p>
+    </div>
+  </section>
+
+  <div class="cobble" role="presentation"></div>
+
+  <section class="section" style="padding-top:var(--s7)">
+    <div class="wrap">
+
+      <!-- Big tap-to-call block. Stays hidden until PHONE is filled in the script below. -->
+      <a class="callblock reveal" id="callblock" href="#" hidden>
+        <span class="label">Call to order</span>
+        <span class="callblock__num" id="callnum"></span>
+      </a>
+
+      <div class="contact-grid">
+        <div class="contact-cards">
+          <div class="find__card reveal">
+            <span class="label">Pickup counter</span>
+            <address class="address-big">1 Exchange St<br>Portland, ME</address>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+
+          <!-- Hours block: stays hidden until the owner confirms real hours (fill HOURS in the script below). -->
+          <div class="find__card reveal" id="hours-card" hidden>
+            <span class="serving" id="serving" data-open="unknown">Now serving</span>
+            <h3>Hours</h3>
+            <ul class="hours-list" id="hours-list"></ul>
+          </div>
+        </div>
+
+        <!-- Question form: add it back once the owner gives us an email or a form service to send to. -->
+        <div class="find__card menucard reveal">
+          <span class="label">Before you come</span>
+          <h2>Read the board first.</h2>
+          <p>Sandwiches, pizza by the slice or whole pie, lunch plates, and grab-and-go bites. Four lanes, ten seconds.</p>
+          <ul class="lanes">
+            <li><a href="../menu/#deli">Deli sandwiches</a></li>
+            <li><a href="../menu/#pizza">Pizza, slice or pie</a></li>
+            <li><a href="../menu/#plates">Lunch plates</a></li>
+            <li><a href="../menu/#go">Grab-and-go</a></li>
+          </ul>
+          <a class="btn btn--ghost" href="../menu/">See the full menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h2>Old Port Deli &amp; Pizza</h2>
+        <p style="margin-top:.75rem;max-width:28ch">Fresh deli sandwiches, hot pizza.</p>
+      </div>
+      <div>
+        <h3>Find us</h3>
+        <address>1 Exchange St<br>Portland, ME</address>
+        <ul style="margin-top:.75rem">
+          <li id="f-phone" hidden><a href="#"></a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Get directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../menu/">Menu</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Old Port Deli &amp; Pizza</p>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Quick actions">
+  <a href="../menu/">Menu<small>See the board</small></a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=1+Exchange+St+Portland+ME" target="_blank" rel="noopener">Directions<small>Exchange St</small></a>
+  <a href="../index.html">Home<small>Start here</small></a>
+</nav>
+
+<script>
+(function () {
+  // Phone: leave empty until the owner gives us a number, e.g. "+12075550100".
+  var PHONE = "";
+  var PHONE_TEXT = "";
+  // Hours: leave null until confirmed. Format { 0: ["11:00","20:00"], 1: [...] } where 0 = Sunday. Omit a day if closed.
+  var HOURS = null;
+
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  if (PHONE) {
+    var c = document.createElement('a');
+    c.className = 'btn btn--sm'; c.href = 'tel:' + PHONE; c.textContent = 'Call';
+    nav.insertBefore(c, document.getElementById('nav-directions'));
+    var dock = document.getElementById('dock');
+    var d = document.createElement('a');
+    d.href = 'tel:' + PHONE; d.innerHTML = 'Call<small>to order</small>';
+    dock.insertBefore(d, dock.firstChild);
+    var f = document.getElementById('f-phone');
+    f.firstChild.href = 'tel:' + PHONE; f.firstChild.textContent = PHONE_TEXT || PHONE; f.hidden = false;
+    var cb = document.getElementById('callblock');
+    cb.href = 'tel:' + PHONE;
+    document.getElementById('callnum').textContent = PHONE_TEXT || PHONE;
+    cb.hidden = false;
+  }
+
+  // Hours + "Now serving" badge
+  if (HOURS) {
+    var names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var list = document.getElementById('hours-list');
+    var now = new Date(), today = now.getDay();
+    var mins = function (s) { var p = s.split(':'); return +p[0] * 60 + +p[1]; };
+    var fmt = function (s) { var p = s.split(':'), h = +p[0], ap = h >= 12 ? 'pm' : 'am'; h = h % 12 || 12; return h + (p[1] === '00' ? '' : ':' + p[1]) + ap; };
+    names.forEach(function (n, i) {
+      var li = document.createElement('li');
+      if (i === today) li.className = 'today';
+      li.innerHTML = '<span>' + n + '</span><span>' + (HOURS[i] ? fmt(HOURS[i][0]) + ' to ' + fmt(HOURS[i][1]) : 'Closed') + '</span>';
+      list.appendChild(li);
+    });
+    var t = HOURS[today], cur = now.getHours() * 60 + now.getMinutes();
+    var isOpen = !!t && cur >= mins(t[0]) && cur < mins(t[1]);
+    var badge = document.getElementById('serving');
+    badge.dataset.open = isOpen;
+    badge.textContent = isOpen ? 'Now serving' : 'Closed right now';
+    document.getElementById('hours-card').hidden = false;
+  }
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else { items.forEach(function (el) { el.classList.add('in'); }); }
+})();
+</script>
+<script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>
