@@ -1,287 +1,403 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Portland Mash Tun | Portland, ME</title><meta name="description" content="Portland Old Port pub with burgers, pub food, cocktails, beer on tap, and late-night food. Open daily with online ordering."><meta name="theme-color" content="#9e2235">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%239e2235%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2742%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2730%27%20font-weight%3D%27700%27%20text-anchor%3D%27middle%27%20fill%3D%27%23ffffff%27%3EPM%3C/text%3E%3C/svg%3E"><meta property="og:type" content="website"><meta property="og:title" content="Portland Mash Tun | Portland, ME"><meta property="og:description" content="Portland Old Port pub with burgers, pub food, cocktails, beer on tap, and late-night food. Open daily with online ordering.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM%20Serif%20Display&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM%20Sans:wght@400;500;700&display=swap">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portland Mash Tun | Beer, burgers and late nights in the Old Port</title>
+<meta name="description" content="Burgers, wings, oysters, lobster rolls, cocktails and beer on tap in Portland's Old Port. Open late on weekends.">
+<meta name="theme-color" content="#17100B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#menu">Skip to the menu</a>
 
-<style>:root{--bg:#fbf7f4;--ink:#2b1517;--muted:#6d5658;--accent:#9e2235;--accent-ink:#ffffff;--soft:#f0e1df;--card:#ffffff;--dark:#2b1517;--dark-ink:#f7ecea;--line:rgba(43,21,23,0.13);--head:'DM Serif Display',Georgia,serif;--body:'DM Sans',system-ui,sans-serif;--hw:400;--hls:0;--rc:8px;--rb:6px;--motif-dark:repeating-radial-gradient(circle at 85% 15%, transparent 0 22px, rgba(255,255,255,0.07) 22px 23px)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
-a{color:inherit}img{max-width:100%;display:block}button{font:inherit;color:inherit}
-.wrap{max-width:1160px;margin:0 auto;padding:0 22px}.narrow{max-width:760px}.center{text-align:center}
-h1,h2,h3{font-family:var(--head);font-weight:var(--hw);letter-spacing:var(--hls);line-height:1.08;margin:0 0 .45em}
-h1{font-size:clamp(2.4rem,6vw,4.6rem)}h2{font-size:clamp(1.7rem,3.3vw,2.5rem)}h3{font-size:1.22rem}
-p{margin:0 0 1em}.muted{color:var(--muted)}.small{font-size:.9rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--accent-ink);
- text-decoration:none;font-weight:600;padding:13px 24px;border-radius:var(--rb);border:2px solid var(--accent);cursor:pointer;
- transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -12px var(--accent)}
-.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.sm{padding:8px 16px;font-size:.92rem}
-.row{display:flex;gap:12px;flex-wrap:wrap}.center-row{justify-content:center}
-.eyebrow{font-weight:600;margin-bottom:.4em;opacity:.92}.eyebrow.acc{color:var(--accent);opacity:1}
-.more{color:var(--accent);font-weight:600;text-decoration:none}.more:hover{text-decoration:underline}
-/* nav */
-.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);
- border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;gap:22px;height:72px}
-.brand{font:var(--hw) 1.22rem/1.15 var(--head);text-decoration:none;letter-spacing:var(--hls)}
-.links{display:flex;gap:4px;margin-left:auto}
-.links a{text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:500;font-size:.97rem;color:var(--muted)}
-.links a:hover{color:var(--ink);background:var(--soft)}.links a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent);border-radius:0}
-.nav-r{display:flex;align-items:center;gap:10px}
-.hrs{position:relative}.hrs-btn{display:flex;align-items:center;gap:7px;background:var(--soft);border:1px solid var(--line);
- border-radius:999px;padding:6px 12px;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap}
-.hrs-btn svg{width:12px;height:12px;transition:transform .2s}.hrs-btn[aria-expanded=true] svg{transform:rotate(180deg)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block;flex:none}
-.is-open .dot{background:#22a35a;box-shadow:0 0 0 3px rgba(34,163,90,.2)}.is-closed .dot{background:#d0463b}
-.hrs-pop{position:absolute;right:0;top:calc(100% + 8px);background:var(--card);color:var(--ink);border:1px solid var(--line);
- border-radius:12px;box-shadow:0 20px 50px -20px rgba(0,0,0,.35);padding:10px 16px;min-width:260px}
-.hrs-pop ul,.hlist{list-style:none;padding:0;margin:0}
-.hrs-pop li,.hlist li{display:flex;justify-content:space-between;gap:18px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.93rem}
-.hrs-pop li:last-child,.hlist li:last-child{border-bottom:0}
-li.today{font-weight:700;color:var(--accent)}
-.burger{display:none;background:none;border:0;padding:8px;cursor:pointer;flex-direction:column;gap:5px}
-.burger span{display:block;width:22px;height:2px;background:currentColor;transition:.2s}
-/* hero */
-.hero{min-height:84vh;min-height:84svh;background-size:cover;background-position:center;color:#fff;display:flex;align-items:flex-end}
-.hero-in{padding:120px 22px 9vh}.hero h1{max-width:15ch;text-shadow:0 2px 30px rgba(0,0,0,.3)}
-.hero .lede{font-size:1.18rem;max-width:54ch;color:rgba(255,255,255,.92)}.hero .btn.ghost{color:#fff}
-.phero{background-size:cover;background-position:center;color:#fff;padding:120px 0 64px}
-.phero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:0}.phero .lede{max-width:60ch;margin-top:12px;color:rgba(255,255,255,.9);font-size:1.12rem}
-/* sections */
-.sec{padding:88px 0}.sec.alt{background:var(--soft)}
-.facts{background:var(--soft);padding:34px 0;border-bottom:1px solid var(--line)}
-.fgrid{display:grid;gap:22px}.fgrid.n2{grid-template-columns:1fr 1fr}.fgrid.n3{grid-template-columns:repeat(3,1fr)}.fgrid.n4{grid-template-columns:repeat(4,1fr)}
-.fact b{display:block;font:var(--hw) clamp(1.2rem,2.1vw,1.6rem)/1.15 var(--head);color:var(--accent)}
-.fact span{display:block;color:var(--muted);font-size:.94rem;line-height:1.4;margin-top:4px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.split.noimg{grid-template-columns:1fr;max-width:780px}
-.split-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--rc)}
-.svc.rev .split-img{order:2}.big-p{font:400 clamp(1.15rem,1.9vw,1.45rem)/1.55 var(--head)}
-.shead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.scard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--rc);
- padding:24px;text-decoration:none;border-top:3px solid var(--accent);transition:transform .2s,box-shadow .2s}
-.scard:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(0,0,0,.4)}
-.scard p{color:var(--muted);font-size:.97rem;line-height:1.55;flex:1}.arrow{color:var(--accent);font-weight:600;font-size:.92rem}
-.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.why b{display:block;font:var(--hw) 1.2rem var(--head);margin-bottom:6px}
-.why p{color:var(--muted);margin:0}
-.band{background-size:cover;background-position:center;color:#fff;padding:120px 0}.band h2{font-size:clamp(1.9rem,4vw,3rem)}
-.band p{font-size:1.1rem;opacity:.9}
-.visit .vgrid,.vgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}.vgrid.one{grid-template-columns:1fr}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:28px}
-.card .big{display:block;font:var(--hw) 1.8rem var(--head);text-decoration:none;margin-bottom:8px}
-.jump{position:sticky;top:72px;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
-.jump-in{display:flex;gap:8px;align-items:center;overflow-x:auto;padding-top:12px;padding-bottom:12px;scrollbar-width:none}
-.jump-in::-webkit-scrollbar{display:none}.jump-in span{color:var(--muted);font-size:.9rem;white-space:nowrap}
-.jump a{white-space:nowrap;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:500}
-.jump a:hover,.jump a.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.svc{padding:80px 0;border-bottom:1px solid var(--line)}.num{font:var(--hw) .95rem var(--head);color:var(--accent);margin-bottom:6px}
-.plist{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
-.prod{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
-.prod b{font-weight:600}.prod span{display:block;color:var(--muted);font-size:.92rem}
-.prod em{font:var(--hw) 1.15rem var(--head);font-style:normal;color:var(--accent);white-space:nowrap}.prod.sold b,.prod.sold em{opacity:.45}
-.psearch{width:100%;font:inherit;padding:13px 16px;border:1px solid var(--line);border-radius:var(--rb);background:var(--card);
- color:var(--ink);margin-bottom:16px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.chips span{background:var(--card);border:1px solid var(--line);
- padding:10px 18px;border-radius:999px;font-weight:600}
-.story p{font-size:1.08rem}.story p:first-child{font:400 clamp(1.15rem,1.8vw,1.4rem)/1.55 var(--head)}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gi{padding:0;border:0;background:none;cursor:zoom-in;border-radius:var(--rc);overflow:hidden}
-.gi img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .4s}.gi:hover img{transform:scale(1.04)}
-.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:20px}
-.lb img{max-height:86vh;max-width:92vw;border-radius:6px}.lb button{position:absolute;background:rgba(255,255,255,.12);border:0;
- color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer}
-.lb .x{top:18px;right:18px}.lb .p{left:14px}.lb .n{right:14px}
-.q{border-bottom:1px solid var(--line)}.q summary{cursor:pointer;font-weight:600;padding:18px 0;list-style:none;display:flex;
- justify-content:space-between;gap:14px}.q summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
-.q[open] summary::after{content:"–"}.q summary::-webkit-details-marker{display:none}.q p{color:var(--muted);margin:0 0 18px}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.ccard{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:24px;text-decoration:none;
- transition:transform .2s,border-color .2s}.ccard:hover{transform:translateY(-2px);border-color:var(--accent)}
-.ccard small{display:block;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
-.ccard b{display:block;font:var(--hw) 1.2rem/1.3 var(--head);margin:6px 0;overflow-wrap:anywhere}.ccard span{color:var(--muted);font-size:.9rem}
-.hhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.status{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:600}
-.cform label{display:block;font-size:.9rem;font-weight:600;margin-bottom:12px}
-.cform input,.cform select,.cform textarea{display:block;width:100%;margin-top:6px;font:inherit;font-weight:400;padding:11px 13px;
- border:1px solid var(--line);border-radius:var(--rb);background:var(--bg);color:var(--ink)}
-.cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fmsg{margin:12px 0 0;font-weight:600;color:var(--accent)}
-iframe.map{width:100%;height:380px;border:0;border-radius:var(--rc);display:block;margin-bottom:12px}
-/* footer */
-.foot{background:var(--dark);color:var(--dark-ink);padding:56px 0 24px;margin-top:0}
-.fcols{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:32px}.foot .muted{color:var(--dark-ink);opacity:.7}
-.fnav,.fcon{display:flex;flex-direction:column;gap:8px}.foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1;text-decoration:underline}
-.fsmall{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem;opacity:.65}
-.callbar{display:none}
-/* polish */
-::selection{background:var(--accent);color:var(--accent-ink)}
-.label{display:inline-flex;align-items:center;gap:10px;font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;
- color:var(--accent);margin-bottom:14px}.label::before{content:"";width:26px;height:2px;background:var(--accent)}
-.label.center{display:flex;justify-content:center}.eyebrow.line{display:inline-flex;align-items:center;gap:12px}
-.eyebrow.line::before{content:"";width:34px;height:2px;background:currentColor;opacity:.8}
-.ico{width:24px;height:24px}.ia{width:16px;height:16px;vertical-align:-3px;transition:transform .2s}
-.more:hover .ia,.scard:hover .ia{transform:translateX(4px)}
-.ibox{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:12px;background:color-mix(in srgb,var(--accent) 12%,transparent);
- color:var(--accent);margin-bottom:14px;flex:none}
-.hero{position:relative;overflow:hidden}.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;
- animation:settle 14s ease-out both}.hero-in,.phero .wrap{position:relative}
-@keyframes settle{from{transform:scale(1.09)}to{transform:scale(1)}}
-.hero h1{animation:rise .9s .1s ease both}.hero .lede{animation:rise .9s .25s ease both}.hero .row{animation:rise .9s .4s ease both}
-.hero .eyebrow{animation:rise .8s ease both}.trust{animation:rise .9s .55s ease both}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:.95rem;color:rgba(255,255,255,.9)}
-.trust span{display:inline-flex;align-items:center;gap:7px}.ti{width:17px;height:17px;color:var(--accent);filter:brightness(1.4)}
-.scroll-cue{position:absolute;left:50%;bottom:22px;width:26px;height:42px;border:2px solid rgba(255,255,255,.6);border-radius:14px;transform:translateX(-50%)}
-.scroll-cue span{position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.8s infinite}
-@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
-.phero{position:relative;overflow:hidden;background:var(--dark)}.crumbs{font-size:.88rem;opacity:.85;margin-bottom:10px;display:flex;gap:8px}
-.crumbs a{text-decoration:none}.crumbs a:hover{text-decoration:underline}
-/* header over the photo on the home page */
-.home .nav{background:transparent;border-color:transparent;backdrop-filter:none;color:#fff;transition:background .3s,color .3s,box-shadow .3s}
-.home .nav .links a{color:rgba(255,255,255,.85)}.home .nav .links a:hover{background:rgba(255,255,255,.12);color:#fff}
-.home .nav .hrs-btn{background:rgba(0,0,0,.25);border-color:rgba(255,255,255,.25);color:#fff}
-.home .nav.solid{background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);color:var(--ink);
- border-color:var(--line);box-shadow:0 8px 30px -18px rgba(0,0,0,.35)}
-.home .nav.solid .links a{color:var(--muted)}.home .nav.solid .hrs-btn{background:var(--soft);border-color:var(--line);color:var(--ink)}
-.home .hero{margin-top:-72px}.home .hero-in{padding-top:150px}
-.frame{position:relative}.frame .split-img{aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
-.frame::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:2px solid var(--accent);border-radius:var(--rc);z-index:-1;opacity:.5}
-.badge{position:absolute;left:-18px;bottom:28px;background:var(--accent);color:var(--accent-ink);padding:16px 20px;border-radius:var(--rc);
- box-shadow:0 18px 40px -18px rgba(0,0,0,.5);max-width:220px}.badge b{display:block;font:var(--hw) 1.5rem/1.1 var(--head)}
-.badge span{font-size:.85rem;opacity:.9}
-.split-img{transition:transform .6s ease}.frame:hover .split-img{transform:scale(1.015)}
-.scard .ibox{margin-bottom:16px}.scard h3{font-size:1.18rem}
-.why{position:relative;padding-top:8px}.wn{display:block;font:var(--hw) 2.6rem/1 var(--head);color:var(--accent);opacity:.25;margin-bottom:8px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
-.step{background:var(--card);border:1px solid var(--line);border-radius:var(--rc);padding:28px;position:relative}
-.step small{display:block;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem}
-.step b{display:block;font:var(--hw) 1.2rem var(--head);margin:4px 0 6px}.step p{color:var(--muted);margin:0}
-.num{display:flex;align-items:center;gap:12px;font:var(--hw) 1rem var(--head);color:var(--accent);margin-bottom:6px}.num .ibox{margin:0}
-.closer{background:var(--dark);color:var(--dark-ink);padding:90px 0;position:relative;overflow:hidden}
-.closer::after{content:"";position:absolute;inset:0;background:var(--motif-dark);opacity:.9;pointer-events:none}
-.cl-in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;z-index:1}
-.closer h2{font-size:clamp(2rem,4.5vw,3.4rem)}.closer p{opacity:.8;font-size:1.1rem;margin:0}
-.cl-r{text-align:right}.cl-phone{display:block;font:var(--hw) clamp(1.8rem,4vw,3rem)/1.1 var(--head);text-decoration:none;margin-bottom:18px;color:#fff}
-.cl-r .row{justify-content:flex-end}.closer .btn.ghost{color:#fff}
-.ccard .ibox{margin-bottom:12px}
-.fhrs{display:flex;flex-direction:column;gap:4px;font-size:.9rem}.fhrs b,.fnav b{margin-bottom:6px;opacity:1;font-weight:700}
-.fh{display:flex;justify-content:space-between;gap:14px;opacity:.75}.fh.today{opacity:1;font-weight:700;color:var(--accent);filter:brightness(1.3)}
-.fcols{grid-template-columns:1.3fr .8fr 1fr}.foot .fcon{margin-top:14px}
-.totop{position:fixed;right:18px;bottom:18px;z-index:55;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
- display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:.25s}
-.totop.on{opacity:1;pointer-events:auto}.ico.up{transform:rotate(-90deg)}
-.rv{transition-delay:var(--d,0ms)!important}
-.board{list-style:none;padding:0;margin:0;display:grid;gap:4px 56px}.board.c2{grid-template-columns:1fr 1fr}
-.board li{padding:14px 0;border-bottom:1px dashed var(--line)}
-.mi-top{display:flex;align-items:baseline;gap:10px}.mi-top b{font:var(--hw) 1.08rem/1.3 var(--head)}
-.mi-top i{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px);min-width:16px}
-.mi-top em{font-style:normal;font-weight:700;color:var(--accent);white-space:nowrap}
-.board span{display:block;color:var(--muted);font-size:.93rem;margin-top:3px}
-.mgroup{padding:56px 0 20px}.gnote{color:var(--muted);margin:-2px 0 10px;max-width:70ch}.mgroup .label{margin-bottom:6px}
-.locs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:10px}
-.locs .card p{margin:0 0 6px}
-.blogo{height:44px;width:auto;max-width:200px;object-fit:contain;display:block}
-.blogo.chip{background:#fff;padding:4px 10px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.12)}
-.hlogo{min-height:auto}.hlogo .hero-in{padding:150px 22px 80px;max-width:900px;margin:0 auto}
-.biglogo{display:inline-block;margin:0 auto 28px;animation:rise .9s ease both}.biglogo img{max-height:220px;max-width:min(520px,80vw);width:auto}
-.biglogo.chip{background:#fff;padding:22px 30px;border-radius:16px;box-shadow:0 24px 60px -24px rgba(0,0,0,.6)}
-.hlogo .lede{margin:0 auto 1em}.h1-sm{font-size:clamp(2rem,4.4vw,3.2rem);max-width:none!important}
-.cap{font-weight:700;color:var(--accent);margin:-4px 0 8px}.chips.left{justify-content:flex-start;margin-top:14px}
-.ticks{list-style:none;padding:0;margin:0}.ticks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line)}
-.ticks li:last-child{border-bottom:0}.ticks .ti{color:var(--accent);flex:none;margin-top:4px;filter:none}
-.brands{padding:64px 0}.bgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:8px}
-.bt{flex:0 1 calc((100% - 70px)/6);min-width:140px;background:#fff;border:1px solid var(--line);border-radius:var(--rc);height:96px;display:grid;place-items:center;padding:14px 18px}
-.bt img{max-height:64px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(.15);transition:filter .2s,transform .2s}
-.bt:hover img{filter:none;transform:scale(1.04)}.bt-t{font-weight:700;color:#222}
-/* motion */
-.rv-on .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}.rv-on .rv.rv-in{opacity:1;transform:none}
-@media(max-width:900px){
- .bt{flex-basis:calc((100% - 28px)/3);min-width:0;height:80px}
- .board.c2{grid-template-columns:1fr}
- .steps,.cl-in{grid-template-columns:1fr}.cl-r{text-align:left}.cl-r .row{justify-content:flex-start}
- .badge{left:12px;bottom:12px}.frame::before{display:none}.frame .split-img{aspect-ratio:4/3}
- .totop{bottom:70px}.home .hero-in{padding-top:120px}.scroll-cue{display:none}
- .home .nav .links a{color:var(--muted)}.home.menu-open .nav{background:var(--bg);color:var(--ink)}
- .links{position:fixed;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);padding:10px 16px 18px;
-  border-bottom:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.3);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s}
- .links a{padding:13px 10px;font-size:1.05rem;border-bottom:1px solid var(--line);border-radius:0}.links a[aria-current]{box-shadow:none;color:var(--accent)}
- .menu-open .links{transform:none;opacity:1;pointer-events:auto}.burger{display:flex}
- .menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-open .burger span:nth-child(2){opacity:0}
- .menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
- .nav-call{display:none}.nav-in{gap:10px}.brand{font-size:1.02rem;max-width:46vw}
- .split,.vgrid,.fcols,.wgrid{grid-template-columns:1fr;gap:28px}.svc.rev .split-img{order:0}
- .fgrid.n3,.fgrid.n4{grid-template-columns:1fr 1fr}.sec{padding:60px 0}.svc{padding:56px 0}.band{padding:84px 0}
- .gal{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.hero-in{padding-bottom:8vh}
- .hrs-pop{position:fixed;left:12px;right:12px;top:78px;min-width:0}
- .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -6px 20px rgba(0,0,0,.15)}
- .callbar a{flex:1;text-align:center;padding:15px;font-weight:700;text-decoration:none;background:var(--accent);color:var(--accent-ink)}
- .callbar a+a{background:var(--dark);color:var(--dark-ink)}body.has-bar{padding-bottom:54px}}
-.hrs-head{font-weight:700;padding:4px 0 8px;border-bottom:1px solid var(--line);margin-bottom:2px}
-.hrs-head.is-open{color:#1d8a4c}.hrs-head.is-closed{color:#c0392b}
-.links a,.nav-call{white-space:nowrap}
-@media(max-width:1180px){.nav-call{display:none}}
-@media(max-width:600px){.hrs-btn .hrs-more{display:none}}
-</style></head><body class="home st-classic">
-<header class="nav"><div class="wrap nav-in"><a class="brand" href="">Portland Mash Tun</a><nav class="links" id="menu"><a href="" aria-current=page>Home</a><a href="menu/">Menu</a><a href="about/">About</a><a href="contact/">Contact</a></nav><div class="nav-r"><div class="hrs"><button class="hrs-btn" aria-expanded="false"><i class="dot"></i><span class="hrs-now">Hours</span><span class="hrs-more"></span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="hrs-pop" hidden><div class="hrs-head"><span class="hrs-now"></span><span class="hrs-more"></span></div><ul><li data-day="0"><span>Monday</span><span>3pm - 12am</span></li><li data-day="1"><span>Tuesday</span><span>3pm - 12am</span></li><li data-day="2"><span>Wednesday</span><span>3pm - 12am</span></li><li data-day="3"><span>Thursday</span><span>3pm - 12am</span></li><li data-day="4"><span>Friday</span><span>12pm - 1am</span></li><li data-day="5"><span>Saturday</span><span>12pm - 1am</span></li><li data-day="6"><span>Sunday</span><span>12pm - 12am</span></li></ul></div></div><button class="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button></div></div></header><main><section class="hero"><div class="hero-bg" style="background-image:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.38) 45%,rgba(0,0,0,.8)),url('photos/photo1.jpg')"></div><div class="wrap hero-in"><div class="eyebrow line">Beer, burgers, late nights</div><h1>Old Port bites, taps, and games</h1><p class="lede">We’re your spot in Portland’s Old Port for burgers, pub food, cocktails, and plenty of beer on tap. Stop in for a quick bite, a late-night meal, or a few drinks with friends while the game’s on.</p><div class="row"><a class="btn" href="contact/#write">Get in touch</a><a class="btn ghost" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a></div><div class="trust"><span><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Old Port</span><span><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Beer on tap</span><span><svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Late-night food</span></div></div><a class="scroll-cue" href="#start" aria-label="Scroll down"><span></span></a></section><div id="start"></div><section class="facts"><div class="wrap fgrid n3"><div class="fact rv" style="--d:0ms"><b>Old Port</b><span>In Portland’s Old Port</span></div><div class="fact rv" style="--d:90ms"><b>Beer on tap</b><span>Plenty of taps available</span></div><div class="fact rv" style="--d:180ms"><b>Late-night food</b><span>Open late on weekends</span></div></div></section><section class="sec"><div class="wrap split"><div class="frame rv"><img class="split-img" src="photos/photo2.jpg" alt="" loading="lazy"><div class="badge"><b>Old Port</b><span>In Portland’s Old Port</span></div></div><div class="rv"><div class="label">About us</div><h2>Old Port pub</h2><p class="big-p">We keep it casual and easy, with a laid-back bar feel and food that works whether you’re hungry for dinner or just want something fast. Our menu runs from the Mash Tun Burger and Maine Burger to Lobster Rolls, wings, fried pickles, oysters, and grilled cheese. You can also grab a breakfast sandwich, a Caesar salad, fries, or tacos, plus cocktails and a rotating mix of beer on tap. We’re in Portland’s Old Port for the people who want good food, drinks, and a place to linger a while.</p><a class="more" href="about/">Our story <svg class="ia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section><section class="sec alt"><div class="wrap"><div class="shead rv"><div><div class="label">Menu</div><h2>A few favorites</h2></div><a class="more" href="menu/">Full menu <svg class="ia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div><div class="rv"><ul class="board c2"><li><div class="mi-top"><b>Fried Pickles</b><i></i><em>$10</em></div><span>served w/ chipotle ranch</span></li><li><div class="mi-top"><b>Fried Green Beans</b><i></i><em>$8</em></div><span>tossed in garlic oil. add bacon $2</span></li><li><div class="mi-top"><b>Wings (6)</b><i></i><em>$14</em></div><span>buffalo, bbq or mango habanero</span></li><li><div class="mi-top"><b>Chili Cheese Fries</b><i></i><em>$12</em></div><span>served w/ sour cream</span></li><li><div class="mi-top"><b>Oysters</b><i></i><em>$3</em></div><span>served w/ mignonette and lemon, 1 for</span></li><li><div class="mi-top"><b>Oysters</b><i></i><em>$15</em></div><span>served w/ mignonette and lemon, 6 for</span></li><li><div class="mi-top"><b>Caesar Salad</b><i></i><em>$10</em></div><span>add grilled chicken or shrimp - $7</span></li><li><div class="mi-top"><b>Regular</b><i></i><em>$6</em></div></li></ul></div><div class="row" style="margin-top:22px"><a class="btn" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a></div></div></section><section class="sec"><div class="wrap"><div class="label center rv">Why people choose us</div><div class="wgrid"><div class="why rv" style="--d:0ms"><span class="wn">01</span><b>Casual atmosphere</b><p>We keep the feel laid-back, so it works for a quick bite or a longer stay.</p></div><div class="why rv" style="--d:100ms"><span class="wn">02</span><b>Food and drinks</b><p>You can order burgers, pub food, cocktails, and beer in one place.</p></div><div class="why rv" style="--d:200ms"><span class="wn">03</span><b>Good for gatherings</b><p>The menu and setting fit meeting friends or catching the game.</p></div></div></div></section><section class="band" style="background-image:linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.64)),url('photos/photo3.jpg')"><div class="wrap narrow center rv"><h2>Beer, burgers, late nights</h2><div class="row center-row"><a class="btn" href="contact/#write">Get in touch</a><a class="btn ghost" href="contact/">Hours &amp; directions</a></div></div></section><section class="sec visit"><div class="wrap vgrid"><div class="card rv"><h3>Visit or call</h3><p>29 Wharf St. Portland, ME 04101</p><div class="row"><a class="btn ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Portland%20Mash%20Tun%2C%2029%20Wharf%20St.%20Portland%2C%20ME%2004101">Get directions</a><a class="btn ghost" href="contact/#write">Send a message</a></div></div><div class="card rv"><h3>Hours</h3><ul class="hlist"><li data-day="0"><span>Monday</span><span>3pm - 12am</span></li><li data-day="1"><span>Tuesday</span><span>3pm - 12am</span></li><li data-day="2"><span>Wednesday</span><span>3pm - 12am</span></li><li data-day="3"><span>Thursday</span><span>3pm - 12am</span></li><li data-day="4"><span>Friday</span><span>12pm - 1am</span></li><li data-day="5"><span>Saturday</span><span>12pm - 1am</span></li><li data-day="6"><span>Sunday</span><span>12pm - 12am</span></li></ul></div></div></section></main><footer class="foot"><div class="wrap fcols"><div><div class="brand">Portland Mash Tun</div><p class="muted">Beer, burgers, late nights</p><div class="fcon"><span>29 Wharf St. Portland, ME 04101</span></div></div><div class="fnav"><b>Pages</b><a href="">Home</a><a href="menu/">Menu</a><a href="about/">About</a><a href="contact/">Contact</a></div><div class="fhrs"><b>Hours</b><div data-day="0" class="fh"><span>Mon</span><span>3pm - 12am</span></div><div data-day="1" class="fh"><span>Tue</span><span>3pm - 12am</span></div><div data-day="2" class="fh"><span>Wed</span><span>3pm - 12am</span></div><div data-day="3" class="fh"><span>Thu</span><span>3pm - 12am</span></div><div data-day="4" class="fh"><span>Fri</span><span>12pm - 1am</span></div><div data-day="5" class="fh"><span>Sat</span><span>12pm - 1am</span></div><div data-day="6" class="fh"><span>Sun</span><span>12pm - 12am</span></div></div></div><div class="wrap fsmall">© 2026 Portland Mash Tun · Portland, ME</div></footer><a class="totop" href="#" aria-label="Back to top"><svg class="ico up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><script>(function(){
-var d=document,H={"Monday": "3pm - 12am", "Tuesday": "3pm - 12am", "Wednesday": "3pm - 12am", "Thursday": "3pm - 12am", "Friday": "12pm - 1am", "Saturday": "12pm - 1am", "Sunday": "12pm - 12am"};
-// menu
-var b=d.querySelector('.burger');if(b)b.onclick=function(){var o=d.body.classList.toggle('menu-open');b.setAttribute('aria-expanded',o)};
-if(d.querySelector('.callbar'))d.body.classList.add('has-bar');
-// open now
-function mins(t){var m=t.trim().match(/(\d{1,2})(?::(\d{2}))?\s*([AaPp])?/);if(!m)return null;var h=+m[1]%12,mm=+(m[2]||0);
- if(m[3]&&/p/i.test(m[3]))h+=12;if(!m[3]&&+m[1]===12)h=12;return h*60+mm}
-function spans(s){if(!s||/closed/i.test(s))return[];if(/24 hours/i.test(s))return[[0,1440]];var out=[];
- s.split(/,|;| and /).forEach(function(p){var r=p.split(/\s*[-–]\s*|\s+to\s+/);if(r.length<2)return;
-  var a=mins(r[0]),z=mins(r[1]);if(a==null||z==null)return;if(!/[ap]m/i.test(r[0])&&/pm/i.test(r[1])&&a<720&&a+720<z)a+=720;
-  if(z<=a)z+=1440;out.push([a,z])});return out}
-var days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-function fmt(m){m=m%1440;var h=Math.floor(m/60),mm=m%60,ap=h>=12?'PM':'AM';h=h%12||12;return h+(mm?':'+(mm<10?'0':'')+mm:'')+' '+ap}
-function status(){if(!H)return null;var n=new Date(),di=(n.getDay()+6)%7,now=n.getHours()*60+n.getMinutes();
- var prev=spans(H[days[(di+6)%7]]);for(var i=0;i<prev.length;i++)if(prev[i][1]>1440&&now<prev[i][1]-1440)return{open:1,t:'Open now · until '+fmt(prev[i][1])};
- var t=spans(H[days[di]]);for(i=0;i<t.length;i++){if(t[i][0]===0&&t[i][1]===1440)return{open:1,t:'Open 24 hours'};
-  if(now>=t[i][0]&&now<t[i][1])return{open:1,t:'Open now · until '+fmt(t[i][1])}}
- for(i=0;i<t.length;i++)if(now<t[i][0])return{open:0,t:'Closed · opens '+fmt(t[i][0])};
- for(var k=1;k<8;k++){var s=spans(H[days[(di+k)%7]]);if(s.length)return{open:0,t:'Closed · opens '+(k===1?'tomorrow ':days[(di+k)%7].slice(0,3)+' ')+fmt(s[0][0])}}
- return{open:0,t:'Closed'}}
-var st=status(),di=(new Date().getDay()+6)%7;
-d.querySelectorAll('li[data-day="'+di+'"]').forEach(function(li){li.classList.add('today')});
-d.querySelectorAll('.hrs-now').forEach(function(el){if(st){var i=st.t.indexOf(' · ');el.textContent=i>0?st.t.slice(0,i):st.t;
- var mo=el.parentNode.querySelector('.hrs-more');if(mo)mo.textContent=i>0?st.t.slice(i):'';else if(i>0)el.textContent=st.t;
- var p=el.closest('.hrs-btn,.status,.hrs-head');if(p)p.classList.add(st.open?'is-open':'is-closed')}});
-var hb=d.querySelector('.hrs-btn'),hp=d.querySelector('.hrs-pop');
-if(hb&&hp){hb.onclick=function(ev){ev.stopPropagation();var o=hp.hidden;hp.hidden=!o;hb.setAttribute('aria-expanded',o)};
- d.addEventListener('click',function(ev){if(!hp.hidden&&!hp.contains(ev.target)){hp.hidden=true;hb.setAttribute('aria-expanded',false)}})}
-// header turns solid once you scroll; back-to-top button
-var nv=d.querySelector('.nav'),tt=d.querySelector('.totop');function sc(){var y=scrollY;if(nv)nv.classList.toggle('solid',y>40);if(tt)tt.classList.toggle('on',y>700)}
-addEventListener('scroll',sc,{passive:true});sc();if(tt)tt.onclick=function(ev){ev.preventDefault();scrollTo({top:0,behavior:'smooth'})};
-// numbers count up when they come into view
-var cs=[].slice.call(d.querySelectorAll('[data-count]'));if(cs.length&&'IntersectionObserver' in window){var io3=new IntersectionObserver(function(es){
- es.forEach(function(x){if(!x.isIntersecting)return;io3.unobserve(x.target);var el=x.target,n=+el.dataset.count,t0=null,txt=el.textContent;
-  function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1400);el.textContent=txt.replace(/\d+/,Math.round(n*(1-Math.pow(1-k,3))));if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)})});
- cs.forEach(function(c){io3.observe(c)})}
-d.querySelectorAll('.fh[data-day="'+((new Date().getDay()+6)%7)+'"]').forEach(function(x){x.classList.add('today')});
-// product search
-var ps=d.querySelector('.psearch');if(ps)ps.oninput=function(){var q=ps.value.toLowerCase().trim();
- d.querySelectorAll('.prod').forEach(function(li){li.style.display=!q||li.dataset.q.indexOf(q)>-1?'':'none'})};
-// jump links highlight
-var jl=[].slice.call(d.querySelectorAll('.jump a'));if(jl.length&&'IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){
- es.forEach(function(x){if(x.isIntersecting)jl.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
- d.querySelectorAll('.svc').forEach(function(s){io2.observe(s)})}
-// photo viewer
-var g=[].slice.call(d.querySelectorAll('.gi'));if(g.length){var lb,ix=0;function show(i){ix=(i+g.length)%g.length;lb.querySelector('img').src=g[ix].dataset.full}
- g.forEach(function(x,i){x.onclick=function(){lb=d.createElement('div');lb.className='lb';lb.innerHTML='<img alt=""><button class="x" aria-label="Close">×</button><button class="p" aria-label="Previous">‹</button><button class="n" aria-label="Next">›</button>';
-  d.body.appendChild(lb);show(i);lb.onclick=function(ev){if(ev.target===lb||ev.target.className==='x')lb.remove();if(ev.target.className==='p')show(ix-1);if(ev.target.className==='n')show(ix+1)};
-  d.onkeydown=function(ev){if(!d.body.contains(lb))return;if(ev.key==='Escape')lb.remove();if(ev.key==='ArrowLeft')show(ix-1);if(ev.key==='ArrowRight')show(ix+1)}}})}
-// contact form
-var f=d.querySelector('.cform');if(f)f.onsubmit=function(ev){ev.preventDefault();var m=f.querySelector('.fmsg'),btn=f.querySelector('button');
- if(f._honey&&f._honey.value)return;var preview=/(^|\.)sites\.launchpadsites\.co$|github\.io$|^localhost$|^$/.test(location.hostname);
- if(preview||!f.dataset.to){m.textContent=preview?'Thanks! (This is a preview. On the live site, messages go straight to the owner\'s email.)':'Thanks! Please call us so we can help right away.';f.reset();return}
- btn.disabled=true;m.textContent='Sending…';var data={};new FormData(f).forEach(function(v,k){data[k]=v});data._subject='New message from your website';
- fetch('https://formsubmit.co/ajax/'+f.dataset.to,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
- .then(function(r){m.textContent=r.ok?'Thanks! We got your message and will get back to you soon.':'Sorry, that didn\'t go through. Please call us instead.';if(r.ok)f.reset()})
- .catch(function(){m.textContent='Sorry, that didn\'t go through. Please call us instead.'}).then(function(){btn.disabled=false})};
-// reveal
-if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.documentElement.classList.add('rv-on');
- var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('rv-in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
- d.querySelectorAll('.rv').forEach(function(el){io.observe(el)});setTimeout(function(){d.querySelectorAll('.rv').forEach(function(el){el.classList.add('rv-in')})},4000)}
-})();</script><script>(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add('is-in')})},2500);})();</script></body></html><!--lp-pages:None-->
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="wordmark" href="#top" aria-label="Portland Mash Tun, back to top">Mash<span>Tun</span></a>
+    <p class="status" id="status" role="status" aria-live="polite" style="margin-block:0"><span class="dot" aria-hidden="true"></span><span id="status-text">Hours below</span></p>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary btn-sm" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Beer, burgers, late nights</p>
+        <h1>Cold taps, hot fries, <em>Wharf Street</em> till late.</h1>
+        <p class="hero-sub">Burgers, wings, oysters and a lobster roll, with plenty of beer on tap and cocktails to go with them. Right in the Old Port.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+          <a class="btn btn-ghost" href="#menu">See the menu</a>
+        </div>
+        <aside class="ticket" aria-label="Today's hours">
+          <h2>Kitchen ticket</h2>
+          <div class="t-row"><span>Today</span><b id="ticket-today">See hours below</b></div>
+          <div class="t-row"><span>Fri + Sat</span><b>12pm - 1am</b></div>
+          <div class="t-row"><span>Taps</span><b>Plenty</b></div>
+        </aside>
+      </div>
+      <figure class="hero-photo reveal" style="margin:0">
+        <div class="frame">
+          <img src="photos/photo1.jpg" alt="A butcher-block table with a lobster roll, a paper boat of fries, a tray of oysters on ice and two beers" width="600" height="900">
+        </div>
+        <figcaption>Fries, oysters, lobster roll. Beers too.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="At a glance">
+    <div class="wrap">
+      <ul>
+        <li><b>Old Port</b><span>In Portland's Old Port</span></li>
+        <li><b>Beer on tap</b><span>Plenty of taps available</span></li>
+        <li><b>Late-night food</b><span>Open late on weekends</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-title" style="margin-top:14px">
+    <div class="wrap">
+      <div class="menu-head reveal">
+        <div>
+          <p class="eyebrow">The order slip</p>
+          <h2 id="menu-title">Menu</h2>
+          <p style="margin-top:1rem">Burgers, lobster, tacos, fries and fried things. Pick a section or scroll the lot.</p>
+        </div>
+        <div class="pick">
+          <p>Lobster roll, citrus mayo, brioche. Eat it with your hands, it's Wharf Street.</p>
+          <span>Lobster Roll / $25</span>
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter the menu">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="starters" aria-pressed="false">Starters</button>
+        <button class="chip" type="button" data-filter="sandwiches" aria-pressed="false">Sandwiches</button>
+        <button class="chip" type="button" data-filter="tacos" aria-pressed="false">Tacos</button>
+        <button class="chip" type="button" data-filter="fries" aria-pressed="false">Fries</button>
+        <button class="chip" type="button" data-filter="salads" aria-pressed="false">Salads</button>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-group reveal" data-group="starters">
+          <h3>Starters <small>01</small></h3>
+          <ul>
+            <li>
+              <div class="item-row"><span class="item-name">Fried Pickles</span><span class="leader"></span><span class="price">$10</span></div>
+              <p class="item-desc">Served with chipotle ranch</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Fried Green Beans</span><span class="leader"></span><span class="price">$8</span></div>
+              <p class="item-desc">Tossed in garlic oil. Add bacon $2</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Wings (6)</span><span class="leader"></span><span class="price">$14</span></div>
+              <p class="item-desc">Buffalo, BBQ or mango habanero</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Chili Cheese Fries</span><span class="leader"></span><span class="price">$12</span></div>
+              <p class="item-desc">Served with sour cream</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Oysters</span><span class="leader"></span><span class="price"><span>1 for $3</span><span>6 for $15</span></span></div>
+              <p class="item-desc">Served with mignonette and lemon</p>
+            </li>
+          </ul>
+        </article>
+
+        <article class="menu-group reveal" data-group="salads">
+          <h3>Salads <small>02</small></h3>
+          <ul>
+            <li>
+              <div class="item-row"><span class="item-name">Caesar Salad</span><span class="leader"></span><span class="price">$10</span></div>
+              <p class="item-desc">Add grilled chicken or shrimp, $7</p>
+            </li>
+          </ul>
+        </article>
+
+        <article class="menu-group reveal" data-group="fries">
+          <h3>Fries <small>03</small></h3>
+          <ul>
+            <li><div class="item-row"><span class="item-name">Regular</span><span class="leader"></span><span class="price">$6</span></div></li>
+            <li><div class="item-row"><span class="item-name">Cajun</span><span class="leader"></span><span class="price">$7</span></div></li>
+            <li><div class="item-row"><span class="item-name">Parmesan Truffle</span><span class="leader"></span><span class="price">$8</span></div></li>
+          </ul>
+        </article>
+
+        <article class="menu-group wide reveal" data-group="tacos">
+          <h3>Tacos <small>04</small></h3>
+          <ul>
+            <li>
+              <div class="item-row"><span class="item-name">Chicken</span><span class="leader"></span><span class="price"><span>$4.50 each</span><span>3 for $13</span></span></div>
+              <p class="item-desc">With pico de gallo and chipotle crema</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Pork</span><span class="leader"></span><span class="price"><span>$4.50 each</span><span>3 for $13</span></span></div>
+              <p class="item-desc">With pico de gallo and chipotle maple</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Shrimp</span><span class="leader"></span><span class="price"><span>$4.50 each</span><span>3 for $13</span></span></div>
+              <p class="item-desc">With onions, pico and chipotle crema</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Lobster (2)</span><span class="leader"></span><span class="price">$25</span></div>
+              <p class="item-desc">With chipotle ranch, grilled garlic, peppers and onions</p>
+            </li>
+          </ul>
+        </article>
+
+        <article class="menu-group wide reveal" data-group="sandwiches">
+          <h3>Sandwiches <small>05</small></h3>
+          <ul>
+            <li>
+              <div class="item-row"><span class="item-name">Mash Tun Burger</span><span class="leader"></span><span class="price">$8</span></div>
+              <p class="item-desc">All beef patty, tomato, pickled red onion and pickle</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Veggie Burger</span><span class="leader"></span><span class="price">$13</span></div>
+              <p class="item-desc">The Beyond Burger, tomato, pickled red onion and pickle</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Maine Burger</span><span class="leader"></span><span class="price">$22</span></div>
+              <p class="item-desc">All beef patty, lobster, tomato, pickled red onion, cheddar and chipotle ranch</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Lobster Roll</span><span class="leader"></span><span class="price">$25</span></div>
+              <p class="item-desc">Served on a brioche bun, tossed in citrus mayo</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Mesquite Chicken Sandwich</span><span class="leader"></span><span class="price">$13</span></div>
+              <p class="item-desc">Cajun rubbed chicken, pickled onion, cheddar and spicy mayo</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Breakfast Sandwich</span><span class="leader"></span><span class="price">$9</span></div>
+              <p class="item-desc">Bacon, egg and cheddar on ciabatta with spicy mayo</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Lobster Grilled Cheese</span><span class="leader"></span><span class="price">$25</span></div>
+              <p class="item-desc">Lobster, cheddar and citrus mayo</p>
+            </li>
+            <li>
+              <div class="item-row"><span class="item-name">Pulled Pork Grilled Cheese</span><span class="leader"></span><span class="price">$13</span></div>
+              <p class="item-desc">Pulled pork, apple, cheddar and chipotle maple aioli</p>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="menu-foot">
+        <a class="btn btn-primary" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+        <a class="btn btn-ghost" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+        <p>Beer on tap and cocktails are at the bar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <figure class="about-photo reveal" style="margin:0">
+        <img src="photos/photo2.jpg" alt="A hand sliding a paper boat of glazed wings with carrots and celery across a butcher-block bar" width="600" height="900" loading="lazy">
+      </figure>
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Casual, easy, stay a while.</h2>
+        <p>We're in Portland's Old Port, running a laid-back bar with burgers, pub food, cocktails and a rotating mix of beer on tap. Come in for a quick bite, a late-night meal, or a few drinks with friends while the game's on.</p>
+        <p>The menu runs from the Mash Tun Burger and the Maine Burger to lobster rolls, wings, fried pickles, oysters and grilled cheese. There's a breakfast sandwich, a Caesar, fries and tacos too. Order a full meal or a few small plates.</p>
+        <ul class="why">
+          <li><b>Casual atmosphere</b><span>Laid-back, so it works for a quick bite or a longer stay.</span></li>
+          <li><b>Food and drinks</b><span>Burgers, pub food, cocktails and beer in one place.</span></li>
+          <li><b>Good for gatherings</b><span>Meeting friends or catching the game, both fit.</span></li>
+        </ul>
+        <p class="praise-label">What people mention</p>
+        <ul class="tags">
+          <li>laid-back atmosphere</li>
+          <li>quick bite</li>
+          <li>catching the game</li>
+          <li>meeting friends</li>
+          <li>late-night food</li>
+          <li>reasonable prices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="late" aria-labelledby="late-title">
+    <div class="late-grid">
+      <div class="late-photo">
+        <img src="photos/photo3.jpg" alt="Three tacos in a tray and a hot sandwich in a checked paper boat on a long amber bar top" width="900" height="793" loading="lazy">
+      </div>
+      <div class="late-copy reveal">
+        <p class="eyebrow">Late-night food</p>
+        <h2 id="late-title">Kitchen's not slowing down just because the sun did.</h2>
+        <p>Weekends run late. Come hungry after the game, after the show, or after your second round.</p>
+        <ul class="late-hours">
+          <li>Fri 12pm - 1am</li>
+          <li>Sat 12pm - 1am</li>
+          <li>Sun 12pm - 12am</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <h2 id="faq-title" class="reveal">Quick answers</h2>
+      <div class="reveal">
+        <details>
+          <summary>What kind of food do you serve?</summary>
+          <p>Burgers, pub food, sandwiches, seafood, salads and snacks like wings, fries, fried pickles and oysters.</p>
+        </details>
+        <details>
+          <summary>Do you serve beer and cocktails?</summary>
+          <p>Yes. There's beer on tap, and we make cocktails too.</p>
+        </details>
+        <details>
+          <summary>Do you serve late-night food?</summary>
+          <p>Yes. Late-night food is one of our things, and the hours run late on weekends.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Find us</p>
+        <h2 id="contact-title">Pull up a stool.</h2>
+        <address>
+          Portland Mash Tun<br>
+          29 Wharf St<br>
+          Portland, ME 04101
+        </address>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+          <a class="btn btn-ghost" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=29+Wharf+St+Portland+ME+04101" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="hours-card reveal">
+        <h3>Hours</h3>
+        <table>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>3pm - 12am</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>3pm - 12am</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>3pm - 12am</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>3pm - 12am</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>12pm - 1am</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>12pm - 1am</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>12pm - 12am</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="mobile-bar">
+  <a class="btn btn-primary" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+  <a class="btn btn-ghost" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap foot-in">
+    <a class="wordmark" href="#top">Mash<span>Tun</span></a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+      <a href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+    </nav>
+    <p class="copy">© 2026 Portland Mash Tun.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Mobile nav */
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  /* Open-now status, Eastern time. Index = JS getDay(): 0 Sun ... 6 Sat. Minutes from midnight; close past 1440 runs into the next morning. */
+  var H = [
+    { o: 720, c: 1440 }, { o: 900, c: 1440 }, { o: 900, c: 1440 }, { o: 900, c: 1440 },
+    { o: 900, c: 1440 }, { o: 720, c: 1500 }, { o: 720, c: 1500 }
+  ];
+  var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  function label(m) { m = m % 1440; var h = Math.floor(m / 60); var ap = h >= 12 ? 'pm' : 'am'; return (h % 12 || 12) + ap; }
+  function nowET() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+      var o = {};
+      parts.forEach(function (p) { o[p.type] = p.value; });
+      return { d: days[o.weekday], m: (parseInt(o.hour, 10) % 24) * 60 + parseInt(o.minute, 10) };
+    } catch (err) {
+      var n = new Date();
+      return { d: n.getDay(), m: n.getHours() * 60 + n.getMinutes() };
+    }
+  }
+  var t = nowET();
+  var prev = (t.d + 6) % 7;
+  var status = document.getElementById('status');
+  var text = document.getElementById('status-text');
+  var msg, isOpen = false;
+  if (H[prev].c > 1440 && t.m < H[prev].c - 1440) { isOpen = true; msg = 'Open now, till ' + label(H[prev].c); }
+  else if (t.m >= H[t.d].o && t.m < H[t.d].c) { isOpen = true; msg = 'Open now, till ' + label(H[t.d].c); }
+  else if (t.m < H[t.d].o) { msg = 'Opens at ' + label(H[t.d].o); }
+  else { msg = 'Opens tomorrow at ' + label(H[(t.d + 1) % 7].o); }
+  text.textContent = msg;
+  status.classList.add(isOpen ? 'is-open' : 'is-closed');
+
+  var todayCell = document.getElementById('ticket-today');
+  if (todayCell) todayCell.textContent = label(H[t.d].o) + ' - ' + label(H[t.d].c);
+  var row = document.querySelector('.hours-card tr[data-day="' + t.d + '"]');
+  if (row) row.classList.add('today');
+
+  /* Menu filter */
+  var chips = document.querySelectorAll('.chip');
+  var groups = document.querySelectorAll('.menu-group');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.getAttribute('data-filter');
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      groups.forEach(function (g) {
+        var show = f === 'all' || g.getAttribute('data-group') === f;
+        g.hidden = !show;
+        if (show) g.classList.add('in');
+      });
+    });
+  });
+
+  /* Reveal on scroll */
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script>(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add('is-in')})},2500);})();</script></body>
+</html>
+<!--lp-pages:portland-mash-tun-portland-me-->

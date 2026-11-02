@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Portland Mash Tun</title>
+<meta name="description" content="Mash Tun is a casual craft beer pub in Portland's Old Port: burgers, pub food, cocktails and plenty of beer on tap.">
+<meta name="theme-color" content="#17100B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  .nav a[aria-current="page"]:not(.btn) { color: var(--accent); }
+  .page-hero { padding: var(--space-4) 0 var(--space-6); position: relative; }
+  .page-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 60% at 88% 25%, rgba(224,147,43,.16), transparent 70%); }
+  .page-grid { display: grid; gap: var(--space-4); align-items: center; position: relative; }
+  .page-hero h1 { font-size: var(--step-4); font-weight: 850; line-height: .98; letter-spacing: -.03em; font-variation-settings: "opsz" 144; }
+  .page-hero h1 em { font-style: normal; color: var(--accent); }
+  .page-hero .lede { font-size: var(--step-1); max-width: 36ch; margin: var(--space-3) 0 var(--space-3); opacity: .92; }
+  .tall { margin: 0; max-width: 440px; justify-self: center; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 200px 200px var(--radius) var(--radius); border: 6px solid var(--bg-3); outline: 2px solid var(--accent); outline-offset: 6px; box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+  .tall img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+  @media (min-width: 880px) { .page-grid { grid-template-columns: 1.2fr .8fr; gap: var(--space-5); } .page-hero { padding-top: var(--space-5); } .tall { max-width: none; aspect-ratio: 3 / 4.2; } }
+
+  .story-grid { display: grid; gap: var(--space-4); }
+  .story h2 { font-size: var(--step-4); }
+  .story p { max-width: 56ch; color: rgba(244,232,210,.9); }
+  .story .big { font-family: var(--font-display); font-weight: 700; font-size: var(--step-2); line-height: 1.2; color: var(--ink); max-width: 24ch; }
+  .story .big em { font-style: normal; color: var(--accent); }
+  @media (min-width: 880px) { .story-grid { grid-template-columns: .9fr 1.1fr; gap: var(--space-5); align-items: start; } }
+
+  .uses { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .section-head { max-width: 46ch; margin-bottom: var(--space-4); }
+  .section-head h2 { font-size: var(--step-4); }
+  .use-grid { display: grid; gap: var(--space-2); }
+  .use { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); transition: border-color .25s, transform .25s var(--ease); }
+  .use:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .use .num { font-family: var(--font-mono); font-size: .78rem; color: var(--accent-2); background: var(--paper); display: inline-block; padding: .15rem .5rem; border-radius: 3px; margin-bottom: var(--space-2); }
+  .use h3 { font-size: var(--step-1); margin-bottom: .5rem; }
+  .use p { margin: 0; color: var(--muted); font-size: .97rem; }
+  @media (min-width: 640px) { .use-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .use-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .photos { display: grid; gap: var(--space-2); }
+  .photos figure { margin: 0; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line); aspect-ratio: 4 / 3; position: relative; }
+  .photos img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+  .photos figure:hover img { transform: scale(1.05); }
+  .photos .p1 img { object-position: 50% 65%; }
+  .photos .p2 img { object-position: 50% 45%; }
+  .photos .p3 img { object-position: 40% 50%; }
+  .photos figcaption { position: absolute; left: .7rem; bottom: .7rem; background: var(--accent-2); font-family: var(--font-mono); font-size: .74rem; padding: .35rem .6rem; border-radius: 3px; }
+  @media (min-width: 760px) { .photos { grid-template-columns: 1.3fr 1fr 1fr; } .photos figure { aspect-ratio: 3 / 4; } }
+
+  .week { display: grid; gap: var(--space-4); }
+  .week h2 { font-size: var(--step-3); }
+  .week p { color: rgba(244,232,210,.88); max-width: 44ch; }
+  .blocks { display: grid; gap: .8rem; }
+  .block { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1rem 1.2rem; border-radius: 8px; background: var(--bg-2); border: 1px solid var(--line); font-family: var(--font-mono); }
+  .block span:first-child { font-size: .85rem; color: var(--muted); }
+  .block b { font-weight: 500; color: var(--accent); }
+  .block.late-b { background: var(--accent-2); border-color: var(--accent-2); }
+  .block.late-b span:first-child, .block.late-b b { color: var(--ink); }
+  @media (min-width: 880px) { .week { grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: center; } }
+
+  .cta { background: var(--bg-3); border-top: 1px solid var(--line); }
+  .cta h2 { font-size: var(--step-4); margin-bottom: var(--space-2); }
+  .cta p { max-width: 44ch; color: rgba(244,232,210,.88); }
+  .cta .contact-actions { margin-top: var(--space-3); }
+</style>
+</head>
+<body>
+<a class="skip" href="#story">Skip to the story</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="wordmark" href="../" aria-label="Portland Mash Tun, home">Mash<span>Tun</span></a>
+    <p class="status" id="status" role="status" aria-live="polite" style="margin-block:0"><span class="dot" aria-hidden="true"></span><span id="status-text">Hours on contact page</span></p>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../services/">Menu</a>
+      <a href="./" aria-current="page">About</a>
+      <a href="../contact/">Contact</a>
+      <a class="btn btn-primary btn-sm" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap page-grid">
+      <div>
+        <p class="eyebrow">About</p>
+        <h1>Beer first. <em>Burgers a close second.</em></h1>
+        <p class="lede">Mash Tun is a casual craft beer pub in Portland's Old Port, with burgers, pub food, cocktails and plenty on tap.</p>
+        <div class="hero-cta" style="margin-bottom:0">
+          <a class="btn btn-primary" href="../services/">See the menu</a>
+          <a class="btn btn-ghost" href="../contact/">Hours and directions</a>
+        </div>
+      </div>
+      <figure class="tall reveal">
+        <img src="../photos/photo1.jpg" alt="A butcher-block table with a lobster roll, a paper boat of fries, a tray of oysters on ice and two beers" width="600" height="900">
+      </figure>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="At a glance">
+    <div class="wrap">
+      <ul>
+        <li><b>Old Port</b><span>In Portland's Old Port</span></li>
+        <li><b>Beer on tap</b><span>Plenty of taps available</span></li>
+        <li><b>Late-night food</b><span>Open late on weekends</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <p class="eyebrow">The place</p>
+        <h2 id="story-title">Easy room, <span style="color:var(--accent)">loud enough.</span></h2>
+        <p class="big" style="margin-top:var(--space-3)">Food comes out in <em>red-checked paper boats.</em> The bar is butcher block.</p>
+      </div>
+      <div class="reveal">
+        <p>We're in the Old Port and we've built the place around the neighborhood: quick stops, game nights and longer hangs with friends. Nobody's going to rush you either way.</p>
+        <p>The menu leans burger bar. Burgers, seafood, sandwiches and snacks, with beer on tap and cocktails next to them. Order a full meal, or a few small plates and another round.</p>
+        <p>Start with fried pickles or oysters. Move on to the Mash Tun Burger, the Maine Burger or a lobster roll. Add fries. Pick a taco if you're still going. It's all on the <a href="../services/" style="color:var(--accent)">menu page</a>, prices included.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section uses" aria-labelledby="uses-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What people use it for</p>
+        <h2 id="uses-title">Four good reasons to walk in.</h2>
+      </div>
+      <div class="use-grid">
+        <article class="use reveal"><span class="num">01</span><h3>A quick bite</h3><p>Fries, wings, a taco or a grilled cheese, fast and no fuss.</p></article>
+        <article class="use reveal"><span class="num">02</span><h3>Catching the game</h3><p>Grab a stool, order a round and stay for the whole thing.</p></article>
+        <article class="use reveal"><span class="num">03</span><h3>Meeting friends</h3><p>Laid-back enough for a few drinks, with food to split.</p></article>
+        <article class="use reveal"><span class="num">04</span><h3>Late-night food</h3><p>Weekends run late, and the kitchen's still going.</p></article>
+      </div>
+      <p style="margin-top:var(--space-3);font-family:var(--font-mono);font-size:.85rem;color:var(--muted)">People also mention the laid-back atmosphere and reasonable prices.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Photos from the bar">
+    <div class="wrap photos">
+      <figure class="p1 reveal"><img src="../photos/photo1.jpg" alt="Lobster roll, fries in a paper boat, oysters on ice and beers on a butcher-block table" width="600" height="900" loading="lazy"><figcaption>Lobster roll + oysters</figcaption></figure>
+      <figure class="p2 reveal"><img src="../photos/photo2.jpg" alt="A hand sliding a paper boat of glazed wings with carrots and celery across a butcher-block bar" width="600" height="900" loading="lazy"><figcaption>Wings, mid-slide</figcaption></figure>
+      <figure class="p3 reveal"><img src="../photos/photo3.jpg" alt="Three tacos in a tray and a hot sandwich in a checked paper boat on a long amber bar top" width="900" height="793" loading="lazy"><figcaption>Tacos + sandwich</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section uses" aria-labelledby="week-title">
+    <div class="wrap week">
+      <div class="reveal">
+        <p class="eyebrow">The week</p>
+        <h2 id="week-title">Open every day, later on weekends.</h2>
+        <p>Weeknights start at 3pm. Friday and Saturday open at noon and run to 1am.</p>
+      </div>
+      <div class="blocks reveal">
+        <div class="block"><span>Mon to Thu</span><b>3pm - 12am</b></div>
+        <div class="block late-b"><span>Fri + Sat</span><b>12pm - 1am</b></div>
+        <div class="block"><span>Sunday</span><b>12pm - 12am</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" aria-labelledby="cta-title">
+    <div class="wrap reveal">
+      <p class="eyebrow">Come by</p>
+      <h2 id="cta-title">Cold taps, hot fries.</h2>
+      <p>Book a table or order online.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+        <a class="btn btn-ghost" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="mobile-bar">
+  <a class="btn btn-primary" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+  <a class="btn btn-ghost" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap foot-in">
+    <a class="wordmark" href="../">Mash<span>Tun</span></a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="../services/">Menu</a>
+      <a href="./">About</a>
+      <a href="../contact/">Contact</a>
+      <a href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+      <a href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+    </nav>
+    <p class="copy">© 2026 Portland Mash Tun.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  var H = [
+    { o: 720, c: 1440 }, { o: 900, c: 1440 }, { o: 900, c: 1440 }, { o: 900, c: 1440 },
+    { o: 900, c: 1440 }, { o: 720, c: 1500 }, { o: 720, c: 1500 }
+  ];
+  var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  function label(m) { m = m % 1440; var h = Math.floor(m / 60); var ap = h >= 12 ? 'pm' : 'am'; return (h % 12 || 12) + ap; }
+  function nowET() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+      var o = {};
+      parts.forEach(function (p) { o[p.type] = p.value; });
+      return { d: days[o.weekday], m: (parseInt(o.hour, 10) % 24) * 60 + parseInt(o.minute, 10) };
+    } catch (err) {
+      var n = new Date();
+      return { d: n.getDay(), m: n.getHours() * 60 + n.getMinutes() };
+    }
+  }
+  var t = nowET();
+  var prev = (t.d + 6) % 7;
+  var status = document.getElementById('status');
+  var text = document.getElementById('status-text');
+  var msg, isOpen = false;
+  if (H[prev].c > 1440 && t.m < H[prev].c - 1440) { isOpen = true; msg = 'Open now, till ' + label(H[prev].c); }
+  else if (t.m >= H[t.d].o && t.m < H[t.d].c) { isOpen = true; msg = 'Open now, till ' + label(H[t.d].c); }
+  else if (t.m < H[t.d].o) { msg = 'Opens at ' + label(H[t.d].o); }
+  else { msg = 'Opens tomorrow at ' + label(H[(t.d + 1) % 7].o); }
+  text.textContent = msg;
+  status.classList.add(isOpen ? 'is-open' : 'is-closed');
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script>(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add('is-in')})},2500);})();</script></body>
+</html>

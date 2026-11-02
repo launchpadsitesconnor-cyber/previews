@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hours and Contact | Portland Mash Tun</title>
+<meta name="description" content="Hours, directions and a message form for Portland Mash Tun in the Old Port. Open late on weekends.">
+<meta name="theme-color" content="#17100B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  .nav a[aria-current="page"]:not(.btn) { color: var(--accent); }
+  .page-hero { padding: var(--space-4) 0 var(--space-5); position: relative; }
+  .page-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 60% at 88% 25%, rgba(224,147,43,.16), transparent 70%); }
+  .page-grid { display: grid; gap: var(--space-4); align-items: center; position: relative; }
+  .page-hero h1 { font-size: var(--step-4); font-weight: 850; line-height: .98; letter-spacing: -.03em; font-variation-settings: "opsz" 144; }
+  .page-hero h1 em { font-style: normal; color: var(--accent); }
+  .page-hero .lede { font-size: var(--step-1); max-width: 34ch; margin: var(--space-3) 0 0; opacity: .92; }
+
+  .clock { background: var(--paper); color: var(--paper-ink); border-radius: 8px; padding: var(--space-3); transform: rotate(-1deg); box-shadow: 0 20px 40px rgba(0,0,0,.45); font-family: var(--font-mono); max-width: 440px; position: relative; }
+  .clock .lbl { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-2); margin: 0 0 .6rem; }
+  .clock .big { font-family: var(--font-display); font-weight: 850; font-size: var(--step-3); line-height: 1; margin: 0 0 .5rem; letter-spacing: -.02em; }
+  .clock .sub { font-size: .9rem; margin: 0; color: var(--paper-muted); }
+  .clock .led { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--muted); margin-right: .55rem; vertical-align: middle; }
+  .clock.is-open .led { background: #2f9e4f; }
+  .clock.is-closed .led { background: var(--accent-2); }
+  @media (min-width: 880px) { .page-grid { grid-template-columns: 1.1fr .9fr; gap: var(--space-5); } .page-hero { padding-top: var(--space-5); } .clock { justify-self: end; } }
+
+  .find { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .find h2, .note h2 { font-size: var(--step-3); margin-bottom: var(--space-3); }
+  .find-grid { display: grid; gap: var(--space-4); }
+  .map-card { margin-top: var(--space-3); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); background:
+    repeating-linear-gradient(0deg, rgba(224,147,43,.07) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(224,147,43,.07) 0 1px, transparent 1px 28px), var(--bg); }
+  .map-card p { margin: 0 0 var(--space-2); color: rgba(244,232,210,.88); max-width: 36ch; }
+  .find .hours-card { background: var(--bg); }
+  @media (min-width: 880px) { .find-grid { grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; } }
+
+  .note-grid { display: grid; gap: var(--space-4); }
+  .note-copy p { max-width: 40ch; color: rgba(244,232,210,.88); }
+  .note-photo { margin: var(--space-3) 0 0; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); max-width: 460px; }
+  .note-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
+  form { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); }
+  .field { display: grid; gap: .4rem; margin-bottom: var(--space-2); }
+  .field label { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .field input, .field select, .field textarea { font: inherit; font-size: 1rem; min-height: 48px; width: 100%; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: .7rem .9rem; transition: border-color .2s, box-shadow .2s; }
+  .field textarea { min-height: 150px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(224,147,43,.25); }
+  .field-row { display: grid; gap: var(--space-2); }
+  .form-hint { font-size: .9rem; color: var(--muted); margin: var(--space-2) 0 0; }
+  .form-hint a { color: var(--accent); }
+  .thanks { display: none; text-align: left; }
+  .thanks.show { display: block; }
+  .thanks h3 { font-size: var(--step-2); margin-bottom: var(--space-1); color: var(--accent); }
+  .thanks p { margin: 0 0 var(--space-2); color: rgba(244,232,210,.88); }
+  @media (min-width: 640px) { .field-row { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 880px) { .note-grid { grid-template-columns: .8fr 1.2fr; gap: var(--space-5); align-items: start; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#find">Skip to hours and directions</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="wordmark" href="../" aria-label="Portland Mash Tun, home">Mash<span>Tun</span></a>
+    <p class="status" id="status" role="status" aria-live="polite" style="margin-block:0"><span class="dot" aria-hidden="true"></span><span id="status-text">Hours below</span></p>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../services/">Menu</a>
+      <a href="../about/">About</a>
+      <a href="./" aria-current="page">Contact</a>
+      <a class="btn btn-primary btn-sm" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap page-grid">
+      <div>
+        <p class="eyebrow">Find us</p>
+        <h1>Is the door open? <em>Let's check.</em></h1>
+        <p class="lede">The clock on the right reads the real hours, in Portland time.</p>
+      </div>
+      <aside class="clock" id="clock" aria-label="Open right now">
+        <p class="lbl">Right now</p>
+        <p class="big"><span class="led" aria-hidden="true"></span><span id="clock-big">Checking</span></p>
+        <p class="sub" id="clock-sub">Today's hours load in a second.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section find" id="find" aria-labelledby="find-title">
+    <div class="wrap find-grid">
+      <div class="reveal">
+        <p class="eyebrow">Where</p>
+        <h2 id="find-title">Pull up a stool.</h2>
+        <address style="font-style:normal;font-size:var(--step-1);line-height:1.4">
+          Portland Mash Tun<br>
+          29 Wharf St<br>
+          Portland, ME 04101
+        </address>
+        <div class="map-card">
+          <p>Wharf Street, right in the Old Port. Open the map and it'll walk you in.</p>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=29+Wharf+St+Portland+ME+04101" target="_blank" rel="noopener">Get directions</a>
+        </div>
+        <div class="contact-actions" style="margin-top:var(--space-3)">
+          <a class="btn btn-ghost" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+          <a class="btn btn-ghost" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+        </div>
+      </div>
+      <div class="hours-card reveal">
+        <h3>Hours</h3>
+        <table>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>3pm - 12am</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>3pm - 12am</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>3pm - 12am</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>3pm - 12am</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>12pm - 1am</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>12pm - 1am</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>12pm - 12am</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section note" aria-labelledby="note-title">
+    <div class="wrap note-grid">
+      <div class="note-copy reveal">
+        <p class="eyebrow">Drop a note</p>
+        <h2 id="note-title">Got a question?</h2>
+        <p>Write it down here. For a table, the reservation page is the quickest route.</p>
+        <a class="btn btn-ghost" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+        <figure class="note-photo">
+          <img src="../photos/photo3.jpg" alt="Three tacos in a tray and a hot sandwich in a checked paper boat on a long amber bar top" width="900" height="793" loading="lazy">
+        </figure>
+      </div>
+      <div class="reveal">
+        <form id="note-form" aria-labelledby="note-title">
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-topic">What's it about</label>
+            <select id="f-topic" name="topic">
+              <option>A question about the menu</option>
+              <option>Hours</option>
+              <option>A group or a game night</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send the note</button>
+          <p class="form-hint">Ordering? Use <a href="https://order.spoton.com" target="_blank" rel="noopener">online ordering</a> instead.</p>
+        </form>
+        <div class="thanks card-thanks" id="thanks" role="status" aria-live="polite" tabindex="-1" style="background:var(--bg-2);border:1px solid var(--accent);border-radius:var(--radius);padding:var(--space-3)">
+          <h3 id="thanks-title">Thanks.</h3>
+          <p>Your note's in. In the meantime, the menu's right here.</p>
+          <a class="btn btn-primary" href="../services/">See the menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="mobile-bar">
+  <a class="btn btn-primary" href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+  <a class="btn btn-ghost" href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap foot-in">
+    <a class="wordmark" href="../">Mash<span>Tun</span></a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="../services/">Menu</a>
+      <a href="../about/">About</a>
+      <a href="./">Contact</a>
+      <a href="https://www.mashtunportland.com/book-online" target="_blank" rel="noopener">Reserve a table</a>
+      <a href="https://order.spoton.com" target="_blank" rel="noopener">Order online</a>
+    </nav>
+    <p class="copy">© 2026 Portland Mash Tun.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  var H = [
+    { o: 720, c: 1440 }, { o: 900, c: 1440 }, { o: 900, c: 1440 }, { o: 900, c: 1440 },
+    { o: 900, c: 1440 }, { o: 720, c: 1500 }, { o: 720, c: 1500 }
+  ];
+  var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  function label(m) { m = m % 1440; var h = Math.floor(m / 60); var ap = h >= 12 ? 'pm' : 'am'; return (h % 12 || 12) + ap; }
+  function nowET() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+      var o = {};
+      parts.forEach(function (p) { o[p.type] = p.value; });
+      return { d: days[o.weekday], m: (parseInt(o.hour, 10) % 24) * 60 + parseInt(o.minute, 10) };
+    } catch (err) {
+      var n = new Date();
+      return { d: n.getDay(), m: n.getHours() * 60 + n.getMinutes() };
+    }
+  }
+  var t = nowET();
+  var prev = (t.d + 6) % 7;
+  var status = document.getElementById('status');
+  var text = document.getElementById('status-text');
+  var msg, big, sub, isOpen = false;
+  if (H[prev].c > 1440 && t.m < H[prev].c - 1440) { isOpen = true; msg = 'Open now, till ' + label(H[prev].c); big = 'Open'; sub = 'Open until ' + label(H[prev].c) + ' tonight.'; }
+  else if (t.m >= H[t.d].o && t.m < H[t.d].c) { isOpen = true; msg = 'Open now, till ' + label(H[t.d].o === undefined ? 0 : H[t.d].c); big = 'Open'; sub = 'Open until ' + label(H[t.d].c) + ' tonight.'; }
+  else if (t.m < H[t.d].o) { msg = 'Opens at ' + label(H[t.d].o); big = 'Closed'; sub = 'Doors open at ' + label(H[t.d].o) + ' today.'; }
+  else { msg = 'Opens tomorrow at ' + label(H[(t.d + 1) % 7].o); big = 'Closed'; sub = 'Doors open tomorrow at ' + label(H[(t.d + 1) % 7].o) + '.'; }
+  text.textContent = msg;
+  status.classList.add(isOpen ? 'is-open' : 'is-closed');
+
+  var clock = document.getElementById('clock');
+  clock.classList.add(isOpen ? 'is-open' : 'is-closed');
+  document.getElementById('clock-big').textContent = big;
+  document.getElementById('clock-sub').textContent = sub;
+
+  var row = document.querySelector('.hours-card tr[data-day="' + t.d + '"]');
+  if (row) row.classList.add('today');
+
+  /* Message form: posts nowhere, shows a thank-you note */
+  var form = document.getElementById('note-form');
+  var thanks = document.getElementById('thanks');
+  var title = document.getElementById('thanks-title');
+  thanks.style.display = 'none';
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = (document.getElementById('f-name').value || '').trim();
+    title.textContent = name ? 'Thanks, ' + name + '.' : 'Thanks.';
+    form.style.display = 'none';
+    thanks.style.display = 'block';
+    thanks.focus();
+  });
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script>(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-in')});return;}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});setTimeout(function(){els.forEach(function(e){e.classList.add('is-in')})},2500);})();</script></body>
+</html>
