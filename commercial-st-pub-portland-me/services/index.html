@@ -4,227 +4,230 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Menu | Commercial St Pub, Portland, Maine</title>
-<meta name="description" content="The full menu at Commercial St Pub: fries, mac cheese, salads, burgers, sandwiches, fish tacos, beer and a Bloody Mary. Open 10:30 AM, pouring until 1 AM.">
-<meta name="theme-color" content="#0E1A23">
+<meta name="description" content="The full menu at Commercial St Pub: Pub Burger, Fish Taco, Steak &amp; Cheese, BBQ Pulled Pork, salads, fries, and Guinness Draught, Cold Snap, The Substance and Frye's Leap IPA on tap.">
+<meta name="theme-color" content="#141A20">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
-<script>document.documentElement.classList.add('js');</script>
 <style>
-.site-nav a[aria-current="page"] { color: var(--accent); }
+  .page-hero { background: var(--ink); color: var(--on-dark); position: relative; overflow: hidden; padding-block: var(--space-5) var(--space-5); }
+  .page-hero::before {
+    content: ""; position: absolute; right: -10%; top: -40%; width: 60%; height: 180%;
+    background: radial-gradient(ellipse at center, rgba(217,138,31,0.28), rgba(217,138,31,0) 65%);
+    pointer-events: none;
+  }
+  .page-hero .wrap { position: relative; display: grid; gap: var(--space-3); }
+  .page-hero h1 { font-size: var(--step-4); max-width: 14ch; }
+  .page-hero h1 .num { color: var(--accent); font-family: var(--font-mono); font-stretch: 100%; font-weight: 500; letter-spacing: -0.04em; }
+  .page-hero .lede { max-width: 40ch; color: var(--on-dark-muted); }
+  .page-hero .status { margin-top: var(--space-1); }
 
-.page-head { padding-block: var(--s-7) var(--s-7); position: relative; overflow: hidden; }
-.page-head::before {
-  content: ""; position: absolute; right: -10%; top: -30%; width: 40rem; height: 40rem; max-width: 120vw;
-  background: radial-gradient(closest-side, rgba(227, 160, 47, 0.14), transparent 70%); pointer-events: none;
-}
-.page-head .wrap { position: relative; }
-.page-head h1 {
-  font-family: var(--f-display); font-weight: 600;
-  font-size: clamp(2.6rem, 8vw, 5.5rem); line-height: 0.97; letter-spacing: -0.03em;
-  margin-top: var(--s-5); text-wrap: balance; max-width: 14ch;
-}
-.page-head h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
-.page-head .lede { margin-top: var(--s-5); font-size: clamp(1.1rem, 2.6vw, 1.3rem); max-width: 34rem; }
-.ph-grid { display: grid; gap: var(--s-6); }
-.ph-photo { display: none; }
-.ph-photo .arch img { object-position: 50% 50%; }
+  .filters-bar { background: var(--bg); border-bottom: 1px solid var(--line); padding-block: var(--space-2); }
+  .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+  .filters-label { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-right: 0.5rem; }
+  .chip {
+    font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 0.9rem;
+    min-height: 44px; padding: 0.4rem 1.05rem; border-radius: 999px;
+    border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  .chip:hover { transform: translateY(-2px); background: var(--bg-deep); }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
 
-.chipbar {
-  position: sticky; top: var(--hh, 6.5rem); z-index: 40;
-  background: rgba(14, 26, 35, 0.94);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-  border-block: 1px solid var(--line);
-}
-.chips { display: flex; gap: var(--s-2); overflow-x: auto; padding-block: var(--s-3); scrollbar-width: none; }
-.chips::-webkit-scrollbar { display: none; }
-.chip {
-  flex: none; display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.4rem 1.1rem;
-  border: 1px solid var(--line-strong); border-radius: 999px;
-  text-decoration: none; font-weight: 500; font-size: 0.95rem; color: var(--ink); white-space: nowrap;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.chip:hover { border-color: var(--accent); color: var(--accent); }
-.chip[aria-current="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .menu-page { padding-block: var(--space-5) var(--space-6); }
+  .m-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-5); align-items: start; }
+  .m-group[hidden] { display: none; }
+  .m-group.wide { grid-column: 1 / -1; }
+  .m-head { display: flex; align-items: baseline; gap: 1rem; border-bottom: 2px solid var(--ink); padding-bottom: 0.6rem; }
+  .m-head h2 { font-size: var(--step-2); }
+  .m-count { margin-left: auto; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; color: var(--muted); white-space: nowrap; }
+  .m-note { color: var(--muted); margin-top: 0.7rem; max-width: 46ch; }
+  .m-list { margin-top: var(--space-1); }
+  .m-list li { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line); }
+  .m-list .name { font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 1.1rem; }
+  .m-list .leader { border-bottom-color: rgba(20,26,32,0.35); }
+  .m-list .price { color: var(--ink); }
+  .m-list .price::before { opacity: 0.6; }
 
-.menu { padding-block: var(--s-6) var(--s-8); }
-.cat { display: grid; gap: var(--s-4); padding-block: var(--s-6); border-top: 1px solid var(--line); scroll-margin-top: calc(var(--hh, 6.5rem) + 4.5rem); }
-.cat:first-child { border-top: 0; }
-.menu.filtered .cat { border-top: 0; }
-.cat[hidden] { display: none; }
-.cat-title .num { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: 0.16em; color: var(--accent); }
-.cat-title h2 { font-family: var(--f-display); font-weight: 600; font-size: var(--t-lg); line-height: 1.08; letter-spacing: -0.015em; margin-top: var(--s-2); }
-.cat-title p { margin-top: var(--s-2); color: var(--muted); font-size: var(--t-sm); max-width: 18rem; }
+  .m-group .taps { margin-top: var(--space-3); grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .m-extra { margin-top: var(--space-3); }
+  .m-extra h3 { font-family: var(--font-mono); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
-.menu-list li {
-  display: flex; align-items: baseline; gap: var(--s-3);
-  padding: 0.8rem 0;
-  font-family: var(--f-display); font-size: clamp(1.2rem, 4vw, 1.5rem); font-weight: 500; line-height: 1.2;
-}
-.menu-list .lead-dots { flex: 1; border-bottom: 2px dotted rgba(243, 233, 210, 0.3); transform: translateY(-0.3em); min-width: 1rem; transition: border-color 0.2s; }
-.menu-list .price { font-family: var(--f-mono); font-size: 1.05rem; color: var(--accent); font-weight: 500; }
-.menu-list .tag { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.menu-list li:hover .lead-dots { border-bottom-color: var(--accent); }
+  .menu-foot { margin-top: var(--space-5); padding-top: var(--space-3); border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); max-width: 60ch; }
 
-.menu-note {
-  margin-top: var(--s-6); padding: var(--s-4) var(--s-5);
-  border: 1px dashed var(--line-strong); border-radius: var(--radius);
-  color: var(--muted); font-size: var(--t-sm); max-width: 40rem;
-}
-.menu-note a { color: var(--ink); font-weight: 700; text-decoration-color: var(--accent); text-underline-offset: 3px; white-space: nowrap; }
+  .cta-band { background: var(--teal); color: var(--on-dark); padding-block: var(--space-5); }
+  .cta-band .wrap { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3) var(--space-4); align-items: center; }
+  .cta-band h2 { font-size: var(--step-2); max-width: 20ch; }
+  .cta-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .cta-band .btn-ghost { border-color: rgba(242,234,219,0.4); }
 
-.end-cta { padding-block: var(--s-8); background: var(--bg-deep); border-top: 1px solid var(--line); }
-.end-cta h2 { font-family: var(--f-display); font-weight: 600; font-size: var(--t-xl); line-height: 1.04; letter-spacing: -0.02em; text-wrap: balance; max-width: 18ch; }
-.end-cta p { margin-top: var(--s-4); color: var(--muted); max-width: 30rem; }
-
-@media (min-width: 900px) {
-  .ph-grid { grid-template-columns: 1.3fr 0.7fr; align-items: center; gap: var(--s-8); }
-  .ph-photo { display: block; }
-  .cat { grid-template-columns: 0.7fr 1.3fr; gap: var(--s-7); padding-block: var(--s-7); }
-  .cat-title { position: sticky; top: calc(var(--hh, 4.5rem) + 5rem); align-self: start; }
-}
+  @media (max-width: 960px) {
+    .m-group .taps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .page-hero { padding-block: var(--space-4); }
+    .m-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    .cta-band .wrap { grid-template-columns: 1fr; }
+    .cta-actions .btn { flex: 1 1 100%; }
+    .filters-label { width: 100%; }
+  }
 </style>
+<script>document.documentElement.classList.add('html-js');</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <div class="wrap header-in">
-    <a class="wordmark" href="../" aria-label="Commercial St Pub, home"><span class="lamp" aria-hidden="true"></span>Commercial <em>St</em> Pub</a>
-
-    <div class="status" id="status" role="status" aria-live="polite">
-      <span class="dot" aria-hidden="true"></span>
-      <span id="status-text">Open 10:30 AM to 1 AM</span>
-    </div>
-
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span></button>
-
-    <a class="btn btn-primary btn-sm header-call" href="tel:2077729414">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-      207-772-9414
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Commercial St Pub, home">
+      <span class="brand-plate">129</span>
+      <span class="brand-name">Commercial St Pub</span>
     </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-links" id="nav-links">
+        <a href="./" aria-current="page">Menu</a>
+        <a href="../about/">About</a>
+        <a href="../contact/">Visit</a>
+      </div>
+      <a class="btn btn-primary header-call" href="tel:+12077729414">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        207-772-9414
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span></button>
+    </nav>
   </div>
-  <nav class="site-nav" id="site-nav" aria-label="Main">
-    <ul>
-      <li><a href="../">Home</a></li>
-      <li><a href="./" aria-current="page">Menu</a></li>
-      <li><a href="../about/">About</a></li>
-      <li><a href="../contact/">Contact</a></li>
-    </ul>
-  </nav>
 </header>
 
 <main id="main">
 
-  <section class="page-head" aria-labelledby="page-title">
-    <div class="wrap ph-grid">
-      <div>
-        <p class="eyebrow">The menu</p>
-        <h1 id="page-title">Pub food and <em>cold</em> beer.</h1>
-        <p class="lede">A burger that does its job, fish tacos, salads, sandwiches and sides. Beer and a Bloody Mary to go with them. The kitchen and the taps both run late.</p>
-      </div>
-      <div class="hero-photo">
-        <div class="arch">
-          <img src="../photos/stock5-3d297e.jpg" alt="A red cocktail over crushed ice with lemon slices and a straw on a wooden table" width="900" height="601">
-        </div>
-      </div>
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--on-dark-muted)">The menu</p>
+      <h1 id="page-title" class="display">Everything at <span class="num">129</span>, in one place.</h1>
+      <p class="lede">Burgers, tacos, salads, a basket of fries, and four beers on tap. Prices are in dollars.</p>
+      <p class="status" id="status" data-state="unknown" role="status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">Open 10:30 AM to 1 AM</span>
+      </p>
     </div>
   </section>
 
-  <div class="chipbar" id="chipbar">
+  <div class="filters-bar">
     <div class="wrap">
-      <nav class="chips" aria-label="Menu categories">
-        <a class="chip" href="#top-of-menu" data-filter="all" aria-current="true">All</a>
-        <a class="chip" href="#starters" data-filter="starters">Starters &amp; Sides</a>
-        <a class="chip" href="#salads" data-filter="salads">Salads</a>
-        <a class="chip" href="#sandwiches" data-filter="sandwiches">Sandwiches &amp; Burgers</a>
-        <a class="chip" href="#seafood" data-filter="seafood">Seafood &amp; Tacos</a>
-        <a class="chip" href="#drinks" data-filter="drinks">Drinks</a>
-      </nav>
+      <div class="filters" role="group" aria-label="Filter the menu">
+        <span class="filters-label">Show</span>
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="drinks" aria-pressed="false">Drinks</button>
+        <button class="chip" type="button" data-filter="sandwiches" aria-pressed="false">Burgers and sandwiches</button>
+        <button class="chip" type="button" data-filter="tacos" aria-pressed="false">Tacos</button>
+        <button class="chip" type="button" data-filter="salads" aria-pressed="false">Soups and salads</button>
+        <button class="chip" type="button" data-filter="sides" aria-pressed="false">Sides</button>
+        <button class="chip" type="button" data-filter="mains" aria-pressed="false">Mains</button>
+      </div>
     </div>
   </div>
 
-  <div class="menu" id="menu">
-    <div class="wrap" id="top-of-menu">
+  <section class="menu-page" aria-label="Full menu">
+    <div class="wrap">
+      <div class="m-grid" id="m-grid">
 
-      <section class="cat" id="starters" aria-labelledby="h-starters">
-        <div class="cat-title">
-          <span class="num">01</span>
-          <h2 id="h-starters">Starters &amp; Sides</h2>
-        </div>
-        <ul class="menu-list">
-          <li><span class="name">Basket of Fries</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$4</span></li>
-          <li><span class="name">Mac Cheese</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$8</span></li>
-        </ul>
-      </section>
+        <section class="m-group wide" data-cat="drinks" aria-labelledby="g-drinks" data-reveal>
+          <div class="m-head">
+            <h2 id="g-drinks" class="display">Drinks</h2>
+            <span class="m-count mono">6 ITEMS</span>
+          </div>
+          <p class="m-note">Guinness Draught, plus local favorites. Everything below is a tap or a glass we pour.</p>
+          <ul class="taps">
+            <li class="handle"><span class="handle-tag">On tap</span><span class="handle-name">Guinness Draught</span></li>
+            <li class="handle"><span class="handle-tag">On tap</span><span class="handle-name">Cold Snap</span></li>
+            <li class="handle"><span class="handle-tag">On tap</span><span class="handle-name">The Substance</span></li>
+            <li class="handle"><span class="handle-tag">On tap</span><span class="handle-name">Frye's Leap IPA</span></li>
+          </ul>
+          <div class="m-extra">
+            <h3>Cocktail and no-alcohol</h3>
+            <ul class="m-list">
+              <li><span class="name">Bloody Mary</span></li>
+              <li><span class="name">Water</span></li>
+            </ul>
+          </div>
+        </section>
 
-      <section class="cat" id="salads" aria-labelledby="h-salads">
-        <div class="cat-title">
-          <span class="num">02</span>
-          <h2 id="h-salads">Salads</h2>
-        </div>
-        <ul class="menu-list">
-          <li><span class="name">Frise Salad</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$12</span></li>
-          <li><span class="name">Asparagus Salad</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$12</span></li>
-          <li><span class="name">Mixed Green Salad</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$10</span></li>
-        </ul>
-      </section>
+        <section class="m-group" data-cat="sandwiches" aria-labelledby="g-sand" data-reveal>
+          <div class="m-head">
+            <h2 id="g-sand" class="display">Burgers and sandwiches</h2>
+            <span class="m-count mono">6 ITEMS</span>
+          </div>
+          <ul class="m-list">
+            <li><span class="name">Pub Burger</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span class="name">Steak &amp; Cheese</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span class="name">BBQ Pulled Pork</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span class="name">Chicken Salad Sandwich</span><span class="leader" aria-hidden="true"></span><span class="price">10</span></li>
+            <li><span class="name">BLT</span><span class="leader" aria-hidden="true"></span><span class="price">9</span></li>
+            <li><span class="name">Hot Dogs</span><span class="leader" aria-hidden="true"></span><span class="price">8</span></li>
+          </ul>
+        </section>
 
-      <section class="cat" id="sandwiches" aria-labelledby="h-sandwiches">
-        <div class="cat-title">
-          <span class="num">03</span>
-          <h2 id="h-sandwiches">Sandwiches &amp; Burgers</h2>
-        </div>
-        <ul class="menu-list">
-          <li><span class="name">Pub Burger</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$12</span></li>
-          <li><span class="name">Steak Cheese</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$12</span></li>
-          <li><span class="name">BBQ Pulled Pork</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$12</span></li>
-          <li><span class="name">Chicken Salad Sandwich</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$10</span></li>
-          <li><span class="name">BLT</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$9</span></li>
-          <li><span class="name">Hot Dogs</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$8</span></li>
-        </ul>
-      </section>
+        <section class="m-group" data-cat="tacos" aria-labelledby="g-tacos" data-reveal>
+          <div class="m-head">
+            <h2 id="g-tacos" class="display">Tacos</h2>
+            <span class="m-count mono">2 ITEMS</span>
+          </div>
+          <ul class="m-list">
+            <li><span class="name">Fish Taco</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span class="name">Tacos</span></li>
+          </ul>
+        </section>
 
-      <section class="cat" id="seafood" aria-labelledby="h-seafood">
-        <div class="cat-title">
-          <span class="num">04</span>
-          <h2 id="h-seafood">Seafood &amp; Tacos</h2>
-        </div>
-        <ul class="menu-list">
-          <li><span class="name">Fish Taco</span><span class="lead-dots" aria-hidden="true"></span><span class="price">$12</span></li>
-          <li><span class="name">Fish Chowder</span><span class="lead-dots" aria-hidden="true"></span><span class="tag">Soup</span></li>
-        </ul>
-      </section>
+        <section class="m-group" data-cat="salads" aria-labelledby="g-salads" data-reveal>
+          <div class="m-head">
+            <h2 id="g-salads" class="display">Soups and salads</h2>
+            <span class="m-count mono">5 ITEMS</span>
+          </div>
+          <ul class="m-list">
+            <li><span class="name">Frise Salad</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span class="name">Asparagus Salad</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span class="name">Mixed Green Salad</span><span class="leader" aria-hidden="true"></span><span class="price">10</span></li>
+            <li><span class="name">Mixed Green</span><span class="leader" aria-hidden="true"></span><span class="price">5</span></li>
+            <li><span class="name">Fish Chowder</span></li>
+          </ul>
+        </section>
 
-      <section class="cat" id="drinks" aria-labelledby="h-drinks">
-        <div class="cat-title">
-          <span class="num">05</span>
-          <h2 id="h-drinks">Drinks</h2>
-          <p>The beer list changes. Call or stop in for what's pouring today.</p>
-        </div>
-        <ul class="menu-list">
-          <li><span class="name">Guinness Draught</span><span class="lead-dots" aria-hidden="true"></span><span class="tag">On tap</span></li>
-          <li><span class="name">Cold Snap</span><span class="lead-dots" aria-hidden="true"></span><span class="tag">On tap</span></li>
-          <li><span class="name">The Substance</span><span class="lead-dots" aria-hidden="true"></span><span class="tag">On tap</span></li>
-          <li><span class="name">Frye's Leap IPA</span><span class="lead-dots" aria-hidden="true"></span><span class="tag">On tap</span></li>
-          <li><span class="name">Bloody Mary</span><span class="lead-dots" aria-hidden="true"></span><span class="tag">Cocktail</span></li>
-        </ul>
-      </section>
+        <section class="m-group" data-cat="sides" aria-labelledby="g-sides" data-reveal>
+          <div class="m-head">
+            <h2 id="g-sides" class="display">Sides</h2>
+            <span class="m-count mono">2 ITEMS</span>
+          </div>
+          <ul class="m-list">
+            <li><span class="name">Basket of Fries</span><span class="leader" aria-hidden="true"></span><span class="price">4</span></li>
+            <li><span class="name">Mac Cheese</span><span class="leader" aria-hidden="true"></span><span class="price">8</span></li>
+          </ul>
+        </section>
 
-      <p class="menu-note">Prices and items can change. Items without a price are listed as they are on the menu. For the latest, <a href="tel:2077729414">call 207-772-9414</a> or stop in.</p>
+        <section class="m-group" data-cat="mains" aria-labelledby="g-mains" data-reveal>
+          <div class="m-head">
+            <h2 id="g-mains" class="display">Mains</h2>
+            <span class="m-count mono">3 ITEMS</span>
+          </div>
+          <ul class="m-list">
+            <li><span class="name">Sea Bass</span></li>
+            <li><span class="name">Fish</span></li>
+            <li><span class="name">Lobster</span></li>
+          </ul>
+        </section>
+
+      </div>
+
+      <p class="menu-foot">Items without a price are listed on our menu without one. Menus change, so call if you're set on a particular dish.</p>
     </div>
-  </div>
+  </section>
 
-  <section class="end-cta" aria-labelledby="end-title">
-    <div class="wrap reveal">
-      <p class="eyebrow">Hungry now?</p>
-      <h2 id="end-title" style="margin-top: var(--s-4)">Off the street and onto a stool.</h2>
-      <p>Open from <span class="mono" style="color: var(--ink)">10:30 AM</span>. Pouring until <span class="mono" style="color: var(--ink)">1 AM</span>, <span class="mono" style="color: var(--ink)">11 PM</span> on Tuesdays.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="tel:2077729414">Call 207-772-9414</a>
-        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=129%20Commercial%20St%2C%20Portland%2C%20ME%2004101" target="_blank" rel="noopener">Get directions</a>
-        <a class="btn btn-ghost" href="../contact/">Hours &amp; contact</a>
+  <section class="cta-band" aria-labelledby="cta-title">
+    <div class="wrap">
+      <h2 id="cta-title" class="display">Hungry? The kitchen's a short walk from the taps.</h2>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="tel:+12077729414">Call 207-772-9414</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=129+Commercial+St,+Portland,+ME+04101" target="_blank" rel="noopener">Get directions</a>
       </div>
     </div>
   </section>
@@ -233,105 +236,118 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="wordmark" href="../"><span class="lamp" aria-hidden="true"></span>Commercial <em>St</em> Pub</a>
-        <p>Pub and bar on Commercial Street, Portland.</p>
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Commercial St Pub, home">
+          <span class="brand-plate">129</span>
+          <span class="brand-name">Commercial St Pub</span>
+        </a>
+        <p class="footer-tag">Late nights on Commercial Street.</p>
       </div>
       <div>
-        <h3>Hours</h3>
-        <ul class="foot-hours">
-          <li><span>Mon</span><span>10:30 AM to 1:00 AM</span></li>
-          <li><span>Tue</span><span>10:30 AM to 11:00 PM</span></li>
-          <li><span>Wed to Sun</span><span>10:30 AM to 1:00 AM</span></li>
+        <h2>Hours</h2>
+        <p class="footer-hours">Mon, Wed to Sun<br>10:30 AM &ndash; 1 AM<br>Tuesday<br>10:30 AM &ndash; 11 PM</p>
+      </div>
+      <div>
+        <h2>Find us</h2>
+        <address style="font-style:normal">
+          <p>129 Commercial St<br>Portland, Maine 04101</p>
+          <p><a href="tel:+12077729414" class="mono">207-772-9414</a></p>
+        </address>
+        <ul>
+          <li><a href="./">Menu</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Visit</a></li>
         </ul>
       </div>
-      <div class="foot-call">
-        <h3>Call</h3>
-        <a class="tel" href="tel:2077729414">207-772-9414</a>
-        <div class="links">
-          <span style="color: var(--muted)">129 Commercial St, Portland, Maine 04101</span>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=129%20Commercial%20St%2C%20Portland%2C%20ME%2004101" target="_blank" rel="noopener">Get directions</a>
-          <a href="../about/">About the pub</a>
-          <a href="../contact/">Contact</a>
-        </div>
-      </div>
     </div>
-    <p class="copyright">© 2026 Commercial St Pub.</p>
+    <p class="copyright">&copy; 2026 Commercial St Pub.</p>
   </div>
 </footer>
 
 <div class="callbar">
-  <a class="btn btn-primary" href="tel:2077729414">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-    Call 207-772-9414
-  </a>
-  <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=129%20Commercial%20St%2C%20Portland%2C%20ME%2004101" target="_blank" rel="noopener">Directions</a>
+  <a class="btn btn-primary" href="tel:+12077729414">Call 207-772-9414</a>
+  <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=129+Commercial+St,+Portland,+ME+04101" target="_blank" rel="noopener">Directions</a>
 </div>
 
 <script>
 (function () {
-  var CLOSE = [1500, 1380, 1500, 1500, 1500, 1500, 1500]; /* Mon..Sun, minutes; 1500 = 1:00 AM next day */
-  var DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-  function portland() {
-    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
-    var o = {};
-    parts.forEach(function (p) { o[p.type] = p.value; });
-    return { d: DAYS.indexOf(o.weekday), m: (parseInt(o.hour, 10) % 24) * 60 + parseInt(o.minute, 10) };
-  }
-  function state() {
-    var t = portland(), prev = (t.d + 6) % 7;
-    if (t.m < 60 && CLOSE[prev] > 1440) return { open: true, until: '1:00 AM' };
-    if (t.m >= 630 && t.m < CLOSE[t.d]) return { open: true, until: CLOSE[t.d] > 1440 ? '1:00 AM' : '11:00 PM' };
-    return { open: false };
-  }
-  function paint() {
-    var s = state(), el = document.getElementById('status'), tx = document.getElementById('status-text');
-    el.classList.toggle('is-open', s.open);
-    el.classList.toggle('is-closed', !s.open);
-    tx.textContent = s.open ? 'Open now \u00b7 until ' + s.until : 'Closed \u00b7 opens 10:30 AM';
-  }
-  paint();
-  setInterval(paint, 60000);
-
-  /* mobile nav */
-  var btn = document.getElementById('nav-toggle'), nav = document.getElementById('site-nav');
-  var hdr = document.querySelector('.site-header');
-  function setH() { document.documentElement.style.setProperty('--hh', hdr.offsetHeight + 'px'); }
-  btn.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    setH();
+  // Mobile menu
+  var toggle = document.querySelector('.menu-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
-  window.addEventListener('resize', setH);
-  setH();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setH);
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 
-  /* category filter */
-  var chips = document.querySelectorAll('.chip'), cats = document.querySelectorAll('.cat'), menu = document.getElementById('menu');
+  // Menu filter
+  var chips = document.querySelectorAll('.chip');
+  var groups = document.querySelectorAll('.m-group');
   chips.forEach(function (chip) {
-    chip.addEventListener('click', function (e) {
-      e.preventDefault();
+    chip.addEventListener('click', function () {
       var f = chip.getAttribute('data-filter');
-      chips.forEach(function (c) { c.removeAttribute('aria-current'); });
-      chip.setAttribute('aria-current', 'true');
-      cats.forEach(function (c) { c.hidden = !(f === 'all' || c.id === f); });
-      menu.classList.toggle('filtered', f !== 'all');
-      var bar = document.getElementById('chipbar');
-      var top = menu.getBoundingClientRect().top + window.scrollY - hdr.offsetHeight - bar.offsetHeight;
-      if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      groups.forEach(function (g) {
+        var show = f === 'all' || g.getAttribute('data-cat') === f;
+        g.hidden = !show;
+        if (show) g.classList.add('in');
+      });
     });
   });
 
-  /* reveal */
-  var els = document.querySelectorAll('.reveal');
+  // Open-now status, Eastern time
+  function easternNow() {
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false
+    }).formatToParts(new Date());
+    var o = {};
+    parts.forEach(function (p) { o[p.type] = p.value; });
+    var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    return { day: days[o.weekday], min: (parseInt(o.hour, 10) % 24) * 60 + parseInt(o.minute, 10) };
+  }
+  function closeMin(day) { return day === 2 ? 23 * 60 : 25 * 60; } // Tue 11 PM, others 1 AM next day
+  function label(min) {
+    var m = min % 1440, h = Math.floor(m / 60), mm = m % 60;
+    var ap = h >= 12 ? 'PM' : 'AM';
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + (mm ? ':' + (mm < 10 ? '0' : '') + mm : '') + ' ' + ap;
+  }
+  try {
+    var n = easternNow();
+    var el = document.getElementById('status');
+    var txt = document.getElementById('status-text');
+    var prev = (n.day + 6) % 7;
+    var openNow = false, until = 0;
+    if (n.min >= 630 && n.min < closeMin(n.day)) { openNow = true; until = closeMin(n.day); }
+    else if (n.min < 60 && closeMin(prev) > 1440 && n.min < closeMin(prev) - 1440) { openNow = true; until = closeMin(prev); }
+    if (openNow) {
+      el.setAttribute('data-state', 'open');
+      txt.textContent = 'Open now, until ' + label(until);
+    } else {
+      el.setAttribute('data-state', 'closed');
+      txt.textContent = 'Closed now. Opens at 10:30 AM';
+    }
+  } catch (e) {}
+
+  // Reveal on scroll
+  var items = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (en) {
-      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
     }, { threshold: 0.12 });
-    els.forEach(function (el) { io.observe(el); });
-  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+    items.forEach(function (i) { io.observe(i); });
+  } else {
+    items.forEach(function (i) { i.classList.add('in'); });
+  }
 })();
 </script>
 <script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>

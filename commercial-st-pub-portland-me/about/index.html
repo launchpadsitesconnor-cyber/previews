@@ -4,210 +4,334 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About | Commercial St Pub, Portland, Maine</title>
-<meta name="description" content="Commercial St Pub is a pub and bar in Portland, Maine. Guinness Draught and local beers, pub food, doors open 10:30 AM and pouring until 1 AM.">
-<meta name="theme-color" content="#0E1A23">
+<meta name="description" content="What Commercial St Pub pours and cooks, how long the doors are open, and the full menu with prices. Call 207-772-9414.">
+<meta name="theme-color" content="#141A20">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=DM+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('html-js');</script>
 <style>
-.site-nav a[aria-current="page"] { color: var(--accent); }
+  .page-hero { background: var(--ink); color: var(--on-dark); position: relative; overflow: hidden; }
+  .page-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: stretch;
+  }
+  .page-hero-copy {
+    padding: var(--space-6) var(--gutter) var(--space-5) max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+    display: flex; flex-direction: column; gap: var(--space-3); justify-content: center;
+  }
+  .page-hero h1 { font-size: var(--step-4); max-width: 14ch; }
+  .page-hero .lede { color: var(--on-dark-muted); max-width: 44ch; font-size: var(--step-1); line-height: 1.4; }
+  .page-hero-photo { position: relative; min-height: 360px; }
+  .page-hero-photo::before {
+    content: ""; position: absolute; inset: -10% -20% -10% -10%;
+    background: radial-gradient(ellipse at 55% 55%, rgba(217,138,31,.45), rgba(217,138,31,0) 62%);
+  }
+  .page-hero-photo img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: 60% 40%;
+  }
+  .page-hero-photo::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, var(--ink) 0%, rgba(20,26,32,.5) 18%, rgba(20,26,32,0) 45%);
+  }
 
-.page-head { padding-block: var(--s-7) var(--s-7); position: relative; overflow: hidden; }
-.page-head::before {
-  content: ""; position: absolute; right: -10%; top: -30%; width: 40rem; height: 40rem; max-width: 120vw;
-  background: radial-gradient(closest-side, rgba(227, 160, 47, 0.14), transparent 70%); pointer-events: none;
-}
-.page-head .wrap { position: relative; }
-.page-head h1 {
-  font-family: var(--f-display); font-weight: 600;
-  font-size: clamp(2.6rem, 8vw, 5.5rem); line-height: 0.97; letter-spacing: -0.03em;
-  margin-top: var(--s-5); text-wrap: balance; max-width: 14ch;
-}
-.page-head h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
-.page-head .lede { margin-top: var(--s-5); font-size: clamp(1.1rem, 2.6vw, 1.3rem); max-width: 36rem; }
+  .story { padding-block: var(--space-6); }
+  .story-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: var(--space-5); align-items: start; }
+  .story-body p + p { margin-top: var(--space-2); }
+  .story-body p { max-width: 58ch; }
+  .story-body .big { font-size: var(--step-1); line-height: 1.4; max-width: 34ch; }
+  .story-body .big em { color: var(--teal); font-style: italic; }
 
-.band { padding-block: 0; }
-.band .frame {
-  aspect-ratio: 4 / 3; overflow: hidden; border-radius: 20px;
-  border: 1px solid rgba(227, 160, 47, 0.4);
-  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
-}
-.band img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+  .pour { background: var(--ink-2); color: var(--on-dark); padding-block: var(--space-6); }
+  .pour-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-5); align-items: start; margin-top: var(--space-4); }
+  .pour-list li { display: flex; align-items: baseline; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line-dark); }
+  .pour-list li:last-child { border-bottom: 1px solid var(--line-dark); }
+  .pour-list .n { font-family: var(--font-mono); color: var(--accent); font-size: .85rem; letter-spacing: .08em; min-width: 2rem; }
+  .pour-list .name { font-family: var(--font-display); font-stretch: 118%; font-weight: 800; font-size: var(--step-1); line-height: 1.15; }
+  .pour-text p { color: var(--on-dark-muted); max-width: 46ch; }
+  .pour-text p + p { margin-top: var(--space-2); }
+  .pour-text strong { color: var(--on-dark); font-weight: 600; }
 
-.story { padding-block: var(--s-8) var(--s-7); }
-.chapter { display: grid; gap: var(--s-3); padding-block: var(--s-6); border-top: 1px solid var(--line); }
-.chapter:last-child { border-bottom: 1px solid var(--line); }
-.chapter .label { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
-.chapter h2 { font-family: var(--f-display); font-weight: 600; font-size: var(--t-lg); line-height: 1.1; letter-spacing: -0.015em; text-wrap: balance; }
-.chapter p { color: var(--muted); max-width: 36rem; margin-top: var(--s-3); }
-.chapter p strong { color: var(--ink); font-weight: 500; }
-.chapter a { color: var(--ink); font-weight: 700; text-decoration-color: var(--accent); text-underline-offset: 3px; }
-.chapter a:hover { color: var(--accent); }
+  .menu-full { padding-block: var(--space-6); }
+  .filters { display: flex; flex-wrap: wrap; gap: .6rem; margin: var(--space-3) 0 var(--space-4); }
+  .chip {
+    min-height: 44px; padding: .5rem 1.1rem; border-radius: 999px;
+    border: 2px solid var(--ink); background: transparent; color: var(--ink);
+    font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: .92rem; cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .chip:hover { background: var(--bg-deep); }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--on-dark); }
+  .menu-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-5); }
+  .menu-groups .full-group[hidden] { display: none; }
+  .menu-groups .full-list li { padding: .6rem 0; font-size: 1.05rem; }
+  .menu-groups .full-list .price { font-size: 1rem; }
+  .menu-foot { margin-top: var(--space-4); color: var(--muted); font-family: var(--font-mono); font-size: .82rem; letter-spacing: .04em; }
 
-.clocks-sec { padding-block: var(--s-7) var(--s-8); background: var(--bg-deep); border-block: 1px solid var(--line); }
-.clocks { display: grid; gap: var(--s-4); }
-.clock {
-  border: 1px solid var(--line-strong); border-radius: var(--radius); padding: var(--s-5);
-  background: var(--surface);
-}
-.clock .t { font-family: var(--f-mono); font-size: clamp(1.8rem, 6vw, 2.4rem); color: var(--accent); letter-spacing: -0.02em; }
-.clock p { margin-top: var(--s-2); color: var(--ink); }
-.clock.tue { border-color: rgba(194, 67, 47, 0.6); }
-.clock.tue .t { color: var(--ink); }
-.clock.tue .t::after { content: ""; display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--accent2); margin-left: 0.7rem; vertical-align: middle; }
-.clocks-sec .sec-head { margin-bottom: var(--s-6); }
+  .long-day { background: var(--bg-deep); padding-block: var(--space-6); }
+  .long-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--space-5); align-items: start; }
+  .long-grid .copy p { margin-top: var(--space-2); max-width: 40ch; }
+  .hours-list li {
+    display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .hours-list li:last-child { border-bottom: 1px solid var(--line); }
+  .hours-list .d { font-family: var(--font-display); font-stretch: 112%; font-weight: 700; }
+  .hours-list .t { font-family: var(--font-mono); font-size: .95rem; text-align: right; }
+  .hours-list li.is-today { background: var(--accent); padding-inline: .8rem; margin-inline: -.8rem; border-radius: 3px; border-top-color: transparent; }
+  .hours-list li.is-today + li { border-top-color: transparent; }
 
-.split { padding-block: var(--s-9); display: grid; gap: var(--s-6); align-items: center; }
-.split .frame { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line-strong); }
-.split img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; transition: transform 1.2s var(--ease); }
-.split .frame:hover img { transform: scale(1.05); }
-.split h2 { font-family: var(--f-display); font-weight: 600; font-size: var(--t-xl); line-height: 1.04; letter-spacing: -0.02em; margin-top: var(--s-4); text-wrap: balance; }
-.split p { margin-top: var(--s-4); color: var(--muted); max-width: 30rem; }
-.split .cta-row { margin-top: var(--s-5); }
+  .faq { padding-block: var(--space-6); }
+  .faq-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: var(--space-5); align-items: start; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    min-height: 56px; padding: .9rem 0;
+    font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: var(--step-0);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-family: var(--font-mono); font-size: 1.5rem; line-height: 1; color: var(--accent); transition: transform .2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { padding: 0 0 1.2rem; max-width: 52ch; color: #3b3d3c; }
 
-.end-cta { padding-block: var(--s-8); background: var(--bg-deep); border-top: 1px solid var(--line); }
-.end-cta h2 { font-family: var(--f-display); font-weight: 600; font-size: var(--t-xl); line-height: 1.04; letter-spacing: -0.02em; text-wrap: balance; max-width: 18ch; margin-top: var(--s-4); }
-.end-cta p.sub { margin-top: var(--s-4); color: var(--muted); max-width: 30rem; }
+  .cta { background: var(--ink); color: var(--on-dark); padding-block: var(--space-6); }
+  .cta-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); }
+  .cta h2 { font-size: var(--step-3); max-width: 16ch; }
+  .cta .btns { display: flex; flex-wrap: wrap; gap: .8rem; }
 
-@media (min-width: 760px) {
-  .band .frame { aspect-ratio: 21 / 9; }
-  .chapter { grid-template-columns: 0.5fr 1.5fr; gap: var(--s-7); padding-block: var(--s-7); }
-  .chapter p { margin-top: 0; }
-  .chapter .body p + p { margin-top: var(--s-3); }
-  .clocks { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 900px) {
-  .split { grid-template-columns: 1fr 1fr; gap: var(--s-8); }
-}
+  @media (max-width: 960px) {
+    .page-hero-grid { grid-template-columns: 1fr; }
+    .page-hero-copy { padding: var(--space-5) var(--gutter) var(--space-4); }
+    .page-hero-photo { min-height: 0; height: 280px; }
+    .page-hero-photo::after { background: linear-gradient(180deg, var(--ink) 0%, rgba(20,26,32,0) 40%); }
+    .story-grid, .pour-grid, .long-grid, .faq-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  }
+  @media (max-width: 760px) {
+    .menu-groups { grid-template-columns: 1fr; }
+    .page-hero .btn { flex: 1 1 100%; }
+    .cta .btns, .cta .btns .btn { width: 100%; }
+  }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <div class="wrap header-in">
-    <a class="wordmark" href="../" aria-label="Commercial St Pub, home"><span class="lamp" aria-hidden="true"></span>Commercial <em>St</em> Pub</a>
-
-    <div class="status" id="status" role="status" aria-live="polite">
-      <span class="dot" aria-hidden="true"></span>
-      <span id="status-text">Open 10:30 AM to 1 AM</span>
-    </div>
-
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span></button>
-
-    <a class="btn btn-primary btn-sm header-call" href="tel:2077729414">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-      207-772-9414
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Commercial St Pub, home">
+      <span class="brand-plate">129</span>
+      <span class="brand-name">Commercial St Pub</span>
     </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-links" id="nav-links">
+        <a href="../services/">Menu</a>
+        <a href="./" aria-current="page">About</a>
+        <a href="../contact/">Visit</a>
+      </div>
+      <a class="btn btn-primary header-call" href="tel:+12077729414">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        207-772-9414
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span></button>
+    </nav>
   </div>
-  <nav class="site-nav" id="site-nav" aria-label="Main">
-    <ul>
-      <li><a href="../">Home</a></li>
-      <li><a href="../services/">Menu</a></li>
-      <li><a href="./" aria-current="page">About</a></li>
-      <li><a href="../contact/">Contact</a></li>
-    </ul>
-  </nav>
 </header>
 
 <main id="main">
 
-  <section class="page-head" aria-labelledby="page-title">
-    <div class="wrap">
-      <p class="eyebrow">About the pub</p>
-      <h1 id="page-title">A pub that keeps the <em>light</em> on.</h1>
-      <p class="lede">Come in for a cold beer, a cocktail and a plate of pub food in the heart of Portland. Stop in after dinner, or make us the plan for the whole evening.</p>
-    </div>
-  </section>
-
-  <section class="band" aria-label="Photo">
-    <div class="wrap reveal">
-      <div class="frame">
-        <img src="../photos/stock1-95bc09.jpg" alt="A cold glass mug of amber beer with a thick white head, lit by warm light" width="900" height="600">
+  <!-- PAGE HERO -->
+  <section class="page-hero on-dark" aria-labelledby="about-title">
+    <div class="page-hero-grid">
+      <div class="page-hero-copy">
+        <p class="status" id="status" data-state="unknown" role="status" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="status-text">Open 10:30 AM to 1 AM</span>
+        </p>
+        <p class="eyebrow">About the pub</p>
+        <h1 id="about-title" class="display">Beer, a short menu, a long day.</h1>
+        <p class="lede">Commercial St Pub is a bar and pub in Portland. We pour a mix of beers, cook pub food, and open the door at 10:30 in the morning.</p>
+      </div>
+      <div class="page-hero-photo">
+        <img src="../photos/stock1-95bc09.jpg" alt="A tall glass mug of golden beer with a white head of foam, beaded with condensation, in warm evening light" width="900" height="600" fetchpriority="high">
       </div>
     </div>
   </section>
 
+  <!-- STORY -->
   <section class="story" aria-labelledby="story-title">
-    <div class="wrap">
-      <h2 id="story-title" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">What the pub is about</h2>
-
-      <article class="chapter reveal">
-        <p class="label">01 · The beer</p>
-        <div class="body">
-          <h2>A mix, with Guinness at one end.</h2>
-          <p style="margin-top: var(--s-3)">We pour a diverse selection of beers, from Guinness Draught to local favorites like <strong>Cold Snap</strong>, <strong>The Substance</strong> and <strong>Frye's Leap IPA</strong>. The list changes, so call or stop in for what's pouring today. There's a Bloody Mary on the menu too. <a href="../services/#drinks">See the drinks</a>.</p>
-        </div>
-      </article>
-
-      <article class="chapter reveal">
-        <p class="label">02 · The food</p>
-        <div class="body">
-          <h2>Pub staples, built to go with a drink.</h2>
-          <p style="margin-top: var(--s-3)">The menu leans on the Pub Burger, the Fish Taco, Mac Cheese and baskets of fries. There are also salads, sandwiches, hot dogs and BBQ pulled pork for when you want something quick with your beer. <a href="../services/">Read the whole menu</a>.</p>
-        </div>
-      </article>
-
-      <article class="chapter reveal">
-        <p class="label">03 · The hours</p>
-        <div class="body">
-          <h2>Open in the morning, lit at midnight.</h2>
-          <p style="margin-top: var(--s-3)">Doors open at 10:30 AM. Most nights we pour until 1 AM, with one early night: Tuesday, when we close at 11 PM.</p>
-        </div>
-      </article>
+    <div class="wrap story-grid">
+      <div data-reveal>
+        <p class="eyebrow">The pub</p>
+        <h2 id="story-title" class="display section-title">Come in for a cold beer.</h2>
+      </div>
+      <div class="story-body" data-reveal>
+        <p class="big">A beer, a cocktail, a plate of pub food. <em>Stop in after dinner, or make us the plan for the whole evening.</em></p>
+        <p>We pour a diverse selection of beers, from Guinness Draught to local favorites like Cold Snap, The Substance and Frye's Leap IPA.</p>
+        <p>The food menu keeps things easy with pub staples: the Pub Burger, Fish Taco, Mac Cheese and baskets of fries. There are salads, sandwiches, hot dogs and BBQ pulled pork too, for when you want something quick with your drink.</p>
+        <p>We're open late most nights, and we open at 10:30 AM, so lunch counts as much as last call.</p>
+      </div>
     </div>
   </section>
 
-  <section class="clocks-sec" aria-labelledby="clock-title">
+  <!-- WHAT WE POUR -->
+  <section class="pour on-dark" aria-labelledby="pour-title">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <p class="eyebrow">By the clock</p>
-        <h2 id="clock-title">Three times worth remembering.</h2>
+      <div data-reveal>
+        <p class="eyebrow">On the taps</p>
+        <h2 id="pour-title" class="display section-title">The beer mix.</h2>
       </div>
-      <div class="clocks reveal">
-        <div class="clock">
-          <p class="t">10:30 AM</p>
-          <p>Doors open, every day of the week.</p>
-        </div>
-        <div class="clock">
-          <p class="t">1:00 AM</p>
-          <p>Closing time, every night except Tuesday.</p>
-        </div>
-        <div class="clock tue">
-          <p class="t">11:00 PM</p>
-          <p>Closing time on Tuesday.</p>
+      <div class="pour-grid">
+        <ol class="pour-list" data-reveal>
+          <li><span class="n">01</span><span class="name">Guinness Draught</span></li>
+          <li><span class="n">02</span><span class="name">Cold Snap</span></li>
+          <li><span class="n">03</span><span class="name">The Substance</span></li>
+          <li><span class="n">04</span><span class="name">Frye's Leap IPA</span></li>
+        </ol>
+        <div class="pour-text" data-reveal>
+          <p><strong>One classic, three local favorites.</strong> That's the list we can tell you about today.</p>
+          <p>Prefer a cocktail? There's a Bloody Mary on the menu. Ask at the bar for what else is behind it.</p>
+          <p>Want the full run of what's on the taps? Call us on <a class="mono" href="tel:+12077729414" style="border-bottom:2px solid var(--accent);text-decoration:none">207-772-9414</a>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <section class="split" aria-labelledby="split-title">
-      <div class="frame reveal">
-        <img src="../photos/stock5-3d297e.jpg" alt="A red cocktail over crushed ice with lemon slices and a straw on a wooden table" width="900" height="601" loading="lazy">
-      </div>
-      <div class="reveal">
-        <p class="eyebrow">Beyond the taps</p>
-        <h2 id="split-title">Food and cocktails, same stool.</h2>
-        <p>Order a plate with your drink, or just the drink. Salads, sandwiches, hot dogs and BBQ pulled pork sit next to the burger and the fish tacos, all in one short menu.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="../services/">See the menu</a>
+  <!-- FULL MENU -->
+  <section class="menu-full" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div data-reveal>
+        <p class="eyebrow">The whole menu</p>
+        <h2 id="menu-title" class="display section-title">Every plate, every price we have.</h2>
+        <div class="filters" role="group" aria-label="Filter the menu">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">Everything</button>
+          <button class="chip" type="button" data-filter="food" aria-pressed="false">Food</button>
+          <button class="chip" type="button" data-filter="drink" aria-pressed="false">Drinks</button>
         </div>
       </div>
-    </section>
-  </div>
 
-  <section class="end-cta" aria-labelledby="end-title">
-    <div class="wrap reveal">
-      <p class="eyebrow">Come by</p>
-      <h2 id="end-title">Come in, or call first.</h2>
-      <p class="sub">Open from 10:30 AM, pouring until 1 AM, 11 PM on Tuesdays.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="tel:2077729414">Call 207-772-9414</a>
-        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=129%20Commercial%20St%2C%20Portland%2C%20ME%2004101" target="_blank" rel="noopener">Get directions</a>
-        <a class="btn btn-ghost" href="../contact/">Hours &amp; contact</a>
+      <div class="menu-groups" data-reveal>
+        <div class="full-group" data-cat="food">
+          <h3>Burgers and sandwiches</h3>
+          <ul class="full-list">
+            <li><span>Pub Burger</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span>Steak &amp; Cheese</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span>BBQ Pulled Pork</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span>Chicken Salad Sandwich</span><span class="leader" aria-hidden="true"></span><span class="price">10</span></li>
+            <li><span>BLT</span><span class="leader" aria-hidden="true"></span><span class="price">9</span></li>
+            <li><span>Hot Dogs</span><span class="leader" aria-hidden="true"></span><span class="price">8</span></li>
+          </ul>
+        </div>
+
+        <div class="full-group" data-cat="food">
+          <h3>Tacos</h3>
+          <ul class="full-list">
+            <li><span>Fish Taco</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li class="noprice"><span>Tacos</span></li>
+          </ul>
+          <h3 style="margin-top:1.5rem">Sides</h3>
+          <ul class="full-list">
+            <li><span>Basket of Fries</span><span class="leader" aria-hidden="true"></span><span class="price">4</span></li>
+            <li><span>Mac Cheese</span><span class="leader" aria-hidden="true"></span><span class="price">8</span></li>
+          </ul>
+        </div>
+
+        <div class="full-group" data-cat="food">
+          <h3>Salads and soup</h3>
+          <ul class="full-list">
+            <li><span>Frise Salad</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span>Asparagus Salad</span><span class="leader" aria-hidden="true"></span><span class="price">12</span></li>
+            <li><span>Mixed Green Salad</span><span class="leader" aria-hidden="true"></span><span class="price">10</span></li>
+            <li><span>Mixed Green</span><span class="leader" aria-hidden="true"></span><span class="price">5</span></li>
+            <li class="noprice"><span>Fish Chowder</span></li>
+          </ul>
+        </div>
+
+        <div class="full-group" data-cat="food">
+          <h3>From the water</h3>
+          <ul class="full-list">
+            <li class="noprice"><span>Sea Bass</span></li>
+            <li class="noprice"><span>Fish</span></li>
+            <li class="noprice"><span>Lobster</span></li>
+          </ul>
+        </div>
+
+        <div class="full-group" data-cat="drink">
+          <h3>Beer</h3>
+          <ul class="full-list">
+            <li class="noprice"><span>Guinness Draught</span></li>
+            <li class="noprice"><span>Cold Snap</span></li>
+            <li class="noprice"><span>The Substance</span></li>
+            <li class="noprice"><span>Frye's Leap IPA</span></li>
+          </ul>
+        </div>
+
+        <div class="full-group" data-cat="drink">
+          <h3>Cocktails and other drinks</h3>
+          <ul class="full-list">
+            <li class="noprice"><span>Bloody Mary</span></li>
+            <li class="noprice"><span>Water</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="menu-foot">Prices in dollars. Items without a price here, call and ask.</p>
+    </div>
+  </section>
+
+  <!-- THE LONG DAY -->
+  <section class="long-day" aria-labelledby="long-title">
+    <div class="wrap long-grid">
+      <div class="copy" data-reveal>
+        <p class="eyebrow">Hours</p>
+        <h2 id="long-title" class="display section-title">The long day.</h2>
+        <p>We open at 10:30 AM and stay open late many days of the week. Tuesday is the early one, closing at 11 PM.</p>
+      </div>
+      <ul class="hours-list" id="hours-list" data-reveal>
+        <li data-day="1"><span class="d">Monday</span><span class="t">10:30 AM &ndash; 1 AM</span></li>
+        <li data-day="2"><span class="d">Tuesday</span><span class="t">10:30 AM &ndash; 11 PM</span></li>
+        <li data-day="3"><span class="d">Wednesday</span><span class="t">10:30 AM &ndash; 1 AM</span></li>
+        <li data-day="4"><span class="d">Thursday</span><span class="t">10:30 AM &ndash; 1 AM</span></li>
+        <li data-day="5"><span class="d">Friday</span><span class="t">10:30 AM &ndash; 1 AM</span></li>
+        <li data-day="6"><span class="d">Saturday</span><span class="t">10:30 AM &ndash; 1 AM</span></li>
+        <li data-day="0"><span class="d">Sunday</span><span class="t">10:30 AM &ndash; 1 AM</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div data-reveal>
+        <p class="eyebrow">Quick answers</p>
+        <h2 id="faq-title" class="display section-title">Before you come in.</h2>
+      </div>
+      <div data-reveal>
+        <details>
+          <summary>Do you serve food as well as drinks?</summary>
+          <p>Yes. The menu has pub food, salads, sandwiches, burgers, fries, hot dogs and more.</p>
+        </details>
+        <details>
+          <summary>What kinds of beer do you pour?</summary>
+          <p>Guinness Draught, Cold Snap, The Substance and Frye's Leap IPA, among others.</p>
+        </details>
+        <details>
+          <summary>Do you stay open late?</summary>
+          <p>Yes. We open at 10:30 AM and stay open until 1 AM most days. Tuesday we close at 11 PM.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta on-dark" aria-labelledby="cta-title">
+    <div class="wrap cta-inner">
+      <h2 id="cta-title" class="display">Find the light on.</h2>
+      <div class="btns">
+        <a class="btn btn-primary" href="tel:+12077729414">Call 207-772-9414</a>
+        <a class="btn btn-ghost" href="../contact/">Hours and map</a>
       </div>
     </div>
   </section>
@@ -216,81 +340,135 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="wordmark" href="../"><span class="lamp" aria-hidden="true"></span>Commercial <em>St</em> Pub</a>
-        <p>Pub and bar on Commercial Street, Portland.</p>
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Commercial St Pub, home">
+          <span class="brand-plate">129</span>
+          <span class="brand-name">Commercial St Pub</span>
+        </a>
+        <p class="footer-tag">Late nights on Commercial Street.</p>
       </div>
       <div>
-        <h3>Hours</h3>
-        <ul class="foot-hours">
-          <li><span>Mon</span><span>10:30 AM to 1:00 AM</span></li>
-          <li><span>Tue</span><span>10:30 AM to 11:00 PM</span></li>
-          <li><span>Wed to Sun</span><span>10:30 AM to 1:00 AM</span></li>
+        <h2>Visit</h2>
+        <p>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=129+Commercial+St,+Portland,+ME+04101" target="_blank" rel="noopener">129 Commercial St<br>Portland, Maine 04101</a><br>
+          <a class="mono" href="tel:+12077729414">207-772-9414</a>
+        </p>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services/">Menu</a></li>
+          <li><a href="../contact/">Contact</a></li>
         </ul>
       </div>
-      <div class="foot-call">
-        <h3>Call</h3>
-        <a class="tel" href="tel:2077729414">207-772-9414</a>
-        <div class="links">
-          <span style="color: var(--muted)">129 Commercial St, Portland, Maine 04101</span>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=129%20Commercial%20St%2C%20Portland%2C%20ME%2004101" target="_blank" rel="noopener">Get directions</a>
-          <a href="../services/">Menu</a>
-          <a href="../contact/">Contact</a>
-        </div>
+      <div>
+        <h2>Hours</h2>
+        <p class="footer-hours">Mon, Wed to Sun<br>10:30 AM &ndash; 1 AM<br>Tuesday<br>10:30 AM &ndash; 11 PM</p>
       </div>
     </div>
-    <p class="copyright">© 2026 Commercial St Pub.</p>
+    <p class="copyright">&copy; 2026 Commercial St Pub.</p>
   </div>
 </footer>
 
 <div class="callbar">
-  <a class="btn btn-primary" href="tel:2077729414">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-    Call 207-772-9414
-  </a>
-  <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=129%20Commercial%20St%2C%20Portland%2C%20ME%2004101" target="_blank" rel="noopener">Directions</a>
+  <a class="btn btn-primary" href="tel:+12077729414">Call 207-772-9414</a>
+  <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=129+Commercial+St,+Portland,+ME+04101" target="_blank" rel="noopener">Directions</a>
 </div>
 
 <script>
 (function () {
-  var CLOSE = [1500, 1380, 1500, 1500, 1500, 1500, 1500];
-  var DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-  function portland() {
-    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
-    var o = {};
-    parts.forEach(function (p) { o[p.type] = p.value; });
-    return { d: DAYS.indexOf(o.weekday), m: (parseInt(o.hour, 10) % 24) * 60 + parseInt(o.minute, 10) };
-  }
-  function state() {
-    var t = portland(), prev = (t.d + 6) % 7;
-    if (t.m < 60 && CLOSE[prev] > 1440) return { open: true, until: '1:00 AM' };
-    if (t.m >= 630 && t.m < CLOSE[t.d]) return { open: true, until: CLOSE[t.d] > 1440 ? '1:00 AM' : '11:00 PM' };
-    return { open: false };
-  }
-  function paint() {
-    var s = state(), el = document.getElementById('status'), tx = document.getElementById('status-text');
-    el.classList.toggle('is-open', s.open);
-    el.classList.toggle('is-closed', !s.open);
-    tx.textContent = s.open ? 'Open now \u00b7 until ' + s.until : 'Closed \u00b7 opens 10:30 AM';
-  }
-  paint();
-  setInterval(paint, 60000);
-
-  var btn = document.getElementById('nav-toggle'), nav = document.getElementById('site-nav');
-  btn.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  // Mobile menu
+  var toggle = document.querySelector('.menu-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && links.classList.contains('open')) {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
   });
 
-  var els = document.querySelectorAll('.reveal');
+  // Open-now status, Eastern time. Close times in minutes from midnight.
+  var OPEN = 630;
+  function closeFor(d) { return d === 2 ? 1380 : 1500; }
+  var names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  function easternNow() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23'
+      }).formatToParts(new Date());
+      var o = {};
+      parts.forEach(function (p) { o[p.type] = p.value; });
+      var idx = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(o.weekday);
+      return { day: idx, mins: parseInt(o.hour, 10) * 60 + parseInt(o.minute, 10) };
+    } catch (err) {
+      var n = new Date();
+      return { day: n.getDay(), mins: n.getHours() * 60 + n.getMinutes() };
+    }
+  }
+  function fmt(c) {
+    var m = c % 1440, h = Math.floor(m / 60), mm = m % 60;
+    var ap = h >= 12 ? 'PM' : 'AM';
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + (mm ? ':' + (mm < 10 ? '0' : '') + mm : '') + ' ' + ap;
+  }
+  var now = easternNow();
+  var prev = (now.day + 6) % 7;
+  var state = 'closed', text;
+  if (now.mins >= OPEN && now.mins < closeFor(now.day)) {
+    state = 'open';
+    text = 'Open now, until ' + fmt(closeFor(now.day));
+  } else if (now.mins < closeFor(prev) - 1440) {
+    state = 'open';
+    text = 'Open now, until ' + fmt(closeFor(prev));
+  } else if (now.mins < OPEN) {
+    text = 'Opens at 10:30 AM';
+  } else {
+    text = 'Opens ' + (now.day === 1 ? 'tomorrow' : 'tomorrow') + ' at 10:30 AM';
+  }
+  var status = document.getElementById('status');
+  status.setAttribute('data-state', state);
+  document.getElementById('status-text').textContent = text;
+
+  // Highlight today in the hours list
+  var rows = document.querySelectorAll('#hours-list li');
+  var todayIdx = now.mins < closeFor(prev) - 1440 ? prev : now.day;
+  for (var i = 0; i < rows.length; i++) {
+    if (parseInt(rows[i].getAttribute('data-day'), 10) === todayIdx) {
+      rows[i].classList.add('is-today');
+      rows[i].setAttribute('aria-label', names[todayIdx] + ', today');
+    }
+  }
+
+  // Menu filter
+  var chips = document.querySelectorAll('.chip');
+  var groups = document.querySelectorAll('.menu-groups .full-group');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.getAttribute('data-filter');
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      groups.forEach(function (g) {
+        g.hidden = !(f === 'all' || g.getAttribute('data-cat') === f);
+      });
+    });
+  });
+
+  // Reveal on scroll
+  var items = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (en) {
-      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
     }, { threshold: 0.12 });
-    els.forEach(function (el) { io.observe(el); });
-  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
 })();
 </script>
 <script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
