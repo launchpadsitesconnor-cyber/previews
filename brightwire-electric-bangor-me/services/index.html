@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | Brightwire Electric, Bangor, ME</title>
+<meta name="description" content="Electrical repairs, wiring and rewiring, lighting installation, outlet and switch work, panel upgrades and troubleshooting from Brightwire Electric in Bangor, ME.">
+<meta name="theme-color" content="#15110E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='2' width='24' height='28' rx='4' fill='%2315110E'/%3E%3Crect x='11' y='6' width='10' height='20' rx='2' fill='%23F5F1E8'/%3E%3Crect x='11' y='6' width='10' height='9' rx='2' fill='%23F2A900'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  /* services page only */
+  .sched { border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; background: var(--card); box-shadow: 0 10px 0 -2px var(--ink); }
+  .svc2 { position: relative; border-bottom: 1px dashed var(--line); scroll-margin-top: 90px; transition: background .3s; }
+  .svc2:last-child { border-bottom: 0; }
+  .svc2::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--accent); }
+  .svc2__head {
+    width: 100%; display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: var(--s4);
+    padding: var(--s5) var(--s5) var(--s3); background: transparent; border: 0; text-align: left;
+    pointer-events: none; cursor: default; -webkit-tap-highlight-color: transparent;
+  }
+  .svc2__head .bk__name { font-size: clamp(1.8rem, 1.5rem + 1vw, 2.4rem); }
+  .svc2__head .lever, .svc2__head .bk__state { display: none; }
+  .svc2__body { display: grid; grid-template-rows: 1fr; }
+  .svc2__inner { overflow: hidden; display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--s3) var(--s7); padding: 0 var(--s5) var(--s6) calc(var(--s5) + 3.4rem); }
+  .svc2__lead { margin: 0; color: var(--ink-2); max-width: 36rem; }
+  .svc2 dl { margin: 0; display: grid; gap: var(--s3); font-size: var(--t-sm); }
+  .svc2 dt { font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+  .svc2 dd { margin: 0; color: var(--ink-2); }
+  .svc2__pic { grid-column: 1 / -1; margin: var(--s3) 0 0; border-radius: var(--radius); overflow: hidden; aspect-ratio: 21 / 6; background: var(--ink); }
+  .svc2__pic img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+
+  @media (max-width: 860px) {
+    .svc2__head { pointer-events: auto; cursor: pointer; padding: var(--s4); gap: var(--s3); min-height: 76px; }
+    .svc2__head .lever, .svc2__head .bk__state { display: block; }
+    .svc2__head .bk__state { color: var(--muted); }
+    .svc2__head .bk__name { font-size: 1.45rem; }
+    .svc2__head .bk__state .on { display: none; }
+    .svc2.is-on .bk__state .on { display: inline; color: var(--ink); font-weight: 600; }
+    .svc2.is-on .bk__state .off { display: none; }
+    .svc2::before { background: transparent; }
+    .svc2.is-on::before { background: var(--accent); }
+    .svc2.is-on { background: var(--accent-soft); }
+    .svc2__inner { grid-template-columns: 1fr; padding: 0 var(--s4) var(--s5); gap: var(--s4); }
+    .svc2__pic { aspect-ratio: 16 / 8; }
+    .js .svc2__body { grid-template-rows: 0fr; transition: grid-template-rows .35s var(--ease); }
+    .js .svc2__body .svc2__inner { visibility: hidden; transition: visibility 0s .35s; }
+    .js .svc2.is-on .svc2__body { grid-template-rows: 1fr; }
+    .js .svc2.is-on .svc2__body .svc2__inner { visibility: visible; transition-delay: 0s; }
+  }
+  @media (max-width: 400px) { .svc2__head .bk__state { display: none; } }
+  .svc2.is-on .lever::after { transform: translateY(-21px); background: linear-gradient(#ffd46b, var(--accent)); }
+
+  .steps { display: grid; gap: 0; margin-top: var(--s6); }
+  .steps li { display: grid; grid-template-columns: auto 1fr; gap: var(--s5); padding-block: var(--s4); border-top: 1px solid var(--line); }
+  .steps li:last-child { border-bottom: 1px solid var(--line); }
+  .steps__no { font-family: var(--f-mono); font-size: var(--t-sm); font-weight: 500; color: var(--muted); padding-top: .2rem; }
+  .steps h3 { font-size: 1.6rem; margin-bottom: var(--s1); }
+  .steps p { margin: 0; color: var(--ink-2); font-size: var(--t-sm); }
+  .figure--wide { aspect-ratio: 4 / 5; }
+  .figure--wide img { object-position: 50% 50%; }
+  @media (max-width: 860px) { .figure--wide { aspect-ratio: 4 / 3; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="brand" href="../index.html" aria-label="Brightwire Electric, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="2" width="24" height="28" rx="4" fill="#15110E"/><rect x="11" y="6" width="10" height="20" rx="2" fill="#F5F1E8"/><rect x="11" y="6" width="10" height="9" rx="2" fill="#F2A900"/></svg>
+      <span><span class="brand__name">Brightwire</span><span class="brand__sub">ELECTRIC / BANGOR</span></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-btn__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="nav__links">
+        <a href="../index.html">Home</a>
+        <a href="../services/" aria-current="page">Services</a>
+        <a href="../about/">About</a>
+        <a href="../contact/">Contact</a>
+      </div>
+      <a class="btn btn--sm" href="../contact/">Request a visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head dark" aria-labelledby="page-title">
+    <img class="page-head__img" src="../photos/stock2-6fb10a.jpg" alt="Electrician's tools, bulbs and tape laid out together" width="1600" height="700" fetchpriority="high">
+    <div class="wrap">
+      <p class="tag">Services / Panel schedule</p>
+      <h1 id="page-title">The full panel.</h1>
+      <p class="lede">Six kinds of electrical work, labeled the way we'd label a panel. For homes and businesses in Bangor. Each one says what it is, when you need it and what we look at.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sched-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Circuit directory</p>
+        <h2 id="sched-title">What we do, circuit by circuit.</h2>
+        <p class="lede" id="sched-hint">On a phone, tap a circuit to flip it ON and read the detail.</p>
+      </div>
+
+      <div class="sched reveal">
+        <div class="panel__bar"><span>Panel schedule / Brightwire Electric</span><span class="panel__main">Main: ON</span></div>
+
+        <article class="svc2 is-on" id="repairs">
+          <button class="svc2__head" type="button" aria-expanded="true" aria-controls="s1">
+            <span class="bk__no">01</span><span class="bk__name">Electrical repairs</span>
+            <span class="bk__state"><span class="off">OFF</span><span class="on">ON</span></span><span class="lever" aria-hidden="true"></span>
+          </button>
+          <div class="svc2__body" id="s1"><div class="svc2__inner">
+            <p class="svc2__lead">Fixing wiring, outlets, fixtures and connections that have stopped working the way they should. We find what failed, repair it and check the circuit around it before we leave.</p>
+            <dl>
+              <div><dt>When you need it</dt><dd>A circuit is dead, something buzzes or crackles, a plate or cover feels warm, or there's a scorch mark or burnt smell. Don't wait on any of those.</dd></div>
+              <div><dt>What we look at</dt><dd>The failed part, the connections on either side of it, and the condition of the wire at that spot.</dd></div>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="svc2 is-on" id="wiring">
+          <button class="svc2__head" type="button" aria-expanded="true" aria-controls="s2">
+            <span class="bk__no">02</span><span class="bk__name">Wiring and rewiring</span>
+            <span class="bk__state"><span class="off">OFF</span><span class="on">ON</span></span><span class="lever" aria-hidden="true"></span>
+          </button>
+          <div class="svc2__body" id="s2"><div class="svc2__inner">
+            <p class="svc2__lead">New wiring for a space that doesn't have enough power, and rewiring for circuits that have outlived their wire. This is the work that ends up behind drywall, so it gets the most care.</p>
+            <dl>
+              <div><dt>When you need it</dt><dd>You're finishing a basement, adding a room or setting up a shop. Or the house has older wiring, or circuits that were added over the years without much of a plan.</dd></div>
+              <div><dt>What we look at</dt><dd>How the circuits are split up, the condition of existing wire and boxes, and every connection before the wall is closed.</dd></div>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="svc2 is-on" id="lighting">
+          <button class="svc2__head" type="button" aria-expanded="true" aria-controls="s3">
+            <span class="bk__no">03</span><span class="bk__name">Lighting installation</span>
+            <span class="bk__state"><span class="off">OFF</span><span class="on">ON</span></span><span class="lever" aria-hidden="true"></span>
+          </button>
+          <div class="svc2__body" id="s3"><div class="svc2__inner">
+            <p class="svc2__lead">Putting in new fixtures, swapping out old ones, and adding light to rooms that don't have enough of it. The aim is light that sits where you actually use the room, switched where your hand goes.</p>
+            <dl>
+              <div><dt>When you need it</dt><dd>A fixture is dated or failing, a room is too dark, or a remodel changes where the light should be.</dd></div>
+              <div><dt>What we look at</dt><dd>Where the power comes from, whether the box can carry the fixture, where the switch should go, and whether the bulbs and dimmer suit each other.</dd></div>
+            </dl>
+            <figure class="svc2__pic"><img src="../photos/stock5-66ed7e.jpg" alt="A filament light bulb glowing amber against a dark background" width="1400" height="400" loading="lazy"></figure>
+          </div></div>
+        </article>
+
+        <article class="svc2 is-on" id="outlets">
+          <button class="svc2__head" type="button" aria-expanded="true" aria-controls="s4">
+            <span class="bk__no">04</span><span class="bk__name">Outlet and switch work</span>
+            <span class="bk__state"><span class="off">OFF</span><span class="on">ON</span></span><span class="lever" aria-hidden="true"></span>
+          </button>
+          <div class="svc2__body" id="s4"><div class="svc2__inner">
+            <p class="svc2__lead">Replacing worn or dead outlets and switches, and adding new ones where you keep reaching for an extension cord. Small jobs, but they're the part of the system you touch every day.</p>
+            <dl>
+              <div><dt>When you need it</dt><dd>A plug won't hold, a switch is loose or does nothing, or you need power on a wall that has none.</dd></div>
+              <div><dt>What we look at</dt><dd>Loose or scorched connections, whether it's the device or the wire behind it that has failed, and what else is on the same circuit.</dd></div>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="svc2 is-on" id="panels">
+          <button class="svc2__head" type="button" aria-expanded="true" aria-controls="s5">
+            <span class="bk__no">05</span><span class="bk__name">Panel upgrades</span>
+            <span class="bk__state"><span class="off">OFF</span><span class="on">ON</span></span><span class="lever" aria-hidden="true"></span>
+          </button>
+          <div class="svc2__body" id="s5"><div class="svc2__inner">
+            <p class="svc2__lead">The panel is the box every circuit starts from. An upgrade swaps it for one that fits how you use power now, with breakers that are sized and labeled for what they run.</p>
+            <dl>
+              <div><dt>When you need it</dt><dd>Breakers trip over and over, there's no room for another circuit, or you're adding something that draws a lot of power.</dd></div>
+              <div><dt>What we look at</dt><dd>What the panel is carrying compared to what it can carry, the state of the connections inside, and whether the labels match the circuits.</dd></div>
+            </dl>
+          </div></div>
+        </article>
+
+        <article class="svc2 is-on" id="troubleshooting">
+          <button class="svc2__head" type="button" aria-expanded="true" aria-controls="s6">
+            <span class="bk__no">06</span><span class="bk__name">Troubleshooting</span>
+            <span class="bk__state"><span class="off">OFF</span><span class="on">ON</span></span><span class="lever" aria-hidden="true"></span>
+          </button>
+          <div class="svc2__body" id="s6"><div class="svc2__inner">
+            <p class="svc2__lead">Tracing a problem back to its cause when it isn't obvious. Flickering lights, a breaker that won't stay on, an outlet that works some days. We start from the symptom and work toward the fault.</p>
+            <dl>
+              <div><dt>When you need it</dt><dd>Something's wrong and you can't point to what. Or it's been fixed before and came back.</dd></div>
+              <div><dt>What we look at</dt><dd>The affected circuit from one end to the other: the device, the box, the run of wire and the breaker.</dd></div>
+            </dl>
+          </div></div>
+        </article>
+
+        <div class="panel__foot">
+          <span>6 circuits / all labeled</span>
+          <a class="btn btn--sm" href="../contact/">Request a visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" aria-labelledby="unsure-title">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="tag">Not sure what you need?</p>
+        <h2 id="unsure-title" style="font-size:var(--t-h2)">Start with the symptom.</h2>
+        <p class="lede">You don't have to know which of the six it is. Most people don't. Tell us what the house is doing and we'll work out the rest.</p>
+        <ol class="steps">
+          <li><span class="steps__no">01</span><div><h3>Tell us what's happening</h3><p>Which room, which light or outlet, and when it happens. A flicker when the dryer starts says a lot.</p></div></li>
+          <li><span class="steps__no">02</span><div><h3>We trace the circuit</h3><p>We follow that circuit from the device back toward the panel until we find where it goes wrong.</p></div></li>
+          <li><span class="steps__no">03</span><div><h3>The cause points to the fix</h3><p>It usually turns out to be one of the six above: a repair, a new outlet, more wire or a bigger panel.</p></div></li>
+        </ol>
+        <div class="note note--warn" style="margin-top:var(--s6)">
+          <strong>Tripped breaker</strong>
+          <p>If something is sparking, smells burnt or is hot to the touch, switch off its breaker first, then <a href="../contact/">send us a request</a>.</p>
+        </div>
+      </div>
+      <figure class="figure figure--wide reveal" data-d="1">
+        <img src="../photos/stock3-2c4ba2.jpg" alt="Electrician's tools laid out on a table, ready for a job" width="900" height="1100" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section dark" aria-labelledby="cta-title">
+    <div class="wrap reveal">
+      <p class="tag">Ready when you are</p>
+      <h2 id="cta-title" style="font-size:var(--t-h2);max-width:16ch;margin-bottom:var(--s6)">Tell us what's <em style="font-style:normal;color:var(--accent)">going on.</em></h2>
+      <a class="btn" href="../contact/">Request a visit</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Brightwire Electric, home">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="2" width="24" height="28" rx="4" fill="#F5F1E8"/><rect x="11" y="6" width="10" height="20" rx="2" fill="#15110E"/><rect x="11" y="6" width="10" height="9" rx="2" fill="#F2A900"/></svg>
+          <span><span class="brand__name">Brightwire</span><span class="brand__sub">ELECTRIC / BANGOR</span></span>
+        </a>
+        <p>Electrical repairs, wiring, lighting and panel work for homes and businesses.</p>
+      </div>
+      <div>
+        <h4>PAGES</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>WHERE</h4>
+        <p class="place">Bangor, ME</p>
+        <p>Send us a request from the <a href="../contact/" style="border-bottom:2px solid var(--accent)">contact page</a> and tell us what's going on.</p>
+      </div>
+    </div>
+    <div class="site-footer__legal">&copy; 2026 Brightwire Electric</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // mobile menu
+  var mb = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  if (mb && nav) {
+    mb.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      mb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // services: flip-to-expand on phones, always open on desktop
+  var items = Array.prototype.slice.call(document.querySelectorAll('.svc2'));
+  var mq = window.matchMedia('(max-width: 860px)');
+  var hint = document.getElementById('sched-hint');
+
+  function setOn(item, on) {
+    item.classList.toggle('is-on', on);
+    var b = item.querySelector('.svc2__head');
+    if (mq.matches) b.setAttribute('aria-expanded', on ? 'true' : 'false');
+  }
+  function openFromHash() {
+    var id = location.hash.replace('#', '');
+    if (!id) return false;
+    var t = document.getElementById(id);
+    if (t && t.classList.contains('svc2')) { setOn(t, true); return true; }
+    return false;
+  }
+  function sync() {
+    items.forEach(function (item) {
+      var b = item.querySelector('.svc2__head');
+      if (mq.matches) {
+        b.removeAttribute('tabindex');
+        b.setAttribute('aria-expanded', item.classList.contains('is-on') ? 'true' : 'false');
+      } else {
+        item.classList.add('is-on');
+        b.removeAttribute('aria-expanded');
+        b.setAttribute('tabindex', '-1');
+      }
+    });
+    if (hint) hint.hidden = !mq.matches;
+  }
+  items.forEach(function (item) {
+    item.querySelector('.svc2__head').addEventListener('click', function () {
+      if (mq.matches) setOn(item, !item.classList.contains('is-on'));
+    });
+  });
+  if (mq.matches) {
+    items.forEach(function (i, n) { i.classList.toggle('is-on', n === 0); });
+    openFromHash();
+  }
+  sync();
+  if (mq.addEventListener) mq.addEventListener('change', function () {
+    if (mq.matches) items.forEach(function (i, n) { i.classList.toggle('is-on', n === 0); });
+    sync();
+  });
+  window.addEventListener('hashchange', function () { if (mq.matches) openFromHash(); });
+  if (location.hash && mq.matches) {
+    setTimeout(function () {
+      var t = document.getElementById(location.hash.replace('#', ''));
+      if (t) t.scrollIntoView();
+    }, 60);
+  }
+
+  // reveal on scroll
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>

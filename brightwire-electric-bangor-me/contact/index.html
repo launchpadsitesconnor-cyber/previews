@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Visit | Brightwire Electric, Bangor, ME</title>
+<meta name="description" content="Tell Brightwire Electric what's going on and we'll take a look. Electrical repairs, wiring, lighting, outlets, panels and troubleshooting in Bangor, ME.">
+<meta name="theme-color" content="#15110E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='2' width='24' height='28' rx='4' fill='%2315110E'/%3E%3Crect x='11' y='6' width='10' height='20' rx='2' fill='%23F5F1E8'/%3E%3Crect x='11' y='6' width='10' height='9' rx='2' fill='%23F2A900'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--s8); align-items: start; }
+  .contact-side { display: grid; gap: var(--s5); position: sticky; top: 92px; }
+  .contact-side .figure { aspect-ratio: 4 / 3; }
+  .contact-side .figure img { object-position: 50% 50%; }
+  .form-intro { margin-bottom: var(--s6); }
+  .form-intro h2 { font-size: var(--t-h2); }
+  .field--row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: var(--s4); }
+  .field small { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); letter-spacing: .04em; }
+  .thanks { display: none; }
+  .thanks.is-shown { display: block; }
+  .thanks h3 { font-size: var(--t-h3); margin-bottom: var(--s3); }
+  .form.is-hidden { display: none; }
+  .where { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: var(--s7); align-items: start; }
+  .where h2 { font-size: var(--t-h2); }
+  .ways { margin-top: var(--s5); display: grid; gap: var(--s3); }
+  .ways li { padding-top: var(--s3); border-top: 1px dashed var(--line); font-size: var(--t-sm); }
+  .ways strong { display: block; font-family: var(--f-mono); font-size: var(--t-xs); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  @media (max-width: 900px) {
+    .contact-grid, .where { grid-template-columns: minmax(0, 1fr); gap: var(--s6); }
+    .contact-side { position: static; }
+  }
+  @media (max-width: 520px) { .field--row { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="brand" href="../index.html" aria-label="Brightwire Electric, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="2" width="24" height="28" rx="4" fill="#15110E"/><rect x="11" y="6" width="10" height="20" rx="2" fill="#F5F1E8"/><rect x="11" y="6" width="10" height="9" rx="2" fill="#F2A900"/></svg>
+      <span><span class="brand__name">Brightwire</span><span class="brand__sub">ELECTRIC / BANGOR</span></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-btn__bars" aria-hidden="true"></span>Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="nav__links">
+        <a href="../index.html">Home</a>
+        <a href="../services/">Services</a>
+        <a href="../about/">About</a>
+        <a href="./" aria-current="page">Contact</a>
+      </div>
+      <a class="btn btn--sm" href="#request">Request a visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Page head -->
+  <section class="page-head dark" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="tag">Contact / Bangor, ME</p>
+      <h1 id="contact-title">Tell us what's going on.</h1>
+      <p class="lede">Flickering, tripping, dead or warm to the touch. Say what you've noticed and where, and we'll take a look.</p>
+    </div>
+  </section>
+
+  <!-- Form + side -->
+  <section class="section" id="request" aria-labelledby="form-title">
+    <div class="wrap contact-grid">
+
+      <div class="reveal">
+        <div class="form-intro">
+          <p class="tag">Request a visit</p>
+          <h2 id="form-title">Four quick questions.</h2>
+          <p class="lede">The more you can tell us about what you're seeing, the better. Small details help, like which room or when it happens.</p>
+        </div>
+
+        <form class="form" id="visit-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-address">Address in Bangor</label>
+            <input id="f-address" name="address" type="text" autocomplete="street-address" placeholder="Street and number" required>
+          </div>
+          <div class="field">
+            <label for="f-issue">What's going on?</label>
+            <textarea id="f-issue" name="issue" required placeholder="Example: the kitchen lights dim when the dryer starts."></textarea>
+          </div>
+          <div class="field--row">
+            <div class="field">
+              <label for="f-how">Best way to reach you</label>
+              <select id="f-how" name="how">
+                <option>Phone call</option>
+                <option>Text message</option>
+                <option>Email</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-detail">Your number or email</label>
+              <input id="f-detail" name="detail" type="text" autocomplete="off" required>
+            </div>
+          </div>
+          <p class="form-error" id="form-error" role="alert" style="color:var(--red);margin:0;font-size:var(--t-sm);" hidden>Please fill in each field so we know where to look.</p>
+          <div>
+            <button class="btn" type="submit">Send request</button>
+          </div>
+        </form>
+
+        <div class="note thanks" id="thanks" role="status" aria-live="polite" tabindex="-1">
+          <h3>Thanks, your request is in.</h3>
+          <p>We have what you told us about the problem. If anything starts sparking or gets hot while you wait, switch off that breaker.</p>
+          <p><a class="text-link" href="../services/">See what we work on</a></p>
+        </div>
+      </div>
+
+      <aside class="contact-side reveal" data-d="1" aria-label="Safety note and photo">
+        <div class="note note--warn">
+          <strong>Tripped breaker</strong>
+          <p>If something is sparking, smells burnt or is hot to the touch, switch off the breaker and call us.</p>
+        </div>
+        <figure class="figure">
+          <img src="../photos/stock3-2c4ba2.jpg" alt="Electrician's hand tools laid out on a table" width="800" height="600" loading="lazy">
+        </figure>
+        <p class="muted" style="color:var(--muted);font-size:var(--t-sm);margin:0;">Homes and businesses in Bangor, ME.</p>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="tag">Before you write</p>
+        <h2 id="faq-title">Common questions.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>What should I tell you?</summary>
+          <p>Where the problem is, what it does, and when it started. "The hallway light flickers when the fridge kicks on" tells us more than "electrical problem." If you've noticed a smell, a buzzing sound or a warm plate, mention that too.</p>
+        </details>
+        <details>
+          <summary>What does a visit look like?</summary>
+          <p>We start where you first noticed the problem and work back from there: the switch, outlet or fixture, then the wiring and the panel behind it. We look at what's actually there before deciding what to do about it.</p>
+        </details>
+        <details>
+          <summary>Why do my lights flicker?</summary>
+          <p>It can be a loose connection, a bulb or fixture on its way out, or a circuit that's carrying more than it should. If it's one bulb, try swapping it. If several lights flicker, or it happens when an appliance starts, have it looked at.</p>
+        </details>
+        <details>
+          <summary>My breaker keeps tripping. Is that bad?</summary>
+          <p>A breaker that trips once is doing its job. One that trips again and again is telling you something about that circuit. Don't hold the breaker on or keep resetting it. Let us find out why it's tripping.</p>
+        </details>
+        <details>
+          <summary>Do you work on businesses too?</summary>
+          <p>Yes. We work on shops and offices as well as homes in Bangor. Tell us what kind of space it is when you write.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section" aria-labelledby="map-title">
+    <div class="wrap where">
+      <div class="reveal">
+        <p class="tag">Where we work</p>
+        <h2 id="map-title">Bangor, ME.</h2>
+        <ul class="ways">
+          <li><strong>Work we do</strong>Repairs, wiring and rewiring, lighting, outlets and switches, panel upgrades, troubleshooting.</li>
+          <li><strong>Who for</strong>Homeowners, shops and offices.</li>
+          <li><strong>How to start</strong>Use the form above and tell us what's going on.</li>
+        </ul>
+      </div>
+      <div class="map reveal" data-d="1">
+        <iframe title="Map of Bangor, Maine" src="https://maps.google.com/maps?q=Bangor,+ME&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="brand" href="../index.html" aria-label="Brightwire Electric, home">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="2" width="24" height="28" rx="4" fill="#F5F1E8"/><rect x="11" y="6" width="10" height="20" rx="2" fill="#15110E"/><rect x="11" y="6" width="10" height="9" rx="2" fill="#F2A900"/></svg>
+          <span><span class="brand__name">Brightwire</span><span class="brand__sub">ELECTRIC / BANGOR</span></span>
+        </a>
+        <p>Wired right, down to what's behind the wall.</p>
+      </div>
+      <div>
+        <h4>PAGES</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="./">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>WHERE</h4>
+        <p class="place">Bangor, ME</p>
+        <p>Send a request through the <a href="#request" style="border-bottom:2px solid var(--accent);">form on this page</a>.</p>
+      </div>
+    </div>
+    <div class="site-footer__legal">&copy; 2026 Brightwire Electric</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // mobile menu
+  var btn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('nav');
+  if (btn && nav) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // form: no server, show a thank-you note
+  var form = document.getElementById('visit-form');
+  var thanks = document.getElementById('thanks');
+  var err = document.getElementById('form-error');
+  if (form && thanks) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ok = true;
+      ['f-name', 'f-address', 'f-issue', 'f-detail'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el.value.trim()) { ok = false; el.setAttribute('aria-invalid', 'true'); }
+        else { el.removeAttribute('aria-invalid'); }
+      });
+      if (!ok) { err.hidden = false; return; }
+      err.hidden = true;
+      form.classList.add('is-hidden');
+      thanks.classList.add('is-shown');
+      thanks.focus();
+    });
+  }
+})();
+</script>
+<script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>
