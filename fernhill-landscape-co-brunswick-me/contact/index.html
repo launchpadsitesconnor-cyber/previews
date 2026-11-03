@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Fernhill Landscape Co., Brunswick, ME</title>
+<meta name="description" content="Request a yard visit from Fernhill Landscape Co. Tell us about your Brunswick, ME yard and which jobs you have in mind.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,100,1;1,9..144,400..600,100,1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .contact-aside { display: grid; gap: var(--s5); }
+  .contact-aside .card { margin-bottom: 0; }
+  .form h2 { font-size: var(--step-2); margin-bottom: var(--s2); }
+  .form__intro { color: var(--muted-text); margin-bottom: var(--s6); }
+  .field .hint { display: block; font-weight: 400; font-size: .9rem; color: var(--muted-text); margin-top: -.25rem; margin-bottom: var(--s2); }
+  .form .btn { width: 100%; }
+  .thanks { text-align: left; padding-block: var(--s4); }
+  .thanks[hidden] { display: none; }
+  .thanks h2 { font-size: var(--step-3); }
+  .thanks p { color: var(--muted-text); font-size: var(--step-1); }
+  .thanks .mark { width: 54px; height: 54px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: var(--s5); }
+  .thanks .mark svg { width: 26px; height: 26px; }
+  .card .mono-line { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .06em; color: var(--muted-text); margin-top: var(--s3); }
+  .map-link { display: inline-block; margin-top: var(--s3); font-weight: 600; }
+  .faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+  .faq-wrap h2 { max-width: 12ch; }
+  .faq-wrap > div:first-child p { color: var(--muted-text); }
+  @media (max-width: 900px) { .faq-wrap { grid-template-columns: 1fr; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../index.html" aria-label="Fernhill Landscape Co., home">
+      <svg viewBox="0 0 26 32" fill="none" stroke="#2E5B3B" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <path d="M13 31 C12 22 14 12 13 2"/>
+        <path d="M13 25 C8 23 4 24 2 27 M13 25 C18 23 22 24 24 27"/>
+        <path d="M13 18 C9 16 6 17 4 20 M13 18 C17 16 20 17 22 20"/>
+        <path d="M13 11 C10 9 8 10 7 12 M13 11 C16 9 18 10 19 12"/>
+      </svg>
+      <span>Fernhill<small>Landscape Co.</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services/">Services</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../contact/" aria-current="page">Contact</a></li>
+      </ul>
+      <a class="btn" href="#request">Ask for a yard visit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="label label--berry">Brunswick, ME &middot; Contact</p>
+      <h1>Tell us about <em>your yard.</em></h1>
+      <p>Which beds need help, where the lawn gives up, what's been bothering you since last fall. Put it in the form and we'll know where to start.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: var(--s5);" id="request">
+    <div class="wrap contact-grid">
+
+      <div class="form reveal">
+        <form id="visit-form" novalidate>
+          <h2>Request a yard visit</h2>
+          <p class="form__intro">A few details is plenty. You can always fill in the rest when we see the yard.</p>
+
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="where">Street or neighborhood</label>
+            <span class="hint">Brunswick, ME yards only, so no town needed.</span>
+            <input type="text" id="where" name="where" autocomplete="street-address">
+          </div>
+
+          <fieldset class="field">
+            <legend>What do you have in mind?</legend>
+            <span class="hint">Pick as many as fit.</span>
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="job" value="Lawn mowing"> Lawn mowing</label>
+              <label class="check"><input type="checkbox" name="job" value="Trimming and edging"> Trimming and edging</label>
+              <label class="check"><input type="checkbox" name="job" value="Planting"> Planting</label>
+              <label class="check"><input type="checkbox" name="job" value="Mulching"> Mulching</label>
+              <label class="check"><input type="checkbox" name="job" value="Yard cleanup"> Yard cleanup</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="notes">About the yard</label>
+            <span class="hint">Size, what's growing, what you'd like it to look like.</span>
+            <textarea id="notes" name="notes"></textarea>
+          </div>
+
+          <p id="form-error" role="alert" style="color: var(--berry); font-weight: 600;" hidden>Please add your name so we know who we're talking to.</p>
+          <button class="btn" type="submit">Send my request <span class="arrow" aria-hidden="true">&rarr;</span></button>
+        </form>
+
+        <div class="thanks" id="thanks" role="status" tabindex="-1" hidden>
+          <div class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F3F0E6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </div>
+          <h2>Thanks, <em id="thanks-name">neighbor</em>.</h2>
+          <p>Your note about the yard is in. While you wait, have a look at which jobs belong to which season.</p>
+          <a class="btn btn--ghost" href="../services/">See the services by season</a>
+        </div>
+      </div>
+
+      <aside class="contact-aside" aria-label="Contact details">
+        <div class="card reveal" data-d="1">
+          <p class="label label--berry">How to reach us</p>
+          <h3>Start with the form</h3>
+          <p>The request form on this page is how to get in touch with us. Tell us the street or neighborhood and the jobs you're thinking about.</p>
+        </div>
+
+        <div class="card reveal" data-d="2">
+          <p class="label label--berry">Where we work</p>
+          <h3>Brunswick, ME yards</h3>
+          <p>Lawns, beds, borders and plantings around Brunswick.</p>
+          <p class="mono-line">43.91&deg; N, 69.97&deg; W</p>
+        </div>
+
+        <div class="map-card reveal" data-d="3">
+          <svg viewBox="0 0 400 270" role="img" aria-label="Stylized map of Brunswick, ME with a pin at the center">
+            <rect width="400" height="270" fill="#E4EAD6"/>
+            <path d="M0 214 C70 190 120 232 190 208 C260 184 310 214 400 176 L400 270 L0 270 Z" fill="#C9D8D0"/>
+            <path d="M0 214 C70 190 120 232 190 208 C260 184 310 214 400 176" fill="none" stroke="#9FB8AE" stroke-width="2"/>
+            <g fill="none" stroke="#FCFAF4" stroke-width="9" stroke-linecap="round">
+              <path d="M-10 90 C80 100 150 70 230 110 S350 130 410 100"/>
+              <path d="M120 -10 C130 60 170 120 160 190 S170 250 180 280"/>
+              <path d="M290 -10 C280 50 300 100 270 160 S300 230 320 280"/>
+            </g>
+            <g fill="none" stroke="#D3D9C0" stroke-width="3" stroke-linecap="round">
+              <path d="M30 150 L110 140 M200 150 L270 140 M40 40 L120 55 M300 60 L380 50 M330 140 L395 150"/>
+            </g>
+            <g fill="#B9CDB0">
+              <circle cx="70" cy="50" r="22"/><circle cx="345" cy="95" r="26"/><circle cx="60" cy="185" r="18"/><circle cx="235" cy="45" r="16"/>
+            </g>
+            <g transform="translate(205 118)">
+              <ellipse cx="0" cy="34" rx="14" ry="4" fill="rgba(30,42,33,.25)"/>
+              <path d="M0 34 C-16 14 -20 4 -20 -6 A20 20 0 1 1 20 -6 C20 4 16 14 0 34Z" fill="#B02A30"/>
+              <circle cx="0" cy="-6" r="7" fill="#FCFAF4"/>
+            </g>
+          </svg>
+          <div class="map-card__cap"><span>Brunswick, ME</span><span>43.91&deg; N, 69.97&deg; W</span></div>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Brunswick%2C+ME" target="_blank" rel="noopener">Open Brunswick, ME in Maps &nearr;</a>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="section faq" style="background: var(--tint);" aria-labelledby="faq-title">
+    <div class="wrap faq-wrap">
+      <div class="reveal">
+        <p class="label label--berry">Good to know</p>
+        <h2 id="faq-title">Quick <em>answers</em></h2>
+        <p>The short version of what we do and where.</p>
+      </div>
+      <div class="reveal" data-d="1">
+        <details>
+          <summary>Where do you work?</summary>
+          <p>We do landscape work for yards in Brunswick, ME.</p>
+        </details>
+        <details>
+          <summary>What kind of work do you do?</summary>
+          <p>Lawn mowing, trimming and edging, planting, mulching and yard cleanup. Each one has its own write-up on the <a href="../services/">services page</a>.</p>
+        </details>
+        <details>
+          <summary>I'm not sure what my yard needs. Can I still get in touch?</summary>
+          <p>Yes. Describe what you see in the notes box, or tick whatever sounds closest. Sorting out the right jobs for the yard is part of the visit.</p>
+        </details>
+        <details>
+          <summary>When is the right time for each job?</summary>
+          <p>Cleanup, planting and mulching lean toward spring. Mowing, trimming and edging run through summer. Fall brings another round of cleanup. The <a href="../services/">services page</a> has a &ldquo;best time&rdquo; tag on every job.</p>
+        </details>
+        <details>
+          <summary>What should I put in the form?</summary>
+          <p>Your name, the street or neighborhood, and the jobs you have in mind. A line or two about the yard helps, but it's optional.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<a class="btn float-cta" href="#request">Ask for a yard visit</a>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="wordmark" href="../index.html" aria-label="Fernhill Landscape Co., home">
+          <svg viewBox="0 0 26 32" fill="none" stroke="#B9CDB9" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M13 31 C12 22 14 12 13 2"/>
+            <path d="M13 25 C8 23 4 24 2 27 M13 25 C18 23 22 24 24 27"/>
+            <path d="M13 18 C9 16 6 17 4 20 M13 18 C17 16 20 17 22 20"/>
+            <path d="M13 11 C10 9 8 10 7 12 M13 11 C16 9 18 10 19 12"/>
+          </svg>
+          <span>Fernhill<small>Landscape Co.</small></span>
+        </a>
+        <p>Landscape work for Brunswick, ME yards.</p>
+        <p class="coords">43.91&deg; N, 69.97&deg; W</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>The work</h4>
+        <ul>
+          <li><a href="../services/">Lawn mowing</a></li>
+          <li><a href="../services/">Trimming and edging</a></li>
+          <li><a href="../services/">Planting</a></li>
+          <li><a href="../services/">Mulching</a></li>
+          <li><a href="../services/">Yard cleanup</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__legal">&copy; 2026 Fernhill Landscape Co..</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Mobile menu
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Form: posts nowhere, shows a thank-you note
+  var form = document.getElementById('visit-form');
+  var thanks = document.getElementById('thanks');
+  var err = document.getElementById('form-error');
+  var nameInput = document.getElementById('name');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = nameInput.value.trim();
+    if (!name) {
+      err.hidden = false;
+      nameInput.focus();
+      return;
+    }
+    err.hidden = true;
+    document.getElementById('thanks-name').textContent = name.split(/\s+/)[0];
+    form.hidden = true;
+    thanks.hidden = false;
+    thanks.focus();
+    thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+  nameInput.addEventListener('input', function () { err.hidden = true; });
+})();
+</script>
+<script id="lp-reveal-net">(function(){var els=[].slice.call(document.querySelectorAll('.reveal'));function show(e){e.classList.add('is-in');e.classList.add('in');e.classList.add('visible');}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target);}})},{threshold:.05});els.forEach(function(e){io.observe(e)});}setTimeout(function(){els.forEach(function(e){show(e);e.style.opacity='1';e.style.transform='none';})},('IntersectionObserver' in window)?2500:0);})();</script></body>
+</html>
